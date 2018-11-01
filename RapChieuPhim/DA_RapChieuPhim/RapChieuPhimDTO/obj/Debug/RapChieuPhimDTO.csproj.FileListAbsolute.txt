@@ -1,0 +1,5 @@
+D:\RapChieuPhim\DA_RapChieuPhim\RapChieuPhimDTO\bin\Debug\RapChieuPhimDTO.dll
+D:\RapChieuPhim\DA_RapChieuPhim\RapChieuPhimDTO\bin\Debug\RapChieuPhimDTO.pdb
+D:\RapChieuPhim\DA_RapChieuPhim\RapChieuPhimDTO\obj\Debug\RapChieuPhimDTO.dll
+D:\RapChieuPhim\DA_RapChieuPhim\RapChieuPhimDTO\obj\Debug\RapChieuPhimDTO.pdb
+D:\RapChieuPhim\DA_RapChieuPhim\RapChieuPhimDTO\obj\Debug\RapChieuPhimDTO.csprojResolveAssemblyReference.cache
