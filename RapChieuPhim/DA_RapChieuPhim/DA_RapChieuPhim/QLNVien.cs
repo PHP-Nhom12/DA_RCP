@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,8 +16,11 @@ namespace DA_RapChieuPhim
     public partial class QLNV : Form
     {
         LuongBUS nv = new LuongBUS();
+        List<LuongBUS> LuongNV = new List<LuongBUS>();
         LoaiNV_BUS Loai = new LoaiNV_BUS();
         NhanVienBUS nv_bus = new NhanVienBUS();
+        NhanVienDTO nvchon = null;
+        string pathHA = "D:/RapChieuPhim/DA_RapChieuPhim/DA_RapChieuPhim/bin/Debug/Dữ Liệu/";
         public QLNV()
         {
             InitializeComponent();
@@ -48,51 +52,75 @@ namespace DA_RapChieuPhim
 
         private void loadLuong()
         {
-            //cbbLuong.DataSource = nv.LuongNV();
-            //cbbLuong.DisplayMember = "LuongCB";
-            //cbbLuong.ValueMember = "MaLuong";
-            //var a = nv.LuongNV();
-            foreach (var i in nv.LuongNV())
-            {
-                cbbLuong.Properties.Items.Add(i);
-            }
-            
-            //cbbCVu.DataSource = Loai.LayLoaiNV();
-            //cbbCVu.DisplayMember = "TenLoai";
-            //cbbCVu.ValueMember = "MaLoaiNV";
 
-           
-            //DataGridViewComboBoxColumn dgvLuong = (DataGridViewComboBoxColumn)dgvNhanVien.Columns["ColLuongCB"];
-            //dgvLuong.DataSource = nv.LuongOfNVien();
-            //dgvLuong.DisplayMember = "LuongCB";
-            //dgvLuong.ValueMember = "MaLuong";
-//            public void SetupLookup() {
+            lUpLuong.Properties.DataSource =nv.LuongNV();
+            lUpLuong.Properties.DisplayMember = "LuongCB";
+            lUpLuong.Properties.ValueMember = "MaLuong";
 
-//    lookUpEdit1.Properties.DataSource = dsStorage1.Countries;
+            lUpChucVu.Properties.DataSource = Loai.LayLoaiNV();
+            lUpChucVu.Properties.DisplayMember = "TenLoai";
+            lUpChucVu.Properties.ValueMember = "MaLoaiNV";
 
-//    lookUpEdit1.Properties.DisplayMember = "Name";
 
-//    lookUpEdit1.Properties.ValueMember = "ID";
-
-//    DevExpress.XtraEditors.Controls.LookUpColumnInfo col;
-
-//    col = new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Name", "Country", 100);
-
-//    col.SortOrder = DevExpress.Data.ColumnSortOrder.Ascending;
-
-//    lookUpEdit1.Properties.Columns.Add(col);
-
-//}
+            LpChucVu.DataSource = Loai.LayLoaiNV();
+            LpLuong.DataSource = nv.LuongNV();
+          
         }
 
-       
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog ofp = new OpenFileDialog();
+            ofp.Multiselect = false;
+            ofp.Filter = "Pictures | *.png;*jpg";
+            DialogResult dr= ofp.ShowDialog();
+            if(dr == DialogResult.Cancel)
+            {
+                pictureBox1.Image = null;
+            }
+            else
+            {
+                byte[] HA = File.ReadAllBytes(ofp.FileName);
+                MemoryStream ms = new MemoryStream(HA);
+                pictureBox1.Image = Image.FromStream(ms);
+            }
+        }
 
-       
+        private void btnThem_Click(object sender, EventArgs e)
+        {
+            getDataDetail();
+            if(nv_bus.ThemNV(nvchon))
+            {
+                if(pictureBox1.Image!=null)
+                {
+                    pictureBox1.Image.Save(nvchon.HinhAnh);
+                }
+                MessageBox.Show("Thêm Mới Thành Công");
+            }
+            else
+            {
+                MessageBox.Show("Thêm Mới Thất Bại");
+                nvchon = null;
+            }
+        }
 
-       
-
+        private void getDataDetail()
+        {
+            if (nvchon == null)
+            {
+                nvchon = new NhanVienDTO();
+            }
+            nvchon.HovaTen = txtTenNV.Text;
+            nvchon.NgaySinh = DateTime.Parse(dtNS.Text);
+            nvchon.DiaChi = txtDC.Text;
+            nvchon.GioiTinh = int.Parse(txtGT.Text);
+            nvchon.Email = txtEmail.Text;
+            nvchon.Password = txtPass.Text;
+            nvchon.NgayVaoLam = DateTime.Parse(dtNVL.Text);
+            nvchon.MaLuong = lUpLuong.SelectionStart;
+            nvchon.LoaiNV = lUpChucVu.SelectionStart;
+            nvchon.HinhAnh = pathHA + nvchon.MaNV + ".png";
+        }
         
-
         
     }
 }

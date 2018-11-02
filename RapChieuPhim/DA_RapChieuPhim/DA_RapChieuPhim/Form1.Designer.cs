@@ -41,6 +41,7 @@
             this.btnQLyLChieu = new DevExpress.XtraBars.BarButtonItem();
             this.btnQLTV = new DevExpress.XtraBars.BarButtonItem();
             this.btnThoat = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.PnThongtin = new System.Windows.Forms.Panel();
@@ -72,9 +73,10 @@
             this.btnQLVe,
             this.btnQLyLChieu,
             this.btnQLTV,
-            this.btnThoat});
+            this.btnThoat,
+            this.barButtonItem1});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 11;
+            this.ribbonControl1.MaxItemId = 12;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1});
@@ -164,6 +166,15 @@
             this.btnThoat.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
             this.btnThoat.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnThoat_ItemClick);
             // 
+            // barButtonItem1
+            // 
+            this.barButtonItem1.Caption = "Thống Kê";
+            this.barButtonItem1.Id = 11;
+            this.barButtonItem1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.Image")));
+            this.barButtonItem1.Name = "barButtonItem1";
+            this.barButtonItem1.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.barButtonItem1.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem1_ItemClick_1);
+            // 
             // ribbonPage1
             // 
             this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -179,9 +190,10 @@
             this.ribbonPageGroup1.ItemLinks.Add(this.btnQLVe);
             this.ribbonPageGroup1.ItemLinks.Add(this.btnQLyLChieu);
             this.ribbonPageGroup1.ItemLinks.Add(this.btnQLTV);
+            this.ribbonPageGroup1.ItemLinks.Add(this.barButtonItem1);
             this.ribbonPageGroup1.ItemLinks.Add(this.btnThoat);
             this.ribbonPageGroup1.Name = "ribbonPageGroup1";
-            this.ribbonPageGroup1.Text = "ribbonPageGroup1";
+            this.ribbonPageGroup1.Text = "Chức Năng";
             // 
             // PnThongtin
             // 
@@ -320,6 +332,7 @@
         private DevExpress.LookAndFeel.DefaultLookAndFeel defaultLookAndFeel1;
         private DevExpress.XtraBars.BarButtonItem btnQLTV;
         private DevExpress.XtraBars.BarButtonItem btnThoat;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem1;
     }
 }
 

@@ -166,6 +166,14 @@ namespace DA_RapChieuPhim
             frmTV.Show();
         }
 
+        private void barButtonItem1_ItemClick_1(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            FormThongKe frmTK = new FormThongKe();
+            frmTK.Dock = DockStyle.Fill;
+            frmTK.MdiParent = this;
+            frmTK.Show();
+        }
+
        
        
     }

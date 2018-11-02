@@ -38,5 +38,18 @@ namespace RapChieuPhimDAO
             //sda.UpdateCommand = com;
             return com.ExecuteNonQuery();
         }
+        public static bool ThucThiCauLenh(string strCauLenh, SqlConnection con)
+        {
+            SqlCommand cmd = new SqlCommand(strCauLenh, con);
+            int kq = cmd.ExecuteNonQuery();
+            return kq > 0;
+        }
+        public static bool ThucThiCauLenh(string strCauLenh, SqlParameter[] param, SqlConnection con)
+        {
+            SqlCommand cmd = new SqlCommand(strCauLenh, con);
+            cmd.Parameters.AddRange(param);
+            int kq = cmd.ExecuteNonQuery();
+            return kq > 0;
+        }
     } 
 }

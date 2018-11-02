@@ -163,5 +163,24 @@ namespace RapChieuPhimDAO
             conn.Close();
             return ls;
         }
+        public bool ThemNhanVien(NhanVienDTO nv)
+        {
+            string strTruyVan = "INSERT INTO NhanVien(HovaTen,NgaySinh,GioiTinh,DiaChi,Email,Password,HinhAnh,NgayVaoLam,LoaiNV,MaLuong,TrangThai)" + " VALUES(@HovaTen,@NgaySinh,@GioiTinh,@DiaChi,@Email,@Password,@HinhAnh,@NgayVaoLam,@LoaiNV,@MaLuong,@TrangThai)";
+            SqlParameter[] par = new SqlParameter[11];
+            par[0] = new SqlParameter("@HovaTen",nv.HovaTen);
+            par[1] = new SqlParameter("@NgaySinh", nv.NgaySinh);
+            par[2] = new SqlParameter("@GioiTinh", nv.GioiTinh);
+            par[3] = new SqlParameter("@DiaChi",nv.DiaChi);
+            par[3] = new SqlParameter("@Email", nv.Email);
+            par[3] = new SqlParameter("@Password", nv.Password);
+            par[3] = new SqlParameter("@HinhAnh", nv.HinhAnh);
+            par[3] = new SqlParameter("@NgayVaoLam", nv.NgayVaoLam);
+            par[3] = new SqlParameter("@LoaiNV", nv.LoaiNV);
+            par[3] = new SqlParameter("@MaLuong", nv.MaLuong);
+            par[3] = new SqlParameter("@TrangThai", nv.TrangThai);
+            SqlConnection conn = DataProvider.TaoKetNoi();
+
+            return DataProvider.ThucThiCauLenh(strTruyVan, par, conn);
+        }
     }
 }

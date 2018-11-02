@@ -36,5 +36,10 @@ namespace RapChieuPhimBUS
             NhanVienDAO nvDAO = new NhanVienDAO();
             return nvDAO.loadLuong();
         }
+        public bool ThemNV(NhanVienDTO nv)
+        {
+            NhanVienDAO nvDao = new NhanVienDAO();
+            return nvDao.ThemNhanVien(nv);
+        }
     }
 }
