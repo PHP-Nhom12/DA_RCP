@@ -20,8 +20,6 @@ D:\RapChieuPhim\DA_RapChieuPhim\DA_RapChieuPhim\obj\Debug\DA_RapChieuPhim.QLTV.r
 D:\RapChieuPhim\DA_RapChieuPhim\DA_RapChieuPhim\obj\Debug\DA_RapChieuPhim.FormPhong.resources
 D:\RapChieuPhim\DA_RapChieuPhim\DA_RapChieuPhim\obj\Debug\DA_RapChieuPhim.QLLichChieu.resources
 D:\RapChieuPhim\DA_RapChieuPhim\DA_RapChieuPhim\obj\Debug\DA_RapChieuPhim.QLVe.resources
-D:\github_doanRapCHieuPhim\DA_RCP\DoAn_RapChieuPhim\RapChieuPhim\DA_RapChieuPhim\DA_RapChieuPhim\obj\Debug\DA_RapChieuPhim.exe
-D:\github_doanRapCHieuPhim\DA_RCP\DoAn_RapChieuPhim\RapChieuPhim\DA_RapChieuPhim\DA_RapChieuPhim\obj\Debug\DA_RapChieuPhim.pdb
 D:\github_doanRapCHieuPhim\DA_RCP\DoAn_RapChieuPhim\RapChieuPhim\DA_RapChieuPhim\DA_RapChieuPhim\bin\Debug\DA_RapChieuPhim.exe
 D:\github_doanRapCHieuPhim\DA_RCP\DoAn_RapChieuPhim\RapChieuPhim\DA_RapChieuPhim\DA_RapChieuPhim\bin\Debug\DA_RapChieuPhim.pdb
 D:\github_doanRapCHieuPhim\DA_RCP\DoAn_RapChieuPhim\RapChieuPhim\DA_RapChieuPhim\DA_RapChieuPhim\bin\Debug\RapChieuPhimBUS.dll
@@ -34,6 +32,7 @@ D:\github_doanRapCHieuPhim\DA_RCP\DoAn_RapChieuPhim\RapChieuPhim\DA_RapChieuPhim
 D:\github_doanRapCHieuPhim\DA_RCP\DoAn_RapChieuPhim\RapChieuPhim\DA_RapChieuPhim\DA_RapChieuPhim\obj\Debug\DA_RapChieuPhim.Form1.resources
 D:\github_doanRapCHieuPhim\DA_RCP\DoAn_RapChieuPhim\RapChieuPhim\DA_RapChieuPhim\DA_RapChieuPhim\obj\Debug\DA_RapChieuPhim.FormDangNhap.resources
 D:\github_doanRapCHieuPhim\DA_RCP\DoAn_RapChieuPhim\RapChieuPhim\DA_RapChieuPhim\DA_RapChieuPhim\obj\Debug\DA_RapChieuPhim.FormPhong.resources
+D:\github_doanRapCHieuPhim\DA_RCP\DoAn_RapChieuPhim\RapChieuPhim\DA_RapChieuPhim\DA_RapChieuPhim\obj\Debug\DA_RapChieuPhim.FormThongKe.resources
 D:\github_doanRapCHieuPhim\DA_RCP\DoAn_RapChieuPhim\RapChieuPhim\DA_RapChieuPhim\DA_RapChieuPhim\obj\Debug\DA_RapChieuPhim.FormDoiMK.resources
 D:\github_doanRapCHieuPhim\DA_RCP\DoAn_RapChieuPhim\RapChieuPhim\DA_RapChieuPhim\DA_RapChieuPhim\obj\Debug\DA_RapChieuPhim.Properties.Resources.resources
 D:\github_doanRapCHieuPhim\DA_RCP\DoAn_RapChieuPhim\RapChieuPhim\DA_RapChieuPhim\DA_RapChieuPhim\obj\Debug\DA_RapChieuPhim.QLLichChieu.resources
@@ -42,3 +41,5 @@ D:\github_doanRapCHieuPhim\DA_RCP\DoAn_RapChieuPhim\RapChieuPhim\DA_RapChieuPhim
 D:\github_doanRapCHieuPhim\DA_RCP\DoAn_RapChieuPhim\RapChieuPhim\DA_RapChieuPhim\DA_RapChieuPhim\obj\Debug\DA_RapChieuPhim.QLVe.resources
 D:\github_doanRapCHieuPhim\DA_RCP\DoAn_RapChieuPhim\RapChieuPhim\DA_RapChieuPhim\DA_RapChieuPhim\obj\Debug\DA_RapChieuPhim.csproj.GenerateResource.Cache
 D:\github_doanRapCHieuPhim\DA_RCP\DoAn_RapChieuPhim\RapChieuPhim\DA_RapChieuPhim\DA_RapChieuPhim\obj\Debug\DA_RapChieuPhim.exe.licenses
+D:\github_doanRapCHieuPhim\DA_RCP\DoAn_RapChieuPhim\RapChieuPhim\DA_RapChieuPhim\DA_RapChieuPhim\obj\Debug\DA_RapChieuPhim.exe
+D:\github_doanRapCHieuPhim\DA_RCP\DoAn_RapChieuPhim\RapChieuPhim\DA_RapChieuPhim\DA_RapChieuPhim\obj\Debug\DA_RapChieuPhim.pdb

@@ -88,19 +88,42 @@ namespace DA_RapChieuPhim
         private void btnThem_Click(object sender, EventArgs e)
         {
             getDataDetail();
-            if(nv_bus.ThemNV(nvchon))
+            //if(nv_bus.ThemNV(nvchon))
+            //{
+            //    if(pictureBox1.Image!=null)
+            //    {
+            //        pictureBox1.Image.Save(nvchon.HinhAnh);
+            //    }
+            //    MessageBox.Show("Thêm Mới Thành Công");
+            //}
+            //else
+            //{
+            //    MessageBox.Show("Thêm Mới Thất Bại");
+            //    nvchon = null;
+            //}
+            string hten = txtTenNV.Text;
+            DateTime NSinh = DateTime.Parse(dtNS.Text);
+            string DChi = txtDC.Text;
+            int GTinh = int.Parse(txtGT.Text);
+            string Email = txtEmail.Text;
+            string Password = txtPass.Text;
+            DateTime NgayVaoLam = DateTime.Parse(dtNVL.Text);
+            int MaLuong =2;
+           int LoaiNV = 2;
+            string HinhAnh = pathHA + nvchon.MaNV + ".png";
+            int TrangThai =chkTrangthai.Checked ? 1 : 0;
+            List<NhanVienDTO> kq = nv_bus.ThemNV(hten,NSinh,GTinh,DChi,Email,Password,HinhAnh,NgayVaoLam,LoaiNV,MaLuong,TrangThai);
+            if (kq != null)
             {
-                if(pictureBox1.Image!=null)
-                {
-                    pictureBox1.Image.Save(nvchon.HinhAnh);
-                }
-                MessageBox.Show("Thêm Mới Thành Công");
+                pictureBox1.Image.Save(HinhAnh);
+                MessageBox.Show("Thêm Thành Công");
+                loadNV();
             }
             else
             {
-                MessageBox.Show("Thêm Mới Thất Bại");
-                nvchon = null;
+                MessageBox.Show("Thêm Thất Bại");
             }
+           
         }
 
         private void getDataDetail()
@@ -120,6 +143,7 @@ namespace DA_RapChieuPhim
             nvchon.LoaiNV = lUpChucVu.SelectionStart;
             nvchon.HinhAnh = pathHA + nvchon.MaNV + ".png";
         }
+
         
         
     }

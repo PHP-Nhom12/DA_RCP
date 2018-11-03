@@ -79,6 +79,12 @@
     <Compile Include="FormPhong.Designer.cs">
       <DependentUpon>FormPhong.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormThongKe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormThongKe.Designer.cs">
+      <DependentUpon>FormThongKe.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmDoiMK.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -119,6 +125,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormPhong.resx">
       <DependentUpon>FormPhong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormThongKe.resx">
+      <DependentUpon>FormThongKe.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmDoiMK.resx">
       <DependentUpon>FrmDoiMK.cs</DependentUpon>

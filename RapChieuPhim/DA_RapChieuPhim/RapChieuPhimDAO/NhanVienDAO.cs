@@ -163,24 +163,42 @@ namespace RapChieuPhimDAO
             conn.Close();
             return ls;
         }
-        public bool ThemNhanVien(NhanVienDTO nv)
+        public List<NhanVienDTO> ThemNhanVien(string TenNV, DateTime NS,int GT, string DC,string Email,string Pass, string Ha,DateTime NVL,int LoaiNV,int Maluong,int TrangThai)
         {
             string strTruyVan = "INSERT INTO NhanVien(HovaTen,NgaySinh,GioiTinh,DiaChi,Email,Password,HinhAnh,NgayVaoLam,LoaiNV,MaLuong,TrangThai)" + " VALUES(@HovaTen,@NgaySinh,@GioiTinh,@DiaChi,@Email,@Password,@HinhAnh,@NgayVaoLam,@LoaiNV,@MaLuong,@TrangThai)";
             SqlParameter[] par = new SqlParameter[11];
-            par[0] = new SqlParameter("@HovaTen",nv.HovaTen);
-            par[1] = new SqlParameter("@NgaySinh", nv.NgaySinh);
-            par[2] = new SqlParameter("@GioiTinh", nv.GioiTinh);
-            par[3] = new SqlParameter("@DiaChi",nv.DiaChi);
-            par[3] = new SqlParameter("@Email", nv.Email);
-            par[3] = new SqlParameter("@Password", nv.Password);
-            par[3] = new SqlParameter("@HinhAnh", nv.HinhAnh);
-            par[3] = new SqlParameter("@NgayVaoLam", nv.NgayVaoLam);
-            par[3] = new SqlParameter("@LoaiNV", nv.LoaiNV);
-            par[3] = new SqlParameter("@MaLuong", nv.MaLuong);
-            par[3] = new SqlParameter("@TrangThai", nv.TrangThai);
+            par[0] = new SqlParameter("@HovaTen",TenNV);
+            par[1] = new SqlParameter("@NgaySinh",NS);
+            par[2] = new SqlParameter("@GioiTinh",GT );
+            par[3] = new SqlParameter("@DiaChi", DC);
+            par[4] = new SqlParameter("@Email", Email);
+            par[5] = new SqlParameter("@Password",Pass);
+            par[6] = new SqlParameter("@HinhAnh",Ha);
+            par[7] = new SqlParameter("@NgayVaoLam",NVL);
+            par[8] = new SqlParameter("@LoaiNV", LoaiNV);
+            par[9] = new SqlParameter("@MaLuong",Maluong);
+            par[10] = new SqlParameter("@TrangThai",TrangThai);
             SqlConnection conn = DataProvider.TaoKetNoi();
-
-            return DataProvider.ThucThiCauLenh(strTruyVan, par, conn);
+            SqlDataReader sdr= DataProvider.TruyVanDuLieu(strTruyVan, par, conn);
+            List<NhanVienDTO> ls = new List<NhanVienDTO>();
+            while (sdr.Read())
+            {
+                NhanVienDTO ketqua = new NhanVienDTO();
+                ketqua.HovaTen = sdr["HovaTen"].ToString();
+                ketqua.NgaySinh = DateTime.Parse(sdr["NgaySinh"].ToString());
+                ketqua.GioiTinh =int.Parse( sdr["GioiTinh"].ToString());
+                ketqua.DiaChi =sdr["DiaChi"].ToString();
+                ketqua.Email = sdr["Email"].ToString();
+                ketqua.Password = sdr["Password"].ToString();
+                ketqua.HinhAnh = sdr["HinhAnh"].ToString();
+                ketqua.NgayVaoLam = DateTime.Parse(sdr["NgayVaoLam"].ToString());
+                ketqua.LoaiNV = int.Parse(sdr["LoaiNV"].ToString());
+                ketqua.MaLuong = int.Parse(sdr["MaLuong"].ToString());
+                ketqua.TrangThai = int.Parse(sdr["TrangThai"].ToString());
+                ls.Add(ketqua);
+            }
+            sdr.Close();
+            return ls;
         }
     }
 }

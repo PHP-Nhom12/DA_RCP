@@ -41,6 +41,9 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.gbQLNV = new System.Windows.Forms.GroupBox();
+            this.chkTrangthai = new System.Windows.Forms.CheckBox();
+            this.txtDC = new DevExpress.XtraEditors.TextEdit();
+            this.label9 = new System.Windows.Forms.Label();
             this.lUpChucVu = new DevExpress.XtraEditors.LookUpEdit();
             this.lUpLuong = new DevExpress.XtraEditors.LookUpEdit();
             this.gcNhanVien = new DevExpress.XtraGrid.GridControl();
@@ -62,10 +65,9 @@
             this.txtGT = new DevExpress.XtraEditors.TextEdit();
             this.dtNS = new DevExpress.XtraEditors.DateEdit();
             this.txtTenNV = new DevExpress.XtraEditors.TextEdit();
-            this.label9 = new System.Windows.Forms.Label();
-            this.txtDC = new DevExpress.XtraEditors.TextEdit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.gbQLNV.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtDC.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lUpChucVu.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lUpLuong.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcNhanVien)).BeginInit();
@@ -81,7 +83,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dtNS.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtNS.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTenNV.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtDC.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // label8
@@ -141,6 +142,7 @@
             this.pictureBox1.Location = new System.Drawing.Point(728, 31);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(100, 119);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 7;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
@@ -208,6 +210,7 @@
             // gbQLNV
             // 
             this.gbQLNV.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.gbQLNV.Controls.Add(this.chkTrangthai);
             this.gbQLNV.Controls.Add(this.txtDC);
             this.gbQLNV.Controls.Add(this.label9);
             this.gbQLNV.Controls.Add(this.lUpChucVu);
@@ -237,6 +240,34 @@
             this.gbQLNV.TabIndex = 25;
             this.gbQLNV.TabStop = false;
             this.gbQLNV.Text = "Quản Lý Nhân Viên";
+            // 
+            // chkTrangthai
+            // 
+            this.chkTrangthai.AutoSize = true;
+            this.chkTrangthai.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkTrangthai.Location = new System.Drawing.Point(462, 182);
+            this.chkTrangthai.Name = "chkTrangthai";
+            this.chkTrangthai.Size = new System.Drawing.Size(112, 24);
+            this.chkTrangthai.TabIndex = 40;
+            this.chkTrangthai.Text = "Chờ Duyệt";
+            this.chkTrangthai.UseVisualStyleBackColor = true;
+            // 
+            // txtDC
+            // 
+            this.txtDC.Location = new System.Drawing.Point(97, 179);
+            this.txtDC.Name = "txtDC";
+            this.txtDC.Size = new System.Drawing.Size(225, 20);
+            this.txtDC.TabIndex = 39;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(20, 180);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(52, 16);
+            this.label9.TabIndex = 38;
+            this.label9.Text = "Địa Chỉ";
             // 
             // lUpChucVu
             // 
@@ -439,23 +470,6 @@
             this.txtTenNV.Size = new System.Drawing.Size(225, 20);
             this.txtTenNV.TabIndex = 25;
             // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(20, 180);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(52, 16);
-            this.label9.TabIndex = 38;
-            this.label9.Text = "Địa Chỉ";
-            // 
-            // txtDC
-            // 
-            this.txtDC.Location = new System.Drawing.Point(97, 179);
-            this.txtDC.Name = "txtDC";
-            this.txtDC.Size = new System.Drawing.Size(225, 20);
-            this.txtDC.TabIndex = 39;
-            // 
             // QLNV
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -471,6 +485,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.gbQLNV.ResumeLayout(false);
             this.gbQLNV.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtDC.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lUpChucVu.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lUpLuong.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcNhanVien)).EndInit();
@@ -486,7 +501,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dtNS.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtNS.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTenNV.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtDC.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -529,6 +543,7 @@
         private DevExpress.XtraEditors.LookUpEdit lUpChucVu;
         private DevExpress.XtraEditors.TextEdit txtDC;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.CheckBox chkTrangthai;
 
     }
 }
