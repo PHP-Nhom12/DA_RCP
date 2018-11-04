@@ -108,14 +108,17 @@ namespace DA_RapChieuPhim
             string Email = txtEmail.Text;
             string Password = txtPass.Text;
             DateTime NgayVaoLam = DateTime.Parse(dtNVL.Text);
-            int MaLuong =2;
-           int LoaiNV = 2;
+            int MaLuong = (int)lUpLuong.EditValue;
+           int LoaiNV = (int)lUpChucVu.EditValue;
             string HinhAnh = pathHA + nvchon.MaNV + ".png";
             int TrangThai =chkTrangthai.Checked ? 1 : 0;
             List<NhanVienDTO> kq = nv_bus.ThemNV(hten,NSinh,GTinh,DChi,Email,Password,HinhAnh,NgayVaoLam,LoaiNV,MaLuong,TrangThai);
             if (kq != null)
             {
-                pictureBox1.Image.Save(HinhAnh);
+                if(pictureBox1.Image!=null)
+                {
+                    pictureBox1.Image.Save(HinhAnh);
+                }
                 MessageBox.Show("Thêm Thành Công");
                 loadNV();
             }
