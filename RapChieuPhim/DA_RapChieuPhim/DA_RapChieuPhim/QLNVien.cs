@@ -24,12 +24,10 @@ namespace DA_RapChieuPhim
         public QLNV()
         {
             InitializeComponent();
-           //gcNhanVien.AutoGenerateColumns = false;
         }
 
         private void QLNV_Load(object sender, EventArgs e)
         {
-            loadLoai();
             loadNV();
             loadLuong();
         }
@@ -38,17 +36,7 @@ namespace DA_RapChieuPhim
         {
             gcNhanVien.DataSource = nv_bus.LoadDSNVien();
         }
-        public void loadLoai()
-        {
-            //DataGridViewComboBoxColumn dgvloainv = (DataGridViewComboBoxColumn)gcNhanVien.Columns["ColMaLoai"];
-            //dgvloainv.DataSource = nv_bus.loadLoai();
-            //dgvloainv.DisplayMember = "TenLoai";
-            //dgvloainv.ValueMember = "MaLoaiNV";
-            
-            
-
-            
-        }
+       
 
         private void loadLuong()
         {
@@ -88,19 +76,6 @@ namespace DA_RapChieuPhim
         private void btnThem_Click(object sender, EventArgs e)
         {
             getDataDetail();
-            //if(nv_bus.ThemNV(nvchon))
-            //{
-            //    if(pictureBox1.Image!=null)
-            //    {
-            //        pictureBox1.Image.Save(nvchon.HinhAnh);
-            //    }
-            //    MessageBox.Show("Thêm Mới Thành Công");
-            //}
-            //else
-            //{
-            //    MessageBox.Show("Thêm Mới Thất Bại");
-            //    nvchon = null;
-            //}
             string hten = txtTenNV.Text;
             DateTime NSinh = DateTime.Parse(dtNS.Text);
             string DChi = txtDC.Text;
@@ -146,6 +121,42 @@ namespace DA_RapChieuPhim
             nvchon.LoaiNV = lUpChucVu.SelectionStart;
             nvchon.HinhAnh = pathHA + nvchon.MaNV + ".png";
         }
+
+        private void btnXoa_Click(object sender, EventArgs e)
+        {
+            if(gvNhanVien.SelectedRowsCount==0)
+            {
+                MessageBox.Show("Chưa chọn đối tượng để xóa", "Thông Báo");
+            }
+            else
+            {
+                DialogResult r = MessageBox.Show("Bạn có chắn chắn muốn xóa nhân viên", "Thông Báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if(DialogResult.Yes==r)
+                {
+                    int[] i = gvNhanVien.GetSelectedRows();
+                    foreach(int rows in i)
+                    {
+                        if(rows>=0)
+                        {
+                            //string Email = gvNhanVien.GetRowCellValue(rows, ColMaNV).ToString();
+                            string MaNV = gvNhanVien.GetRowCellValue(rows, ColMaNV).ToString();
+                            if (nv_bus.XoaNV(MaNV) >= 1)
+                            {
+                                MessageBox.Show("Xóa Thành Công", "Thông Báo", MessageBoxButtons.OK);
+                            }
+                            else
+                            {
+                                MessageBox.Show("Xóa Thất Bại", "Thông Báo", MessageBoxButtons.OK);
+                            }
+                        }
+                        loadNV();
+                    }
+                    
+                }
+            }
+        }
+
+        
 
         
         

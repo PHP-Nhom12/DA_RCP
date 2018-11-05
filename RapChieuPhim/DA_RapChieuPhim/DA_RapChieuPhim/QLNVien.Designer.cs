@@ -31,7 +31,7 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
+            this.btnXoa = new DevExpress.XtraEditors.SimpleButton();
             this.btnThem = new DevExpress.XtraEditors.SimpleButton();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label7 = new System.Windows.Forms.Label();
@@ -115,15 +115,16 @@
             this.simpleButton3.TabIndex = 10;
             this.simpleButton3.Text = "Cập Nhập";
             // 
-            // simpleButton2
+            // btnXoa
             // 
-            this.simpleButton2.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.simpleButton2.Appearance.Options.UseFont = true;
-            this.simpleButton2.Location = new System.Drawing.Point(574, 222);
-            this.simpleButton2.Name = "simpleButton2";
-            this.simpleButton2.Size = new System.Drawing.Size(92, 41);
-            this.simpleButton2.TabIndex = 9;
-            this.simpleButton2.Text = "Xóa";
+            this.btnXoa.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnXoa.Appearance.Options.UseFont = true;
+            this.btnXoa.Location = new System.Drawing.Point(574, 222);
+            this.btnXoa.Name = "btnXoa";
+            this.btnXoa.Size = new System.Drawing.Size(92, 41);
+            this.btnXoa.TabIndex = 9;
+            this.btnXoa.Text = "Xóa";
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // btnThem
             // 
@@ -223,7 +224,7 @@
             this.gbQLNV.Controls.Add(this.dtNS);
             this.gbQLNV.Controls.Add(this.txtTenNV);
             this.gbQLNV.Controls.Add(this.simpleButton3);
-            this.gbQLNV.Controls.Add(this.simpleButton2);
+            this.gbQLNV.Controls.Add(this.btnXoa);
             this.gbQLNV.Controls.Add(this.btnThem);
             this.gbQLNV.Controls.Add(this.pictureBox1);
             this.gbQLNV.Controls.Add(this.label8);
@@ -508,7 +509,7 @@
         #endregion
 
         private DevExpress.XtraEditors.SimpleButton simpleButton3;
-        private DevExpress.XtraEditors.SimpleButton simpleButton2;
+        private DevExpress.XtraEditors.SimpleButton btnXoa;
         private DevExpress.XtraEditors.SimpleButton btnThem;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label7;

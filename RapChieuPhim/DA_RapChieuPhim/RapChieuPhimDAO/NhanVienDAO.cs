@@ -98,7 +98,7 @@ namespace RapChieuPhimDAO
         public List<NhanVienDTO> LoadDSNV()
         {
             SqlConnection conn = DataProvider.TaoKetNoi();
-            string strTruyVan = "Select * From NhanVien";
+            string strTruyVan = "Select * From NhanVien where TrangThai=0";
             SqlDataReader sdr = DataProvider.TruyVanDuLieu(strTruyVan, conn);
             List<NhanVienDTO> ls = new List<NhanVienDTO>();
             while (sdr.Read())
@@ -199,6 +199,18 @@ namespace RapChieuPhimDAO
             }
             sdr.Close();
             return ls;
+        }
+        public int XoaNhanVien(string MaNV)
+        {
+            NhanVienDTO nv = new NhanVienDTO();
+            SqlConnection conn = DataProvider.TaoKetNoi();
+            string strTruyVan = "Update NhanVien Set TrangThai=1 WHERE MaNV = " + MaNV;
+            SqlCommand com = new SqlCommand(strTruyVan, conn);
+
+            int kq = com.ExecuteNonQuery();
+            
+            conn.Close();
+            return kq;
         }
     }
 }
