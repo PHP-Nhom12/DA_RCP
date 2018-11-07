@@ -177,10 +177,12 @@ namespace DA_RapChieuPhim
                         nvchon.GioiTinh = gvNhanVien.GetRowCellValue(item, ColGioiTinh).ToString().Trim();
                         nvchon.DiaChi = gvNhanVien.GetRowCellValue(item, ColDC).ToString().Trim();
                         nvchon.Email = gvNhanVien.GetRowCellValue(item, ColMail).ToString().Trim();
-                        nvchon.MaLoaiNV = int.Parse(gvNhanVien.GetRowCellValue(item, ColChucVu).ToString().Trim());
+                        nvchon.LoaiNV = int.Parse(gvNhanVien.GetRowCellValue(item, ColChucVu).ToString().Trim());
                         nvchon.MaLuong = int.Parse(gvNhanVien.GetRowCellValue(item, ColLuong).ToString().Trim());
                         nvchon.HinhAnh = gvNhanVien.GetRowCellValue(item, ColHA).ToString().Trim();
                         nvchon.NgayVaoLam = DateTime.Parse(gvNhanVien.GetRowCellValue(item, ColNVL).ToString().Trim());
+                        nvchon.Password = gvNhanVien.GetRowCellValue(item, ColPass).ToString().Trim();
+                        nvchon.MaNV = gvNhanVien.GetRowCellValue(item, ColMaNV).ToString().Trim();
                         txtPass.Enabled = false;
                     }
                     else
@@ -205,7 +207,7 @@ namespace DA_RapChieuPhim
             txtEmail.Text = nvchon.Email;
             dtNVL.DateTime = nvchon.NgayVaoLam;
             lUpLuong.EditValue = nvchon.MaLuong;
-            lUpChucVu.EditValue = nvchon.MaLoaiNV;
+            lUpChucVu.EditValue = nvchon.LoaiNV;
             if(File.Exists(nvchon.HinhAnh))
             {
                 byte[] byteHA = File.ReadAllBytes(nvchon.HinhAnh);
@@ -217,6 +219,26 @@ namespace DA_RapChieuPhim
                 pictureBox1.Image = null;
             }
            
+        }
+
+        private void simpleButton3_Click(object sender, EventArgs e)
+        {
+            int[] i = gvNhanVien.GetSelectedRows();
+            foreach (int rows in i)
+            {
+                if (rows >= 0)
+                {
+                    int MaNV = int.Parse(gvNhanVien.GetRowCellValue(rows, ColMaNV).ToString());
+                    if (nv_bus.CapNhatNV(nvchon, MaNV) != null)
+                    {
+                        MessageBox.Show("Cập nhật Thành Công", "Thông Báo");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Cập Nhật Thất Bại", "Thông Báo");
+                    }
+                }
+            }
         }
 
        

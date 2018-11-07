@@ -34,10 +34,6 @@ namespace RapChieuPhimDAO
                 ketqua.LoaiNV = int.Parse(sdr["LoaiNV"].ToString());
                 ketqua.MaLuong = int.Parse(sdr["MaLuong"].ToString());
                 ketqua.TrangThai = int.Parse(sdr["TrangThai"].ToString());
-                //ketqua.MaLoaiNV = int.Parse(sdr["MaLoaiNV"].ToString());
-                ketqua.TenLoai = sdr["TenLoai"].ToString();
-                //ketqua.HeSo = float.Parse(sdr["HeSo"].ToString());
-                // ketqua.TrangThaiLoai = int.Parse(sdr["TrangThaiLoai"].ToString());
                 
             }
             sdr.Close();
@@ -67,10 +63,6 @@ namespace RapChieuPhimDAO
                 ketqua.LoaiNV = int.Parse(sdr["LoaiNV"].ToString());
                 ketqua.MaLuong = int.Parse(sdr["MaLuong"].ToString());
                 ketqua.TrangThai = int.Parse(sdr["TrangThai"].ToString());
-                ketqua.MaLoaiNV = int.Parse(sdr["MaLoaiNV"].ToString());
-                ketqua.TenLoai = sdr["TenLoai"].ToString();
-                ketqua.HeSo = float.Parse(sdr["HeSo"].ToString());
-                // ketqua.TrangThaiLoai = int.Parse(sdr["TrangThaiLoai"].ToString());
                 ls.Add(ketqua);
             }
             sdr.Close();
@@ -213,17 +205,43 @@ namespace RapChieuPhimDAO
             conn.Close();
             return kq;
         }
-        public int CapNhatNhanVien(string MaNV)
+        public  NhanVienDTO CapNhatNhanVien(NhanVienDTO nv, int MaNV)
         {
-            NhanVienDTO nv = new NhanVienDTO();
+            string strTruyVan = "Update NhanVien Set HovaTen=@HovaTen,NgaySinh=@NgaySinh,GioiTinh=@GioiTinh,DiaChi=@DiaChi,Email=@Email,Password=@Password,HinhAnh=@HinhAnh,NgayVaoLam=@NgayVaoLam,LoaiNV=@LoaiNV,MaLuong=@MaLuong,TrangThai=@TrangThai WHERE MaNV = " + nv.MaNV;
+            SqlParameter[] par = new SqlParameter[11];
+            par[0] = new SqlParameter("@HovaTen", nv.HovaTen);
+            par[1] = new SqlParameter("@NgaySinh", nv.NgaySinh);
+            par[2] = new SqlParameter("@GioiTinh", nv.GioiTinh);
+            par[3] = new SqlParameter("@DiaChi", nv.DiaChi);
+            par[4] = new SqlParameter("@Email", nv.Email);
+            par[5] = new SqlParameter("@Password", nv.Password);
+            par[6] = new SqlParameter("@HinhAnh", nv.HinhAnh);
+            par[7] = new SqlParameter("@NgayVaoLam", nv.NgayVaoLam);
+            par[8] = new SqlParameter("@LoaiNV", nv.LoaiNV);
+            par[9] = new SqlParameter("@MaLuong", nv.MaLuong);
+            par[10] = new SqlParameter("@TrangThai", nv.TrangThai);
             SqlConnection conn = DataProvider.TaoKetNoi();
-            string strTruyVan = "Update NhanVien Set TrangThai=1 WHERE MaNV = " + MaNV;
-            SqlCommand com = new SqlCommand(strTruyVan, conn);
-
-            int kq = com.ExecuteNonQuery();
-
-            conn.Close();
-            return kq;
+            SqlDataReader sdr = DataProvider.TruyVanDuLieu(strTruyVan, par, conn);
+            List<NhanVienDTO> ls = new List<NhanVienDTO>();
+            while (sdr.Read())
+            {
+                NhanVienDTO ketqua = new NhanVienDTO();
+                ketqua.HovaTen = sdr["HovaTen"].ToString();
+                ketqua.NgaySinh = DateTime.Parse(sdr["NgaySinh"].ToString());
+                ketqua.GioiTinh = sdr["GioiTinh"].ToString();
+                ketqua.DiaChi = sdr["DiaChi"].ToString();
+                ketqua.Email = sdr["Email"].ToString();
+                ketqua.Password = sdr["Password"].ToString();
+                ketqua.HinhAnh = sdr["HinhAnh"].ToString();
+                ketqua.NgayVaoLam = DateTime.Parse(sdr["NgayVaoLam"].ToString());
+                ketqua.LoaiNV = int.Parse(sdr["LoaiNV"].ToString());
+                ketqua.MaLuong = int.Parse(sdr["MaLuong"].ToString());
+                ketqua.TrangThai = int.Parse(sdr["TrangThai"].ToString());
+                ls.Add(ketqua);
+            }
+            sdr.Close();
+            return nv;
+          
         }
     }
 }

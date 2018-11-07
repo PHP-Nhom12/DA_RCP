@@ -10,6 +10,7 @@ using DevExpress.Skins;
 using DevExpress.UserSkins;
 using RapChieuPhimDTO;
 using System.IO;
+using RapChieuPhimBUS;
 
 namespace DA_RapChieuPhim
 {
@@ -18,6 +19,7 @@ namespace DA_RapChieuPhim
         bool isDangNhap;
         FormDangNhap frmDN;
         public NhanVienDTO nvDangNhap = new NhanVienDTO();
+        NhanVienBUS nvBUS = new NhanVienBUS();
        // NhanVienDTO nv = new NhanVienDTO();
         public Form1()
         {
@@ -71,9 +73,24 @@ namespace DA_RapChieuPhim
         }
         internal void SetDangNhapThanhCong()
         {
+            List<LoaiNV_DTO> lsLoaiNV = nvBUS.loadLoai();
+
+            string strLoaiNV = "";
+
+            foreach (LoaiNV_DTO loainv in lsLoaiNV)
+            {
+                if (loainv.MaLoaiNV == nvDangNhap.LoaiNV)
+                {
+                    strLoaiNV = loainv.TenLoai.ToString();
+                    break;
+                }
+                else
+                    strLoaiNV = "";
+            }
+            
             isDangNhap = true;
             lblHoTen.Text = nvDangNhap.HovaTen;
-            lblChucVu.Text = nvDangNhap.TenLoai;
+            lblChucVu.Text = strLoaiNV;
             if (File.Exists(nvDangNhap.HinhAnh))
             {
                 byte[] byteHA = File.ReadAllBytes(nvDangNhap.HinhAnh);

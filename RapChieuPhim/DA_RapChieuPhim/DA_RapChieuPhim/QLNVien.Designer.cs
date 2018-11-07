@@ -120,6 +120,7 @@
             this.simpleButton3.Size = new System.Drawing.Size(92, 41);
             this.simpleButton3.TabIndex = 10;
             this.simpleButton3.Text = "Cập Nhập";
+            this.simpleButton3.Click += new System.EventHandler(this.simpleButton3_Click);
             // 
             // btnXoa
             // 

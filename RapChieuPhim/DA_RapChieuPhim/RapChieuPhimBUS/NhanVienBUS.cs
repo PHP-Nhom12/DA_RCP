@@ -46,5 +46,11 @@ namespace RapChieuPhimBUS
             NhanVienDAO nvDao = new NhanVienDAO();
             return nvDao.XoaNhanVien(MaNV);
         }
+        public NhanVienDTO CapNhatNV(NhanVienDTO nv,int MaNV)
+        {
+            NhanVienDAO nvDao = new NhanVienDAO();
+            return nvDao.CapNhatNhanVien(nv,MaNV);
+        }
+
     }
 }

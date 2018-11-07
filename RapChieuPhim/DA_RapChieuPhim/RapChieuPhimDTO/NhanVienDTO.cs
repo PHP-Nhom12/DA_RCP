@@ -31,13 +31,5 @@ namespace RapChieuPhimDTO
         public int MaLuong { get; set; }
 
         public int TrangThai { get; set; }
-
-        public int MaLoaiNV { get; set; }
-
-        public string TenLoai { get; set; }
-
-        public float HeSo { get; set; }
-
-        public int TrangThai1 { get; set; }
     }
 }
