@@ -64,7 +64,7 @@
             this.txtTK.Location = new System.Drawing.Point(234, 119);
             this.txtTK.Name = "txtTK";
             this.txtTK.Size = new System.Drawing.Size(285, 26);
-            this.txtTK.TabIndex = 2;
+            this.txtTK.TabIndex = 1;
             // 
             // txtMK
             // 
@@ -72,7 +72,7 @@
             this.txtMK.Location = new System.Drawing.Point(234, 177);
             this.txtMK.Name = "txtMK";
             this.txtMK.Size = new System.Drawing.Size(285, 26);
-            this.txtMK.TabIndex = 3;
+            this.txtMK.TabIndex = 2;
             this.txtMK.UseSystemPasswordChar = true;
             // 
             // button1
@@ -81,7 +81,7 @@
             this.button1.Location = new System.Drawing.Point(259, 218);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(154, 45);
-            this.button1.TabIndex = 4;
+            this.button1.TabIndex = 3;
             this.button1.Text = "Đăng Nhập";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
@@ -114,6 +114,7 @@
             // 
             // FormDangNhap
             // 
+            this.AcceptButton = this.button1;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(696, 354);

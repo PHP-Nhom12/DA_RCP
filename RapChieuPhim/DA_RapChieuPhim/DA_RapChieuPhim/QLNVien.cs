@@ -79,12 +79,12 @@ namespace DA_RapChieuPhim
             string hten = txtTenNV.Text;
             DateTime NSinh = DateTime.Parse(dtNS.Text);
             string DChi = txtDC.Text;
-            int GTinh = int.Parse(txtGT.Text);
+            string GTinh = rdoNam.Checked? "Nam": "Nữ";
             string Email = txtEmail.Text;
             string Password = txtPass.Text;
             DateTime NgayVaoLam = DateTime.Parse(dtNVL.Text);
             int MaLuong = (int)lUpLuong.EditValue;
-           int LoaiNV = (int)lUpChucVu.EditValue;
+            int LoaiNV = (int)lUpChucVu.EditValue;
             string HinhAnh = pathHA + nvchon.MaNV + ".png";
             int TrangThai =chkTrangthai.Checked ? 1 : 0;
             List<NhanVienDTO> kq = nv_bus.ThemNV(hten,NSinh,GTinh,DChi,Email,Password,HinhAnh,NgayVaoLam,LoaiNV,MaLuong,TrangThai);
@@ -113,7 +113,7 @@ namespace DA_RapChieuPhim
             nvchon.HovaTen = txtTenNV.Text;
             nvchon.NgaySinh = DateTime.Parse(dtNS.Text);
             nvchon.DiaChi = txtDC.Text;
-            nvchon.GioiTinh = int.Parse(txtGT.Text);
+            nvchon.GioiTinh = rdoNam.Checked ? "Nam" : "Nữ";
             nvchon.Email = txtEmail.Text;
             nvchon.Password = txtPass.Text;
             nvchon.NgayVaoLam = DateTime.Parse(dtNVL.Text);
@@ -155,6 +155,73 @@ namespace DA_RapChieuPhim
                 }
             }
         }
+
+        private void gcNhanVien_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void gcNhanVien_DoubleClick(object sender, EventArgs e)
+        {
+            if (gvNhanVien.SelectedRowsCount > 0)
+            {
+                int[] rows = gvNhanVien.GetSelectedRows();
+
+                foreach (int item in rows)
+                {
+                    if (item >= 0)
+                    {
+                        nvchon = new NhanVienDTO();
+                        nvchon.HovaTen = gvNhanVien.GetRowCellValue(item, ColTenNV).ToString().Trim();
+                        nvchon.NgaySinh = DateTime.Parse(gvNhanVien.GetRowCellValue(item, ColNgaySinh).ToString().Trim());
+                        nvchon.GioiTinh = gvNhanVien.GetRowCellValue(item, ColGioiTinh).ToString().Trim();
+                        nvchon.DiaChi = gvNhanVien.GetRowCellValue(item, ColDC).ToString().Trim();
+                        nvchon.Email = gvNhanVien.GetRowCellValue(item, ColMail).ToString().Trim();
+                        nvchon.MaLoaiNV = int.Parse(gvNhanVien.GetRowCellValue(item, ColChucVu).ToString().Trim());
+                        nvchon.MaLuong = int.Parse(gvNhanVien.GetRowCellValue(item, ColLuong).ToString().Trim());
+                        nvchon.HinhAnh = gvNhanVien.GetRowCellValue(item, ColHA).ToString().Trim();
+                        nvchon.NgayVaoLam = DateTime.Parse(gvNhanVien.GetRowCellValue(item, ColNVL).ToString().Trim());
+                        txtPass.Enabled = false;
+                    }
+                    else
+                    {
+                        nvchon = null;
+                    }
+                }
+            }
+            txtTenNV.Text = nvchon.HovaTen;
+            dtNS.DateTime = nvchon.NgaySinh;
+            if (nvchon.GioiTinh.ToString() == "Nam")
+            {
+                rdoNam.Checked= true;
+                rdoNu.Checked = false;
+            }
+            else 
+            {
+                rdoNu.Checked = true;
+                rdoNam.Checked = false;
+            }
+            txtDC.Text = nvchon.DiaChi;
+            txtEmail.Text = nvchon.Email;
+            dtNVL.DateTime = nvchon.NgayVaoLam;
+            lUpLuong.EditValue = nvchon.MaLuong;
+            lUpChucVu.EditValue = nvchon.MaLoaiNV;
+            if(File.Exists(nvchon.HinhAnh))
+            {
+                byte[] byteHA = File.ReadAllBytes(nvchon.HinhAnh);
+                MemoryStream ms = new MemoryStream(byteHA);
+                pictureBox1.Image = Image.FromStream(ms);
+            }
+            else
+            {
+                pictureBox1.Image = null;
+            }
+           
+        }
+
+       
+
+       
 
         
 

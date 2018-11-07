@@ -73,11 +73,23 @@
     <Compile Include="FormDangNhap.Designer.cs">
       <DependentUpon>FormDangNhap.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormDatVe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDatVe.Designer.cs">
+      <DependentUpon>FormDatVe.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormPhong.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormPhong.Designer.cs">
       <DependentUpon>FormPhong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormQL_LChieu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormQL_LChieu.Designer.cs">
+      <DependentUpon>FormQL_LChieu.cs</DependentUpon>
     </Compile>
     <Compile Include="FormThongKe.cs">
       <SubType>Form</SubType>
@@ -93,12 +105,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="QLLichChieu.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="QLLichChieu.Designer.cs">
-      <DependentUpon>QLLichChieu.cs</DependentUpon>
-    </Compile>
     <Compile Include="QLNVien.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -123,8 +129,14 @@
     <EmbeddedResource Include="FormDangNhap.resx">
       <DependentUpon>FormDangNhap.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormDatVe.resx">
+      <DependentUpon>FormDatVe.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormPhong.resx">
       <DependentUpon>FormPhong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormQL_LChieu.resx">
+      <DependentUpon>FormQL_LChieu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormThongKe.resx">
       <DependentUpon>FormThongKe.cs</DependentUpon>
@@ -142,9 +154,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="QLLichChieu.resx">
-      <DependentUpon>QLLichChieu.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="QLNVien.resx">
       <DependentUpon>QLNVien.cs</DependentUpon>
     </EmbeddedResource>

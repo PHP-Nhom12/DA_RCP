@@ -41,6 +41,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.gbQLNV = new System.Windows.Forms.GroupBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.textEdit1 = new DevExpress.XtraEditors.TextEdit();
             this.chkTrangthai = new System.Windows.Forms.CheckBox();
             this.txtDC = new DevExpress.XtraEditors.TextEdit();
             this.label9 = new System.Windows.Forms.Label();
@@ -58,15 +60,20 @@
             this.LpChucVu = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
             this.ColLuong = new DevExpress.XtraGrid.Columns.GridColumn();
             this.LpLuong = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
+            this.ColHA = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemComboBox1 = new DevExpress.XtraEditors.Repository.RepositoryItemComboBox();
             this.dtNVL = new DevExpress.XtraEditors.DateEdit();
             this.txtEmail = new DevExpress.XtraEditors.TextEdit();
             this.txtPass = new DevExpress.XtraEditors.TextEdit();
-            this.txtGT = new DevExpress.XtraEditors.TextEdit();
             this.dtNS = new DevExpress.XtraEditors.DateEdit();
             this.txtTenNV = new DevExpress.XtraEditors.TextEdit();
+            this.rdoNam = new System.Windows.Forms.RadioButton();
+            this.rdoNu = new System.Windows.Forms.RadioButton();
+            this.ColPass = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.ColNVL = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.gbQLNV.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDC.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lUpChucVu.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lUpLuong.Properties)).BeginInit();
@@ -79,7 +86,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dtNVL.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtEmail.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPass.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtGT.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtNS.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtNS.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTenNV.Properties)).BeginInit();
@@ -130,7 +136,7 @@
             // 
             this.btnThem.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnThem.Appearance.Options.UseFont = true;
-            this.btnThem.Location = new System.Drawing.Point(463, 222);
+            this.btnThem.Location = new System.Drawing.Point(462, 222);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(92, 41);
             this.btnThem.TabIndex = 8;
@@ -211,6 +217,10 @@
             // gbQLNV
             // 
             this.gbQLNV.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.gbQLNV.Controls.Add(this.rdoNu);
+            this.gbQLNV.Controls.Add(this.rdoNam);
+            this.gbQLNV.Controls.Add(this.button1);
+            this.gbQLNV.Controls.Add(this.textEdit1);
             this.gbQLNV.Controls.Add(this.chkTrangthai);
             this.gbQLNV.Controls.Add(this.txtDC);
             this.gbQLNV.Controls.Add(this.label9);
@@ -220,7 +230,6 @@
             this.gbQLNV.Controls.Add(this.dtNVL);
             this.gbQLNV.Controls.Add(this.txtEmail);
             this.gbQLNV.Controls.Add(this.txtPass);
-            this.gbQLNV.Controls.Add(this.txtGT);
             this.gbQLNV.Controls.Add(this.dtNS);
             this.gbQLNV.Controls.Add(this.txtTenNV);
             this.gbQLNV.Controls.Add(this.simpleButton3);
@@ -235,12 +244,28 @@
             this.gbQLNV.Controls.Add(this.label3);
             this.gbQLNV.Controls.Add(this.label2);
             this.gbQLNV.Controls.Add(this.label1);
-            this.gbQLNV.Location = new System.Drawing.Point(12, 6);
+            this.gbQLNV.Location = new System.Drawing.Point(12, 12);
             this.gbQLNV.Name = "gbQLNV";
-            this.gbQLNV.Size = new System.Drawing.Size(863, 520);
+            this.gbQLNV.Size = new System.Drawing.Size(863, 554);
             this.gbQLNV.TabIndex = 25;
             this.gbQLNV.TabStop = false;
             this.gbQLNV.Text = "Quản Lý Nhân Viên";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(372, 281);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 43;
+            this.button1.Text = "Tìm";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // textEdit1
+            // 
+            this.textEdit1.Location = new System.Drawing.Point(34, 283);
+            this.textEdit1.Name = "textEdit1";
+            this.textEdit1.Size = new System.Drawing.Size(322, 20);
+            this.textEdit1.TabIndex = 42;
             // 
             // chkTrangthai
             // 
@@ -300,17 +325,18 @@
             // 
             // gcNhanVien
             // 
-            this.gcNhanVien.Location = new System.Drawing.Point(11, 282);
+            this.gcNhanVien.Location = new System.Drawing.Point(6, 325);
             this.gcNhanVien.MainView = this.gvNhanVien;
             this.gcNhanVien.Name = "gcNhanVien";
             this.gcNhanVien.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemComboBox1,
             this.LpChucVu,
             this.LpLuong});
-            this.gcNhanVien.Size = new System.Drawing.Size(837, 232);
+            this.gcNhanVien.Size = new System.Drawing.Size(851, 223);
             this.gcNhanVien.TabIndex = 33;
             this.gcNhanVien.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvNhanVien});
+            this.gcNhanVien.DoubleClick += new System.EventHandler(this.gcNhanVien_DoubleClick);
             // 
             // gvNhanVien
             // 
@@ -322,11 +348,13 @@
             this.ColDC,
             this.ColMail,
             this.ColChucVu,
-            this.ColLuong});
+            this.ColLuong,
+            this.ColPass,
+            this.ColHA,
+            this.ColNVL});
             this.gvNhanVien.GridControl = this.gcNhanVien;
             this.gvNhanVien.Name = "gvNhanVien";
             this.gvNhanVien.OptionsBehavior.ReadOnly = true;
-            this.gvNhanVien.OptionsFind.AlwaysVisible = true;
             // 
             // ColMaNV
             // 
@@ -412,6 +440,12 @@
             this.LpLuong.Name = "LpLuong";
             this.LpLuong.ValueMember = "MaLuong";
             // 
+            // ColHA
+            // 
+            this.ColHA.Caption = "Hình Ảnh";
+            this.ColHA.FieldName = "HinhAnh";
+            this.ColHA.Name = "ColHA";
+            // 
             // repositoryItemComboBox1
             // 
             this.repositoryItemComboBox1.AutoHeight = false;
@@ -445,13 +479,6 @@
             this.txtPass.Size = new System.Drawing.Size(225, 20);
             this.txtPass.TabIndex = 28;
             // 
-            // txtGT
-            // 
-            this.txtGT.Location = new System.Drawing.Point(97, 100);
-            this.txtGT.Name = "txtGT";
-            this.txtGT.Size = new System.Drawing.Size(225, 20);
-            this.txtGT.TabIndex = 27;
-            // 
             // dtNS
             // 
             this.dtNS.EditValue = null;
@@ -471,12 +498,46 @@
             this.txtTenNV.Size = new System.Drawing.Size(225, 20);
             this.txtTenNV.TabIndex = 25;
             // 
+            // rdoNam
+            // 
+            this.rdoNam.AutoSize = true;
+            this.rdoNam.Location = new System.Drawing.Point(113, 103);
+            this.rdoNam.Name = "rdoNam";
+            this.rdoNam.Size = new System.Drawing.Size(47, 17);
+            this.rdoNam.TabIndex = 44;
+            this.rdoNam.TabStop = true;
+            this.rdoNam.Text = "Nam";
+            this.rdoNam.UseVisualStyleBackColor = true;
+            // 
+            // rdoNu
+            // 
+            this.rdoNu.AutoSize = true;
+            this.rdoNu.Location = new System.Drawing.Point(178, 103);
+            this.rdoNu.Name = "rdoNu";
+            this.rdoNu.Size = new System.Drawing.Size(39, 17);
+            this.rdoNu.TabIndex = 45;
+            this.rdoNu.TabStop = true;
+            this.rdoNu.Text = "Nữ";
+            this.rdoNu.UseVisualStyleBackColor = true;
+            // 
+            // ColPass
+            // 
+            this.ColPass.Caption = "Password";
+            this.ColPass.FieldName = "Password";
+            this.ColPass.Name = "ColPass";
+            // 
+            // ColNVL
+            // 
+            this.ColNVL.Caption = "Ngày Vào Làm";
+            this.ColNVL.FieldName = "NgayVaoLam";
+            this.ColNVL.Name = "ColNVL";
+            // 
             // QLNV
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(892, 538);
+            this.ClientSize = new System.Drawing.Size(892, 578);
             this.Controls.Add(this.gbQLNV);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "QLNV";
@@ -486,6 +547,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.gbQLNV.ResumeLayout(false);
             this.gbQLNV.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDC.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lUpChucVu.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lUpLuong.Properties)).EndInit();
@@ -498,7 +560,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dtNVL.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtEmail.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPass.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtGT.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtNS.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtNS.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTenNV.Properties)).EndInit();
@@ -527,7 +588,6 @@
         private DevExpress.XtraEditors.DateEdit dtNVL;
         private DevExpress.XtraEditors.TextEdit txtEmail;
         private DevExpress.XtraEditors.TextEdit txtPass;
-        private DevExpress.XtraEditors.TextEdit txtGT;
         private DevExpress.XtraEditors.DateEdit dtNS;
         private DevExpress.XtraGrid.Columns.GridColumn ColMaNV;
         private DevExpress.XtraGrid.Columns.GridColumn ColTenNV;
@@ -545,6 +605,13 @@
         private DevExpress.XtraEditors.TextEdit txtDC;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.CheckBox chkTrangthai;
+        private System.Windows.Forms.Button button1;
+        private DevExpress.XtraEditors.TextEdit textEdit1;
+        private DevExpress.XtraGrid.Columns.GridColumn ColHA;
+        private System.Windows.Forms.RadioButton rdoNu;
+        private System.Windows.Forms.RadioButton rdoNam;
+        private DevExpress.XtraGrid.Columns.GridColumn ColPass;
+        private DevExpress.XtraGrid.Columns.GridColumn ColNVL;
 
     }
 }

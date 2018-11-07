@@ -174,6 +174,38 @@ namespace DA_RapChieuPhim
             frmTK.Show();
         }
 
+        private void btnQLVe_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            QLVe frmVe = new QLVe();
+            frmVe.Dock = DockStyle.Fill;
+            frmVe.MdiParent = this;
+            frmVe.Show();
+        }
+
+        private void btnQLyLChieu_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            FormQL_LChieu FrmLC = new FormQL_LChieu(); 
+            FrmLC.Dock = DockStyle.Fill;
+            FrmLC.MdiParent = this;
+            FrmLC.Show();
+        }
+
+        private void barButtonItem5_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            FormDatVe FrmDV = new FormDatVe();
+            FrmDV.Dock = DockStyle.Fill;
+            FrmDV.MdiParent = this;
+            FrmDV.Show();
+        }
+
+        private void btnQLPhong_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            FormPhong FrmPhong = new FormPhong();
+            FrmPhong.Dock = DockStyle.Fill;
+            FrmPhong.MdiParent = this;
+            FrmPhong.Show();
+        }
+
        
        
     }

@@ -7,12 +7,12 @@ D:\RapChieuPhim\DA_RapChieuPhim\RapChieuPhimBUS\bin\Debug\RapChieuPhimDTO.pdb
 D:\RapChieuPhim\DA_RapChieuPhim\RapChieuPhimBUS\obj\Debug\RapChieuPhimBUS.csprojResolveAssemblyReference.cache
 D:\RapChieuPhim\DA_RapChieuPhim\RapChieuPhimBUS\obj\Debug\RapChieuPhimBUS.dll
 D:\RapChieuPhim\DA_RapChieuPhim\RapChieuPhimBUS\obj\Debug\RapChieuPhimBUS.pdb
+D:\github_doanRapCHieuPhim\DA_RCP\DoAn_RapChieuPhim\RapChieuPhim\DA_RapChieuPhim\RapChieuPhimBUS\obj\Debug\RapChieuPhimBUS.csprojResolveAssemblyReference.cache
 D:\github_doanRapCHieuPhim\DA_RCP\DoAn_RapChieuPhim\RapChieuPhim\DA_RapChieuPhim\RapChieuPhimBUS\bin\Debug\RapChieuPhimBUS.dll
 D:\github_doanRapCHieuPhim\DA_RCP\DoAn_RapChieuPhim\RapChieuPhim\DA_RapChieuPhim\RapChieuPhimBUS\bin\Debug\RapChieuPhimBUS.pdb
 D:\github_doanRapCHieuPhim\DA_RCP\DoAn_RapChieuPhim\RapChieuPhim\DA_RapChieuPhim\RapChieuPhimBUS\bin\Debug\RapChieuPhimDAO.dll
 D:\github_doanRapCHieuPhim\DA_RCP\DoAn_RapChieuPhim\RapChieuPhim\DA_RapChieuPhim\RapChieuPhimBUS\bin\Debug\RapChieuPhimDTO.dll
 D:\github_doanRapCHieuPhim\DA_RCP\DoAn_RapChieuPhim\RapChieuPhim\DA_RapChieuPhim\RapChieuPhimBUS\bin\Debug\RapChieuPhimDAO.pdb
 D:\github_doanRapCHieuPhim\DA_RCP\DoAn_RapChieuPhim\RapChieuPhim\DA_RapChieuPhim\RapChieuPhimBUS\bin\Debug\RapChieuPhimDTO.pdb
-D:\github_doanRapCHieuPhim\DA_RCP\DoAn_RapChieuPhim\RapChieuPhim\DA_RapChieuPhim\RapChieuPhimBUS\obj\Debug\RapChieuPhimBUS.csprojResolveAssemblyReference.cache
 D:\github_doanRapCHieuPhim\DA_RCP\DoAn_RapChieuPhim\RapChieuPhim\DA_RapChieuPhim\RapChieuPhimBUS\obj\Debug\RapChieuPhimBUS.dll
 D:\github_doanRapCHieuPhim\DA_RCP\DoAn_RapChieuPhim\RapChieuPhim\DA_RapChieuPhim\RapChieuPhimBUS\obj\Debug\RapChieuPhimBUS.pdb

@@ -13,12 +13,12 @@ namespace RapChieuPhimBUS
         public NhanVienDTO KiemTraDangNhap(string strTaiKhoan, string strMatKhau)
         {
             NhanVienDAO nvDAO = new NhanVienDAO();
-            return nvDAO.DangNhap(strTaiKhoan, strMatKhau);
+            return nvDAO.DangNhap(strTaiKhoan, strMatKhau.ToMD5());
         }
         public bool doiMatkhau( string matkhaumoi,string matkhaucu, string email)
         {
             NhanVienDAO nvDAO = new NhanVienDAO();
-            return nvDAO.doiMatkhau( matkhaumoi,matkhaucu, email);
+            return nvDAO.doiMatkhau( matkhaumoi.ToMD5(),matkhaucu.ToMD5(), email);
         }
         public List<NhanVienDTO> LoadDSNVien()
         {
@@ -36,10 +36,10 @@ namespace RapChieuPhimBUS
             NhanVienDAO nvDAO = new NhanVienDAO();
             return nvDAO.loadLuong();
         }
-        public List<NhanVienDTO> ThemNV(string TenNV, DateTime NS, int GT, string DC, string Email, string Pass, string Ha, DateTime NVL, int LoaiNV, int Maluong, int TrangThai)
+        public List<NhanVienDTO> ThemNV(string TenNV, DateTime NS, string GT, string DC, string Email, string Pass, string Ha, DateTime NVL, int LoaiNV, int Maluong, int TrangThai)
         {
             NhanVienDAO nvDao = new NhanVienDAO();
-            return nvDao.ThemNhanVien(TenNV,NS,GT,DC,Email,Pass,Ha,NVL,LoaiNV,Maluong,TrangThai);
+            return nvDao.ThemNhanVien(TenNV,NS,GT,DC,Email,Pass.ToMD5(),Ha,NVL,LoaiNV,Maluong,TrangThai);
         }
         public int XoaNV(string MaNV)
         {

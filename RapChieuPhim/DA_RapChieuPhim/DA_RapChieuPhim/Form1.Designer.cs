@@ -42,6 +42,7 @@
             this.btnQLTV = new DevExpress.XtraBars.BarButtonItem();
             this.btnThoat = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem5 = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.PnThongtin = new System.Windows.Forms.Panel();
@@ -74,9 +75,10 @@
             this.btnQLyLChieu,
             this.btnQLTV,
             this.btnThoat,
-            this.barButtonItem1});
+            this.barButtonItem1,
+            this.barButtonItem5});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 12;
+            this.ribbonControl1.MaxItemId = 13;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1});
@@ -131,6 +133,7 @@
             this.btnQLPhong.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnQLPhong.ImageOptions.Image")));
             this.btnQLPhong.Name = "btnQLPhong";
             this.btnQLPhong.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.btnQLPhong.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnQLPhong_ItemClick);
             // 
             // btnQLVe
             // 
@@ -139,6 +142,7 @@
             this.btnQLVe.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnQLVe.ImageOptions.Image")));
             this.btnQLVe.Name = "btnQLVe";
             this.btnQLVe.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.btnQLVe.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnQLVe_ItemClick);
             // 
             // btnQLyLChieu
             // 
@@ -147,6 +151,7 @@
             this.btnQLyLChieu.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnQLyLChieu.ImageOptions.Image")));
             this.btnQLyLChieu.Name = "btnQLyLChieu";
             this.btnQLyLChieu.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.btnQLyLChieu.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnQLyLChieu_ItemClick);
             // 
             // btnQLTV
             // 
@@ -175,12 +180,21 @@
             this.barButtonItem1.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
             this.barButtonItem1.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem1_ItemClick_1);
             // 
+            // barButtonItem5
+            // 
+            this.barButtonItem5.Caption = "Đặt Vé";
+            this.barButtonItem5.Id = 12;
+            this.barButtonItem5.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem5.ImageOptions.Image")));
+            this.barButtonItem5.Name = "barButtonItem5";
+            this.barButtonItem5.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.barButtonItem5.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem5_ItemClick);
+            // 
             // ribbonPage1
             // 
             this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
             this.ribbonPageGroup1});
             this.ribbonPage1.Name = "ribbonPage1";
-            this.ribbonPage1.Text = "Quản Lý Tài Khoản";
+            this.ribbonPage1.Text = "Quản Lý ";
             // 
             // ribbonPageGroup1
             // 
@@ -190,6 +204,7 @@
             this.ribbonPageGroup1.ItemLinks.Add(this.btnQLVe);
             this.ribbonPageGroup1.ItemLinks.Add(this.btnQLyLChieu);
             this.ribbonPageGroup1.ItemLinks.Add(this.btnQLTV);
+            this.ribbonPageGroup1.ItemLinks.Add(this.barButtonItem5);
             this.ribbonPageGroup1.ItemLinks.Add(this.barButtonItem1);
             this.ribbonPageGroup1.ItemLinks.Add(this.btnThoat);
             this.ribbonPageGroup1.Name = "ribbonPageGroup1";
@@ -333,6 +348,7 @@
         private DevExpress.XtraBars.BarButtonItem btnQLTV;
         private DevExpress.XtraBars.BarButtonItem btnThoat;
         private DevExpress.XtraBars.BarButtonItem barButtonItem1;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem5;
     }
 }
 

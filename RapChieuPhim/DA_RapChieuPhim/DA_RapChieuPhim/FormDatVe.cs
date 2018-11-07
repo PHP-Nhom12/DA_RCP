@@ -10,11 +10,13 @@ using System.Windows.Forms;
 
 namespace DA_RapChieuPhim
 {
-    public partial class QLLichChieu : Form
+    public partial class FormDatVe : Form
     {
-        public QLLichChieu()
+        public FormDatVe()
         {
             InitializeComponent();
         }
+
+        
     }
 }
