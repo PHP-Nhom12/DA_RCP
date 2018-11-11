@@ -41,19 +41,23 @@
             this.textEdit1 = new DevExpress.XtraEditors.TextEdit();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.gridControl1 = new DevExpress.XtraGrid.GridControl();
-            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gcVe = new DevExpress.XtraGrid.GridControl();
+            this.gvVe = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.ColMaPhim = new DevExpress.XtraGrid.Columns.GridColumn();
             this.ColVitri = new DevExpress.XtraGrid.Columns.GridColumn();
             this.ColPhong = new DevExpress.XtraGrid.Columns.GridColumn();
             this.ColGiaVe = new DevExpress.XtraGrid.Columns.GridColumn();
             this.ColTenTV = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.lUpTenPhong = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
+            this.lUPTenTV = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit3.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gcVe)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvVe)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lUpTenPhong)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lUPTenTV)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -70,13 +74,14 @@
             this.groupBox1.Controls.Add(this.textEdit1);
             this.groupBox1.Controls.Add(this.radioButton2);
             this.groupBox1.Controls.Add(this.radioButton1);
-            this.groupBox1.Controls.Add(this.gridControl1);
+            this.groupBox1.Controls.Add(this.gcVe);
             this.groupBox1.Location = new System.Drawing.Point(3, 12);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(782, 430);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Quản Lý Vé";
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // button4
             // 
@@ -193,30 +198,34 @@
             this.radioButton1.Text = "Tên Phim";
             this.radioButton1.UseVisualStyleBackColor = true;
             // 
-            // gridControl1
+            // gcVe
             // 
-            this.gridControl1.Location = new System.Drawing.Point(0, 132);
-            this.gridControl1.MainView = this.gridView1;
-            this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(782, 247);
-            this.gridControl1.TabIndex = 0;
-            this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView1});
+            this.gcVe.Location = new System.Drawing.Point(0, 132);
+            this.gcVe.MainView = this.gvVe;
+            this.gcVe.Name = "gcVe";
+            this.gcVe.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
+            this.lUpTenPhong,
+            this.lUPTenTV});
+            this.gcVe.Size = new System.Drawing.Size(782, 247);
+            this.gcVe.TabIndex = 0;
+            this.gcVe.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gvVe});
             // 
-            // gridView1
+            // gvVe
             // 
-            this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gvVe.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.ColMaPhim,
             this.ColVitri,
             this.ColPhong,
             this.ColGiaVe,
             this.ColTenTV});
-            this.gridView1.GridControl = this.gridControl1;
-            this.gridView1.Name = "gridView1";
+            this.gvVe.GridControl = this.gcVe;
+            this.gvVe.Name = "gvVe";
             // 
             // ColMaPhim
             // 
             this.ColMaPhim.Caption = "Mã Phim";
+            this.ColMaPhim.FieldName = "MaPhim";
             this.ColMaPhim.Name = "ColMaPhim";
             this.ColMaPhim.Visible = true;
             this.ColMaPhim.VisibleIndex = 0;
@@ -224,6 +233,7 @@
             // ColVitri
             // 
             this.ColVitri.Caption = "Ghế Ngồi";
+            this.ColVitri.FieldName = "ViTriNgoi";
             this.ColVitri.Name = "ColVitri";
             this.ColVitri.Visible = true;
             this.ColVitri.VisibleIndex = 1;
@@ -231,6 +241,8 @@
             // ColPhong
             // 
             this.ColPhong.Caption = "Phòng";
+            this.ColPhong.ColumnEdit = this.lUpTenPhong;
+            this.ColPhong.FieldName = "PhongChieu";
             this.ColPhong.Name = "ColPhong";
             this.ColPhong.Visible = true;
             this.ColPhong.VisibleIndex = 2;
@@ -238,6 +250,7 @@
             // ColGiaVe
             // 
             this.ColGiaVe.Caption = "Giá Vé";
+            this.ColGiaVe.FieldName = "GiaVe";
             this.ColGiaVe.Name = "ColGiaVe";
             this.ColGiaVe.Visible = true;
             this.ColGiaVe.VisibleIndex = 3;
@@ -245,9 +258,29 @@
             // ColTenTV
             // 
             this.ColTenTV.Caption = "Tên Thành Viên";
+            this.ColTenTV.ColumnEdit = this.lUPTenTV;
+            this.ColTenTV.FieldName = "MaTV";
             this.ColTenTV.Name = "ColTenTV";
             this.ColTenTV.Visible = true;
             this.ColTenTV.VisibleIndex = 4;
+            // 
+            // lUpTenPhong
+            // 
+            this.lUpTenPhong.AutoHeight = false;
+            this.lUpTenPhong.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.lUpTenPhong.DisplayMember = "TenPhong";
+            this.lUpTenPhong.Name = "lUpTenPhong";
+            this.lUpTenPhong.ValueMember = "MaPhong";
+            // 
+            // lUPTenTV
+            // 
+            this.lUPTenTV.AutoHeight = false;
+            this.lUPTenTV.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.lUPTenTV.DisplayMember = "TenTV";
+            this.lUPTenTV.Name = "lUPTenTV";
+            this.lUPTenTV.ValueMember = "MaTV";
             // 
             // QLVe
             // 
@@ -263,8 +296,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.textEdit3.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gcVe)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvVe)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lUpTenPhong)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lUPTenTV)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -280,8 +315,8 @@
         private DevExpress.XtraEditors.TextEdit textEdit1;
         private System.Windows.Forms.RadioButton radioButton2;
         private System.Windows.Forms.RadioButton radioButton1;
-        private DevExpress.XtraGrid.GridControl gridControl1;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
+        private DevExpress.XtraGrid.GridControl gcVe;
+        private DevExpress.XtraGrid.Views.Grid.GridView gvVe;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
@@ -290,5 +325,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn ColPhong;
         private DevExpress.XtraGrid.Columns.GridColumn ColGiaVe;
         private DevExpress.XtraGrid.Columns.GridColumn ColTenTV;
+        private DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit lUpTenPhong;
+        private DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit lUPTenTV;
     }
 }

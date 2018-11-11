@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RapChieuPhimBUS;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -16,5 +17,30 @@ namespace DA_RapChieuPhim
         {
             InitializeComponent();
         }
+        PhongBUS pBUS = new PhongBUS();
+        CaBUS ca = new CaBUS();
+        PhimBUS phim = new PhimBUS();
+        private void FormQL_LChieu_Load(object sender, EventArgs e)
+        {
+            LoadtatCa();
+        }
+
+        private void LoadtatCa()
+        {
+            lUpTenPhong.Properties.DataSource = pBUS.LoadPhong();
+            lUpTenPhong.Properties.DisplayMember = "TenPhong";
+            lUpTenPhong.Properties.ValueMember = "MaPhong";
+
+            lUPCa.Properties.DataSource = ca.LoadCa();
+            lUPCa.Properties.DisplayMember = "TenCa";
+            lUPCa.Properties.ValueMember = "MaCa";
+
+            lUPtenPhim.Properties.DataSource = phim.LoadPhim();
+            lUPtenPhim.Properties.DisplayMember = "TenPhim";
+            lUPtenPhim.Properties.ValueMember = "MaPhim";
+        }
+
+        
+
     }
 }

@@ -136,7 +136,6 @@
             this.ColNS});
             this.gvThanhVien.GridControl = this.gcThanhVien;
             this.gvThanhVien.Name = "gvThanhVien";
-            this.gvThanhVien.OptionsFind.AlwaysVisible = true;
             // 
             // ColTenTVien
             // 
@@ -150,7 +149,7 @@
             // 
             this.ColLoaiTv.Caption = "Loại Thành Viên";
             this.ColLoaiTv.ColumnEdit = this.LUpLoaiTV;
-            this.ColLoaiTv.FieldName = "LoaiNV";
+            this.ColLoaiTv.FieldName = "LoaiTV";
             this.ColLoaiTv.Name = "ColLoaiTv";
             this.ColLoaiTv.Visible = true;
             this.ColLoaiTv.VisibleIndex = 1;

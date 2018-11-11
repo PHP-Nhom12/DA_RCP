@@ -39,13 +39,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CaBUS.cs" />
     <Compile Include="LoaiNV_BUS.cs" />
     <Compile Include="LoaiThanhVienBUS.cs" />
     <Compile Include="LuongBUS.cs" />
     <Compile Include="NhanVienBUS.cs" />
+    <Compile Include="PhimBUS.cs" />
+    <Compile Include="PhongBUS.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ThanhVienBUS.cs" />
     <Compile Include="Util.cs" />
+    <Compile Include="VeBUS.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\RapChieuPhimDAO\RapChieuPhimDAO.csproj">
