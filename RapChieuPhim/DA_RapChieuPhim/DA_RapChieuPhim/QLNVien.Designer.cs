@@ -41,6 +41,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.gbQLNV = new System.Windows.Forms.GroupBox();
+            this.rdoNu = new System.Windows.Forms.RadioButton();
+            this.rdoNam = new System.Windows.Forms.RadioButton();
             this.button1 = new System.Windows.Forms.Button();
             this.textEdit1 = new DevExpress.XtraEditors.TextEdit();
             this.chkTrangthai = new System.Windows.Forms.CheckBox();
@@ -60,17 +62,15 @@
             this.LpChucVu = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
             this.ColLuong = new DevExpress.XtraGrid.Columns.GridColumn();
             this.LpLuong = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
+            this.ColPass = new DevExpress.XtraGrid.Columns.GridColumn();
             this.ColHA = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.ColNVL = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemComboBox1 = new DevExpress.XtraEditors.Repository.RepositoryItemComboBox();
             this.dtNVL = new DevExpress.XtraEditors.DateEdit();
             this.txtEmail = new DevExpress.XtraEditors.TextEdit();
             this.txtPass = new DevExpress.XtraEditors.TextEdit();
             this.dtNS = new DevExpress.XtraEditors.DateEdit();
             this.txtTenNV = new DevExpress.XtraEditors.TextEdit();
-            this.rdoNam = new System.Windows.Forms.RadioButton();
-            this.rdoNu = new System.Windows.Forms.RadioButton();
-            this.ColPass = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.ColNVL = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.gbQLNV.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).BeginInit();
@@ -95,7 +95,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(358, 141);
+            this.label8.Location = new System.Drawing.Point(379, 141);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(48, 16);
             this.label8.TabIndex = 22;
@@ -147,9 +147,9 @@
             // pictureBox1
             // 
             this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pictureBox1.Location = new System.Drawing.Point(728, 31);
+            this.pictureBox1.Location = new System.Drawing.Point(787, 31);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(100, 119);
+            this.pictureBox1.Size = new System.Drawing.Size(120, 141);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 7;
             this.pictureBox1.TabStop = false;
@@ -159,7 +159,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(358, 31);
+            this.label7.Location = new System.Drawing.Point(379, 31);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(40, 16);
             this.label7.TabIndex = 6;
@@ -169,7 +169,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(358, 66);
+            this.label6.Location = new System.Drawing.Point(379, 66);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(99, 16);
             this.label6.TabIndex = 5;
@@ -179,7 +179,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(358, 101);
+            this.label5.Location = new System.Drawing.Point(379, 101);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(61, 16);
             this.label5.TabIndex = 4;
@@ -247,14 +247,36 @@
             this.gbQLNV.Controls.Add(this.label1);
             this.gbQLNV.Location = new System.Drawing.Point(12, 12);
             this.gbQLNV.Name = "gbQLNV";
-            this.gbQLNV.Size = new System.Drawing.Size(863, 554);
+            this.gbQLNV.Size = new System.Drawing.Size(932, 554);
             this.gbQLNV.TabIndex = 25;
             this.gbQLNV.TabStop = false;
             this.gbQLNV.Text = "Quản Lý Nhân Viên";
             // 
+            // rdoNu
+            // 
+            this.rdoNu.AutoSize = true;
+            this.rdoNu.Location = new System.Drawing.Point(178, 103);
+            this.rdoNu.Name = "rdoNu";
+            this.rdoNu.Size = new System.Drawing.Size(39, 17);
+            this.rdoNu.TabIndex = 45;
+            this.rdoNu.TabStop = true;
+            this.rdoNu.Text = "Nữ";
+            this.rdoNu.UseVisualStyleBackColor = true;
+            // 
+            // rdoNam
+            // 
+            this.rdoNam.AutoSize = true;
+            this.rdoNam.Location = new System.Drawing.Point(113, 103);
+            this.rdoNam.Name = "rdoNam";
+            this.rdoNam.Size = new System.Drawing.Size(47, 17);
+            this.rdoNam.TabIndex = 44;
+            this.rdoNam.TabStop = true;
+            this.rdoNam.Text = "Nam";
+            this.rdoNam.UseVisualStyleBackColor = true;
+            // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(372, 281);
+            this.button1.Location = new System.Drawing.Point(344, 283);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 43;
@@ -263,7 +285,7 @@
             // 
             // textEdit1
             // 
-            this.textEdit1.Location = new System.Drawing.Point(34, 283);
+            this.textEdit1.Location = new System.Drawing.Point(6, 284);
             this.textEdit1.Name = "textEdit1";
             this.textEdit1.Size = new System.Drawing.Size(322, 20);
             this.textEdit1.TabIndex = 42;
@@ -272,7 +294,7 @@
             // 
             this.chkTrangthai.AutoSize = true;
             this.chkTrangthai.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkTrangthai.Location = new System.Drawing.Point(462, 182);
+            this.chkTrangthai.Location = new System.Drawing.Point(500, 172);
             this.chkTrangthai.Name = "chkTrangthai";
             this.chkTrangthai.Size = new System.Drawing.Size(112, 24);
             this.chkTrangthai.TabIndex = 40;
@@ -298,7 +320,7 @@
             // 
             // lUpChucVu
             // 
-            this.lUpChucVu.Location = new System.Drawing.Point(462, 100);
+            this.lUpChucVu.Location = new System.Drawing.Point(501, 100);
             this.lUpChucVu.Name = "lUpChucVu";
             this.lUpChucVu.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -312,7 +334,7 @@
             // 
             // lUpLuong
             // 
-            this.lUpLuong.Location = new System.Drawing.Point(463, 140);
+            this.lUpLuong.Location = new System.Drawing.Point(500, 137);
             this.lUpLuong.Name = "lUpLuong";
             this.lUpLuong.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -333,7 +355,7 @@
             this.repositoryItemComboBox1,
             this.LpChucVu,
             this.LpLuong});
-            this.gcNhanVien.Size = new System.Drawing.Size(851, 223);
+            this.gcNhanVien.Size = new System.Drawing.Size(908, 223);
             this.gcNhanVien.TabIndex = 33;
             this.gcNhanVien.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvNhanVien});
@@ -441,11 +463,23 @@
             this.LpLuong.Name = "LpLuong";
             this.LpLuong.ValueMember = "MaLuong";
             // 
+            // ColPass
+            // 
+            this.ColPass.Caption = "Password";
+            this.ColPass.FieldName = "Password";
+            this.ColPass.Name = "ColPass";
+            // 
             // ColHA
             // 
             this.ColHA.Caption = "Hình Ảnh";
             this.ColHA.FieldName = "HinhAnh";
             this.ColHA.Name = "ColHA";
+            // 
+            // ColNVL
+            // 
+            this.ColNVL.Caption = "Ngày Vào Làm";
+            this.ColNVL.FieldName = "NgayVaoLam";
+            this.ColNVL.Name = "ColNVL";
             // 
             // repositoryItemComboBox1
             // 
@@ -457,7 +491,7 @@
             // dtNVL
             // 
             this.dtNVL.EditValue = null;
-            this.dtNVL.Location = new System.Drawing.Point(463, 65);
+            this.dtNVL.Location = new System.Drawing.Point(500, 65);
             this.dtNVL.Name = "dtNVL";
             this.dtNVL.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -468,7 +502,7 @@
             // 
             // txtEmail
             // 
-            this.txtEmail.Location = new System.Drawing.Point(462, 30);
+            this.txtEmail.Location = new System.Drawing.Point(500, 30);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(225, 20);
             this.txtEmail.TabIndex = 29;
@@ -499,46 +533,12 @@
             this.txtTenNV.Size = new System.Drawing.Size(225, 20);
             this.txtTenNV.TabIndex = 25;
             // 
-            // rdoNam
-            // 
-            this.rdoNam.AutoSize = true;
-            this.rdoNam.Location = new System.Drawing.Point(113, 103);
-            this.rdoNam.Name = "rdoNam";
-            this.rdoNam.Size = new System.Drawing.Size(47, 17);
-            this.rdoNam.TabIndex = 44;
-            this.rdoNam.TabStop = true;
-            this.rdoNam.Text = "Nam";
-            this.rdoNam.UseVisualStyleBackColor = true;
-            // 
-            // rdoNu
-            // 
-            this.rdoNu.AutoSize = true;
-            this.rdoNu.Location = new System.Drawing.Point(178, 103);
-            this.rdoNu.Name = "rdoNu";
-            this.rdoNu.Size = new System.Drawing.Size(39, 17);
-            this.rdoNu.TabIndex = 45;
-            this.rdoNu.TabStop = true;
-            this.rdoNu.Text = "Nữ";
-            this.rdoNu.UseVisualStyleBackColor = true;
-            // 
-            // ColPass
-            // 
-            this.ColPass.Caption = "Password";
-            this.ColPass.FieldName = "Password";
-            this.ColPass.Name = "ColPass";
-            // 
-            // ColNVL
-            // 
-            this.ColNVL.Caption = "Ngày Vào Làm";
-            this.ColNVL.FieldName = "NgayVaoLam";
-            this.ColNVL.Name = "ColNVL";
-            // 
             // QLNV
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(892, 578);
+            this.ClientSize = new System.Drawing.Size(956, 578);
             this.Controls.Add(this.gbQLNV);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "QLNV";

@@ -12,10 +12,12 @@ namespace RapChieuPhimDTO
 
       public string TenTV{get;set;}
 
-      public string LoaiTV{get;set;}
+      public int LoaiTV{get;set;}
 
       public int CMND{get;set;}
 
       public DateTime NgaySinh{get;set;}
+
+      public int MaVoucher { get; set; }
     }
 }

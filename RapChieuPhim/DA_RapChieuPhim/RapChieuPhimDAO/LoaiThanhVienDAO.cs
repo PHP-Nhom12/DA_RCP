@@ -12,7 +12,7 @@ namespace RapChieuPhimDAO
     {
        public List<LoaiThanhVienDTO> LoadLoaiTV()
        {
-           string strTruyVan = "Select * From LoaiTV";
+           string strTruyVan = "Select * From LoaiTV" ;
            SqlConnection conn = DataProvider.TaoKetNoi();
            SqlDataReader sdr = DataProvider.TruyVanDuLieu(strTruyVan, conn);
            List<LoaiThanhVienDTO> ls = new List<LoaiThanhVienDTO>();

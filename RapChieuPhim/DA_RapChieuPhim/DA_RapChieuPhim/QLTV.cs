@@ -30,50 +30,46 @@ namespace DA_RapChieuPhim
 
         private void LoadLoaiTV()
         {
-            //cbbLoaiTV.DataSource = LoaiTV.LayLoaiTV();
-            //cbbLoaiTV.DisplayMember = "TenLoai";
-            //cbbLoaiTV.ValueMember = "MaLoai";
-            foreach(var a in LoaiTV.LayLoaiTV())
-            {
-                cbbLoaiTV.Properties.Items.Add(a);
-               
-            }
+            lookUpEdit1.Properties.DataSource = LoaiTV.LayLoaiTV();
+            lookUpEdit1.Properties.DisplayMember = "TenLoai";
+            lookUpEdit1.Properties.ValueMember = "MaLoai";
+
+            LUpLoaiTV.DataSource = LoaiTV.LoadLoaiOfTV(); ;
         }
 
         private void LoadThanhVien()
         {
             gcThanhVien.DataSource = tv.LoadTV();
             
-            //DataGridViewComboBoxColumn dgvloaitv = (DataGridViewComboBoxColumn)dgvTV.Columns["CoLoaiTV"];
-            //dgvloaitv.DataSource = LoaiTV.LoadLoaiOfTV();
-            //dgvloaitv.DisplayMember = "TenLoai";
-            //dgvloaitv.ValueMember = "MaLoai";
-
         }
 
         private void BtnThem_Click(object sender, EventArgs e)
         {
-            //if(txtTenTV.Text==""&&txtCMND.Text=="")
-            //{
-            //    MessageBox.Show("Bạn phải nhập đầy đủ thông  tin!");
-            //}
-            //else
-            //{
-            //    string TenTV = txtTenTV.Text;
-            //    string LoaiTV = cbbLoaiTV.SelectedValue.ToString();
-            //    int CMND =int.Parse(txtCMND.Text);
-            //    DateTime NS = DateTime.Parse(DtNgaySinh.Text);
-            //    List<ThanhVienDTO> kq = tv.ThemTVien(TenTV, LoaiTV, CMND, NS);
-            //    if(kq!=null)
-            //    {
-            //        MessageBox.Show("Thêm Thành Công");
-            //    }
-            //    else
-            //    {
-            //        MessageBox.Show("Thêm Thất Bại");
-            //    }
-            //}
+            if (txtTenTV.Text == "" && txtCMND.Text == "")
+            {
+                MessageBox.Show("Bạn phải nhập đầy đủ thông  tin!");
+            }
+            else
+            {
+                
+                string TenTV = txtTenTV.Text;
+                int LoaiTV = (int)lookUpEdit1.EditValue;
+                int CMND = int.Parse(txtCMND.Text);
+                DateTime NS = DateTime.Parse(dtNS.Text);
+                int MaVoucher=1;
+                List<ThanhVienDTO> kq = tv.ThemTVien(TenTV, LoaiTV, CMND, NS, MaVoucher);
+                if (kq != null)
+                {
+                    MessageBox.Show("Thêm Thành Công");
+                }
+                else
+                {
+                    MessageBox.Show("Thêm Thất Bại");
+                }
+            }
         }
+
+       
 
        
 

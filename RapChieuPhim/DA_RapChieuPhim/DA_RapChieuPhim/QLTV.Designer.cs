@@ -29,14 +29,15 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.lookUpEdit1 = new DevExpress.XtraEditors.LookUpEdit();
             this.dtNS = new DevExpress.XtraEditors.DateEdit();
-            this.cbbLoaiTV = new DevExpress.XtraEditors.ComboBoxEdit();
-            this.textEdit2 = new DevExpress.XtraEditors.TextEdit();
-            this.textEdit1 = new DevExpress.XtraEditors.TextEdit();
+            this.txtCMND = new DevExpress.XtraEditors.TextEdit();
+            this.txtTenTV = new DevExpress.XtraEditors.TextEdit();
             this.gcThanhVien = new DevExpress.XtraGrid.GridControl();
             this.gvThanhVien = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.ColTenTVien = new DevExpress.XtraGrid.Columns.GridColumn();
             this.ColLoaiTv = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.LUpLoaiTV = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
             this.ColCMNDan = new DevExpress.XtraGrid.Columns.GridColumn();
             this.ColNS = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btnCapNhat = new DevExpress.XtraEditors.SimpleButton();
@@ -47,22 +48,23 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.lookUpEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtNS.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtNS.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cbbLoaiTV.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtCMND.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtTenTV.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcThanhVien)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvThanhVien)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LUpLoaiTV)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
             this.groupBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.groupBox1.Controls.Add(this.lookUpEdit1);
             this.groupBox1.Controls.Add(this.dtNS);
-            this.groupBox1.Controls.Add(this.cbbLoaiTV);
-            this.groupBox1.Controls.Add(this.textEdit2);
-            this.groupBox1.Controls.Add(this.textEdit1);
+            this.groupBox1.Controls.Add(this.txtCMND);
+            this.groupBox1.Controls.Add(this.txtTenTV);
             this.groupBox1.Controls.Add(this.gcThanhVien);
             this.groupBox1.Controls.Add(this.btnCapNhat);
             this.groupBox1.Controls.Add(this.btnXoa);
@@ -78,6 +80,15 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Quản Lý Thành Viên";
             // 
+            // lookUpEdit1
+            // 
+            this.lookUpEdit1.Location = new System.Drawing.Point(153, 77);
+            this.lookUpEdit1.Name = "lookUpEdit1";
+            this.lookUpEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.lookUpEdit1.Size = new System.Drawing.Size(202, 20);
+            this.lookUpEdit1.TabIndex = 19;
+            // 
             // dtNS
             // 
             this.dtNS.EditValue = null;
@@ -90,34 +101,27 @@
             this.dtNS.Size = new System.Drawing.Size(202, 20);
             this.dtNS.TabIndex = 18;
             // 
-            // cbbLoaiTV
+            // txtCMND
             // 
-            this.cbbLoaiTV.Location = new System.Drawing.Point(153, 77);
-            this.cbbLoaiTV.Name = "cbbLoaiTV";
-            this.cbbLoaiTV.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cbbLoaiTV.Size = new System.Drawing.Size(202, 20);
-            this.cbbLoaiTV.TabIndex = 17;
+            this.txtCMND.Location = new System.Drawing.Point(465, 34);
+            this.txtCMND.Name = "txtCMND";
+            this.txtCMND.Size = new System.Drawing.Size(202, 20);
+            this.txtCMND.TabIndex = 16;
             // 
-            // textEdit2
+            // txtTenTV
             // 
-            this.textEdit2.Location = new System.Drawing.Point(465, 34);
-            this.textEdit2.Name = "textEdit2";
-            this.textEdit2.Size = new System.Drawing.Size(202, 20);
-            this.textEdit2.TabIndex = 16;
-            // 
-            // textEdit1
-            // 
-            this.textEdit1.Location = new System.Drawing.Point(153, 34);
-            this.textEdit1.Name = "textEdit1";
-            this.textEdit1.Size = new System.Drawing.Size(202, 20);
-            this.textEdit1.TabIndex = 15;
+            this.txtTenTV.Location = new System.Drawing.Point(153, 34);
+            this.txtTenTV.Name = "txtTenTV";
+            this.txtTenTV.Size = new System.Drawing.Size(202, 20);
+            this.txtTenTV.TabIndex = 15;
             // 
             // gcThanhVien
             // 
             this.gcThanhVien.Location = new System.Drawing.Point(6, 194);
             this.gcThanhVien.MainView = this.gvThanhVien;
             this.gcThanhVien.Name = "gcThanhVien";
+            this.gcThanhVien.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
+            this.LUpLoaiTV});
             this.gcThanhVien.Size = new System.Drawing.Size(728, 227);
             this.gcThanhVien.TabIndex = 14;
             this.gcThanhVien.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -145,10 +149,20 @@
             // ColLoaiTv
             // 
             this.ColLoaiTv.Caption = "Loại Thành Viên";
-            this.ColLoaiTv.FieldName = "LoaiTV";
+            this.ColLoaiTv.ColumnEdit = this.LUpLoaiTV;
+            this.ColLoaiTv.FieldName = "LoaiNV";
             this.ColLoaiTv.Name = "ColLoaiTv";
             this.ColLoaiTv.Visible = true;
             this.ColLoaiTv.VisibleIndex = 1;
+            // 
+            // LUpLoaiTV
+            // 
+            this.LUpLoaiTV.AutoHeight = false;
+            this.LUpLoaiTV.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.LUpLoaiTV.DisplayMember = "TenLoai";
+            this.LUpLoaiTV.Name = "LUpLoaiTV";
+            this.LUpLoaiTV.ValueMember = "MaLoai";
             // 
             // ColCMNDan
             // 
@@ -249,13 +263,14 @@
             this.Load += new System.EventHandler(this.QLTV_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.lookUpEdit1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtNS.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtNS.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cbbLoaiTV.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtCMND.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtTenTV.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcThanhVien)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvThanhVien)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LUpLoaiTV)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -271,14 +286,15 @@
         private DevExpress.XtraEditors.SimpleButton btnXoa;
         private DevExpress.XtraEditors.SimpleButton BtnThem;
         private DevExpress.XtraEditors.DateEdit dtNS;
-        private DevExpress.XtraEditors.ComboBoxEdit cbbLoaiTV;
-        private DevExpress.XtraEditors.TextEdit textEdit2;
-        private DevExpress.XtraEditors.TextEdit textEdit1;
+        private DevExpress.XtraEditors.TextEdit txtCMND;
+        private DevExpress.XtraEditors.TextEdit txtTenTV;
         private DevExpress.XtraGrid.GridControl gcThanhVien;
         private DevExpress.XtraGrid.Views.Grid.GridView gvThanhVien;
         private DevExpress.XtraGrid.Columns.GridColumn ColTenTVien;
         private DevExpress.XtraGrid.Columns.GridColumn ColLoaiTv;
         private DevExpress.XtraGrid.Columns.GridColumn ColCMNDan;
         private DevExpress.XtraGrid.Columns.GridColumn ColNS;
+        private DevExpress.XtraEditors.LookUpEdit lookUpEdit1;
+        private DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit LUpLoaiTV;
     }
 }
