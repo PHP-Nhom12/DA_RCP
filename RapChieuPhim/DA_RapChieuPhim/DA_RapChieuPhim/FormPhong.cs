@@ -87,10 +87,15 @@ namespace DA_RapChieuPhim
             int[] i = gvPhong.GetSelectedRows();
             foreach (int rows in i)
             {
-                if (rows >= 0)
+                if (rows > 0)
                 {
-                    int MaPhong = int.Parse(gvPhong.GetRowCellValue(rows, ColMaPhong).ToString());
-                    if (pBUS.CapNhat(phongchon, MaPhong) != null)
+
+
+                    phongchon.TenPhong = txtTenPhong.Text;
+                    phongchon.LoaiPhong = int.Parse(lUpLoaiPhong.EditValue.ToString());
+                    phongchon.SLCho = int.Parse(txtSLCho.Text);
+
+                    if (pBUS.CapNhat(phongchon) > 0)
                     {
                         MessageBox.Show("Cập nhật Thành Công", "Thông Báo");
                         gcPhong.DataSource = pBUS.LoadPhong();

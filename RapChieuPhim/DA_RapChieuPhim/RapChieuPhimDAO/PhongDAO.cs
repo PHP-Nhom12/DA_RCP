@@ -67,7 +67,7 @@ namespace RapChieuPhimDAO
             conn.Close();
             return kq;
         }
-        public PhongDTO CapNhatPhong(PhongDTO phong, int MaPhong)
+        public int CapNhatPhong(PhongDTO phong)
         {
             string strTruyVan = "Update PhongChieu Set TenPhong=@TenPhong, LoaiPhong=@LoaiPhong,SLCho=@SLCho WHERE MaPhong = " + phong.MaPhong;
             SqlParameter[] par = new SqlParameter[3];
@@ -77,19 +77,7 @@ namespace RapChieuPhimDAO
             par[2] = new SqlParameter("@SLCho", phong.SLCho);
             //par[4] = new SqlParameter("@TrangThai", phong.TrangThai);
             SqlConnection conn = DataProvider.TaoKetNoi();
-            SqlDataReader sdr = DataProvider.TruyVanDuLieu(strTruyVan, par, conn);
-            List<PhongDTO> ls = new List<PhongDTO>();
-            while (sdr.Read())
-            {
-                PhongDTO ketqua = new PhongDTO();
-                ketqua.MaPhong = int.Parse(sdr["MaPhong"].ToString());
-                ketqua.TenPhong = sdr["TenPhong"].ToString();
-                ketqua.SLCho = int.Parse(sdr["SLCho"].ToString());
-               // ketqua.TrangThai = int.Parse(sdr["TrangThai"].ToString());
-                ls.Add(ketqua);
-            }
-            sdr.Close();
-            return phong;
+            return DataProvider.CapNhatDuLieu(strTruyVan, par, conn);
 
         }
     }

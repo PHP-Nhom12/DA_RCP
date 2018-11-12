@@ -41,7 +41,7 @@
   <ItemGroup>
     <Compile Include="CaDAO.cs" />
     <Compile Include="DataProvider.cs" />
-    <Compile Include="LichCieuDAO.cs" />
+    <Compile Include="LichChieuDAO.cs" />
     <Compile Include="LoaiNV_DAO.cs" />
     <Compile Include="LoaiThanhVienDAO.cs" />
     <Compile Include="LuongDAO.cs" />

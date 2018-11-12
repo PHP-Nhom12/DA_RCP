@@ -25,10 +25,10 @@ namespace RapChieuPhimBUS
             PhongDAO XoaDAO = new PhongDAO();
             return XoaDAO.XoaPhong(MaPhong);
         }
-        public PhongDTO CapNhat(PhongDTO phong,int MaPhong)
+        public int CapNhat(PhongDTO phong)
         {
             PhongDAO CapNhat = new PhongDAO();
-            return CapNhat.CapNhatPhong(phong,MaPhong);
+            return CapNhat.CapNhatPhong(phong);
         }
     }
 }

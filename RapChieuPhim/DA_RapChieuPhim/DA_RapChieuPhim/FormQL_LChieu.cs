@@ -20,6 +20,7 @@ namespace DA_RapChieuPhim
         PhongBUS pBUS = new PhongBUS();
         CaBUS ca = new CaBUS();
         PhimBUS phim = new PhimBUS();
+        LichChieuBUS lich = new LichChieuBUS();
         private void FormQL_LChieu_Load(object sender, EventArgs e)
         {
             LoadtatCa();
@@ -38,9 +39,13 @@ namespace DA_RapChieuPhim
             lUPtenPhim.Properties.DataSource = phim.LoadPhim();
             lUPtenPhim.Properties.DisplayMember = "TenPhim";
             lUPtenPhim.Properties.ValueMember = "MaPhim";
-        }
 
-        
+            gcLichCHieu.DataSource = lich.LoadLich();
 
+            LupTPhim.DataSource = phim.LoadPhim();
+            LupTphong.DataSource = pBUS.LoadPhong();
+            LupMaCa.DataSource = ca.LoadCa();
+            
+        }     
     }
 }

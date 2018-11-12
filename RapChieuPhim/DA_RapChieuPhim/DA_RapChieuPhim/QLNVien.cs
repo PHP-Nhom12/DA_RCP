@@ -228,10 +228,19 @@ namespace DA_RapChieuPhim
             {
                 if (rows >= 0)
                 {
-                    int MaNV = int.Parse(gvNhanVien.GetRowCellValue(rows, ColMaNV).ToString());
-                    if (nv_bus.CapNhatNV(nvchon, MaNV) != null)
+                    nvchon.HovaTen = txtTenNV.Text;
+                    nvchon.NgaySinh = DateTime.Parse(dtNS.Text);
+                    nvchon.GioiTinh = rdoNam.Checked ? "Nam" : "Nữ";
+                    nvchon.DiaChi = txtDC.Text;
+                    nvchon.Email = txtEmail.Text;
+                    nvchon.LoaiNV = int.Parse(lUpChucVu.EditValue.ToString());
+                    nvchon.MaLuong = int.Parse(lUpLuong.EditValue.ToString());
+                    nvchon.NgayVaoLam = DateTime.Parse(dtNVL.Text);
+
+                    if (nv_bus.CapNhatNV(nvchon) > 0)
                     {
                         MessageBox.Show("Cập nhật Thành Công", "Thông Báo");
+                        loadNV();
                     }
                     else
                     {

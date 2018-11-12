@@ -205,7 +205,7 @@ namespace RapChieuPhimDAO
             conn.Close();
             return kq;
         }
-        public  NhanVienDTO CapNhatNhanVien(NhanVienDTO nv, int MaNV)
+        public  int CapNhatNhanVien(NhanVienDTO nv)
         {
             string strTruyVan = "Update NhanVien Set HovaTen=@HovaTen,NgaySinh=@NgaySinh,GioiTinh=@GioiTinh,DiaChi=@DiaChi,Email=@Email,Password=@Password,HinhAnh=@HinhAnh,NgayVaoLam=@NgayVaoLam,LoaiNV=@LoaiNV,MaLuong=@MaLuong,TrangThai=@TrangThai WHERE MaNV = " + nv.MaNV;
             SqlParameter[] par = new SqlParameter[11];
@@ -221,26 +221,7 @@ namespace RapChieuPhimDAO
             par[9] = new SqlParameter("@MaLuong", nv.MaLuong);
             par[10] = new SqlParameter("@TrangThai", nv.TrangThai);
             SqlConnection conn = DataProvider.TaoKetNoi();
-            SqlDataReader sdr = DataProvider.TruyVanDuLieu(strTruyVan, par, conn);
-            List<NhanVienDTO> ls = new List<NhanVienDTO>();
-            while (sdr.Read())
-            {
-                NhanVienDTO ketqua = new NhanVienDTO();
-                ketqua.HovaTen = sdr["HovaTen"].ToString();
-                ketqua.NgaySinh = DateTime.Parse(sdr["NgaySinh"].ToString());
-                ketqua.GioiTinh = sdr["GioiTinh"].ToString();
-                ketqua.DiaChi = sdr["DiaChi"].ToString();
-                ketqua.Email = sdr["Email"].ToString();
-                ketqua.Password = sdr["Password"].ToString();
-                ketqua.HinhAnh = sdr["HinhAnh"].ToString();
-                ketqua.NgayVaoLam = DateTime.Parse(sdr["NgayVaoLam"].ToString());
-                ketqua.LoaiNV = int.Parse(sdr["LoaiNV"].ToString());
-                ketqua.MaLuong = int.Parse(sdr["MaLuong"].ToString());
-                ketqua.TrangThai = int.Parse(sdr["TrangThai"].ToString());
-                ls.Add(ketqua);
-            }
-            sdr.Close();
-            return nv;
+            return DataProvider.CapNhatDuLieu(strTruyVan, par, conn);
           
         }
     }
