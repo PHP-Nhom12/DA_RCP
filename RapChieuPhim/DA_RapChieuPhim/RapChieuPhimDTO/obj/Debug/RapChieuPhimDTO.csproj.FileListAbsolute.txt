@@ -11,3 +11,7 @@ D:\github_doanRapCHieuPhim\DA_RCP\DA_RCP\RapChieuPhim\DA_RapChieuPhim\RapChieuPh
 D:\github_doanRapCHieuPhim\DA_RCP\DA_RCP\RapChieuPhim\DA_RapChieuPhim\RapChieuPhimDTO\bin\Debug\RapChieuPhimDTO.pdb
 D:\github_doanRapCHieuPhim\DA_RCP\DA_RCP\RapChieuPhim\DA_RapChieuPhim\RapChieuPhimDTO\obj\Debug\RapChieuPhimDTO.dll
 D:\github_doanRapCHieuPhim\DA_RCP\DA_RCP\RapChieuPhim\DA_RapChieuPhim\RapChieuPhimDTO\obj\Debug\RapChieuPhimDTO.pdb
+D:\Phong\DA_RCP\RapChieuPhim\DA_RapChieuPhim\RapChieuPhimDTO\bin\Debug\RapChieuPhimDTO.dll
+D:\Phong\DA_RCP\RapChieuPhim\DA_RapChieuPhim\RapChieuPhimDTO\bin\Debug\RapChieuPhimDTO.pdb
+D:\Phong\DA_RCP\RapChieuPhim\DA_RapChieuPhim\RapChieuPhimDTO\obj\Debug\RapChieuPhimDTO.dll
+D:\Phong\DA_RCP\RapChieuPhim\DA_RapChieuPhim\RapChieuPhimDTO\obj\Debug\RapChieuPhimDTO.pdb
