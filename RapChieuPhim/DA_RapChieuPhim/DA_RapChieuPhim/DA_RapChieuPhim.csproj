@@ -163,6 +163,13 @@
     <EmbeddedResource Include="QLVe.resx">
       <DependentUpon>QLVe.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="rptGiaVeTheoSuat.rdlc" />
+    <EmbeddedResource Include="rptNV.rdlc" />
+    <EmbeddedResource Include="rptLuongNV.rdlc" />
+    <EmbeddedResource Include="rptVe.rdlc" />
+    <None Include="Properties\DataSources\RapChieuPhimDTO.CaDTO.datasource" />
+    <None Include="Properties\DataSources\RapChieuPhimDTO.LichChieuDTO.datasource" />
+    <None Include="Properties\DataSources\RapChieuPhimDTO.VeDTO.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

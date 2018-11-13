@@ -47,6 +47,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.ColMaTV = new DevExpress.XtraGrid.Columns.GridColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.lookUpEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtNS.Properties.CalendarTimeProperties)).BeginInit();
@@ -126,10 +127,12 @@
             this.gcThanhVien.TabIndex = 14;
             this.gcThanhVien.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvThanhVien});
+            this.gcThanhVien.DoubleClick += new System.EventHandler(this.gcThanhVien_DoubleClick);
             // 
             // gvThanhVien
             // 
             this.gvThanhVien.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.ColMaTV,
             this.ColTenTVien,
             this.ColLoaiTv,
             this.ColCMNDan,
@@ -143,7 +146,7 @@
             this.ColTenTVien.FieldName = "TenTV";
             this.ColTenTVien.Name = "ColTenTVien";
             this.ColTenTVien.Visible = true;
-            this.ColTenTVien.VisibleIndex = 0;
+            this.ColTenTVien.VisibleIndex = 1;
             // 
             // ColLoaiTv
             // 
@@ -152,7 +155,7 @@
             this.ColLoaiTv.FieldName = "LoaiTV";
             this.ColLoaiTv.Name = "ColLoaiTv";
             this.ColLoaiTv.Visible = true;
-            this.ColLoaiTv.VisibleIndex = 1;
+            this.ColLoaiTv.VisibleIndex = 2;
             // 
             // LUpLoaiTV
             // 
@@ -169,7 +172,7 @@
             this.ColCMNDan.FieldName = "CMND";
             this.ColCMNDan.Name = "ColCMNDan";
             this.ColCMNDan.Visible = true;
-            this.ColCMNDan.VisibleIndex = 2;
+            this.ColCMNDan.VisibleIndex = 3;
             // 
             // ColNS
             // 
@@ -177,7 +180,7 @@
             this.ColNS.FieldName = "NgaySinh";
             this.ColNS.Name = "ColNS";
             this.ColNS.Visible = true;
-            this.ColNS.VisibleIndex = 3;
+            this.ColNS.VisibleIndex = 4;
             // 
             // btnCapNhat
             // 
@@ -188,6 +191,7 @@
             this.btnCapNhat.Size = new System.Drawing.Size(75, 35);
             this.btnCapNhat.TabIndex = 11;
             this.btnCapNhat.Text = "Cập Nhật";
+            this.btnCapNhat.Click += new System.EventHandler(this.btnCapNhat_Click);
             // 
             // btnXoa
             // 
@@ -198,6 +202,7 @@
             this.btnXoa.Size = new System.Drawing.Size(75, 35);
             this.btnXoa.TabIndex = 10;
             this.btnXoa.Text = "Xóa";
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // BtnThem
             // 
@@ -250,6 +255,14 @@
             this.label1.TabIndex = 2;
             this.label1.Text = "Tên Thành Viên";
             // 
+            // ColMaTV
+            // 
+            this.ColMaTV.Caption = "Mã Thành Viên";
+            this.ColMaTV.FieldName = "MaTV";
+            this.ColMaTV.Name = "ColMaTV";
+            this.ColMaTV.Visible = true;
+            this.ColMaTV.VisibleIndex = 0;
+            // 
             // QLTV
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -295,5 +308,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn ColNS;
         private DevExpress.XtraEditors.LookUpEdit lookUpEdit1;
         private DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit LUpLoaiTV;
+        private DevExpress.XtraGrid.Columns.GridColumn ColMaTV;
     }
 }

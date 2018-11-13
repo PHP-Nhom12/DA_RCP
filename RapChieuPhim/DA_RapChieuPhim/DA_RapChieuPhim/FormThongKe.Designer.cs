@@ -29,30 +29,54 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.rdbPhim = new System.Windows.Forms.RadioButton();
+            this.rdbNV = new System.Windows.Forms.RadioButton();
             this.button1 = new System.Windows.Forms.Button();
-            this.radioButton3 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton4 = new System.Windows.Forms.RadioButton();
-            this.radioButton5 = new System.Windows.Forms.RadioButton();
+            this.rdbGiaVeTheoSuat = new System.Windows.Forms.RadioButton();
+            this.rdbLuongNV = new System.Windows.Forms.RadioButton();
+            this.rdbVe = new System.Windows.Forms.RadioButton();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
             this.groupBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.groupBox1.Controls.Add(this.radioButton5);
-            this.groupBox1.Controls.Add(this.radioButton4);
+            this.groupBox1.Controls.Add(this.rdbPhim);
+            this.groupBox1.Controls.Add(this.rdbNV);
             this.groupBox1.Controls.Add(this.button1);
-            this.groupBox1.Controls.Add(this.radioButton3);
-            this.groupBox1.Controls.Add(this.radioButton2);
-            this.groupBox1.Controls.Add(this.radioButton1);
+            this.groupBox1.Controls.Add(this.rdbGiaVeTheoSuat);
+            this.groupBox1.Controls.Add(this.rdbLuongNV);
+            this.groupBox1.Controls.Add(this.rdbVe);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(346, 277);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thống Kê";
+            // 
+            // rdbPhim
+            // 
+            this.rdbPhim.AutoSize = true;
+            this.rdbPhim.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdbPhim.Location = new System.Drawing.Point(44, 105);
+            this.rdbPhim.Name = "rdbPhim";
+            this.rdbPhim.Size = new System.Drawing.Size(152, 24);
+            this.rdbPhim.TabIndex = 5;
+            this.rdbPhim.TabStop = true;
+            this.rdbPhim.Text = "Thống Kế  Phim\r\n";
+            this.rdbPhim.UseVisualStyleBackColor = true;
+            // 
+            // rdbNV
+            // 
+            this.rdbNV.AutoSize = true;
+            this.rdbNV.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdbNV.Location = new System.Drawing.Point(44, 75);
+            this.rdbNV.Name = "rdbNV";
+            this.rdbNV.Size = new System.Drawing.Size(196, 24);
+            this.rdbNV.TabIndex = 4;
+            this.rdbNV.TabStop = true;
+            this.rdbNV.Text = "Thống Kế  Nhân Viên";
+            this.rdbNV.UseVisualStyleBackColor = true;
             // 
             // button1
             // 
@@ -62,66 +86,43 @@
             this.button1.TabIndex = 3;
             this.button1.Text = "Xem Báo Cáo";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // radioButton3
+            // rdbGiaVeTheoSuat
             // 
-            this.radioButton3.AutoSize = true;
-            this.radioButton3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButton3.Location = new System.Drawing.Point(44, 165);
-            this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(251, 24);
-            this.radioButton3.TabIndex = 2;
-            this.radioButton3.TabStop = true;
-            this.radioButton3.Text = "Thống Kế Giá Vé Theo Suất";
-            this.radioButton3.UseVisualStyleBackColor = true;
+            this.rdbGiaVeTheoSuat.AutoSize = true;
+            this.rdbGiaVeTheoSuat.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdbGiaVeTheoSuat.Location = new System.Drawing.Point(44, 165);
+            this.rdbGiaVeTheoSuat.Name = "rdbGiaVeTheoSuat";
+            this.rdbGiaVeTheoSuat.Size = new System.Drawing.Size(251, 24);
+            this.rdbGiaVeTheoSuat.TabIndex = 2;
+            this.rdbGiaVeTheoSuat.TabStop = true;
+            this.rdbGiaVeTheoSuat.Text = "Thống Kế Giá Vé Theo Suất";
+            this.rdbGiaVeTheoSuat.UseVisualStyleBackColor = true;
             // 
-            // radioButton2
+            // rdbLuongNV
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButton2.Location = new System.Drawing.Point(44, 135);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(246, 24);
-            this.radioButton2.TabIndex = 1;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Thống Kế Lương Nhân Viên";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.rdbLuongNV.AutoSize = true;
+            this.rdbLuongNV.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdbLuongNV.Location = new System.Drawing.Point(44, 135);
+            this.rdbLuongNV.Name = "rdbLuongNV";
+            this.rdbLuongNV.Size = new System.Drawing.Size(246, 24);
+            this.rdbLuongNV.TabIndex = 1;
+            this.rdbLuongNV.TabStop = true;
+            this.rdbLuongNV.Text = "Thống Kế Lương Nhân Viên";
+            this.rdbLuongNV.UseVisualStyleBackColor = true;
             // 
-            // radioButton1
+            // rdbVe
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButton1.Location = new System.Drawing.Point(44, 45);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(130, 24);
-            this.radioButton1.TabIndex = 0;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Thống Kế Vé";
-            this.radioButton1.UseVisualStyleBackColor = true;
-            // 
-            // radioButton4
-            // 
-            this.radioButton4.AutoSize = true;
-            this.radioButton4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButton4.Location = new System.Drawing.Point(44, 75);
-            this.radioButton4.Name = "radioButton4";
-            this.radioButton4.Size = new System.Drawing.Size(196, 24);
-            this.radioButton4.TabIndex = 4;
-            this.radioButton4.TabStop = true;
-            this.radioButton4.Text = "Thống Kế  Nhân Viên";
-            this.radioButton4.UseVisualStyleBackColor = true;
-            // 
-            // radioButton5
-            // 
-            this.radioButton5.AutoSize = true;
-            this.radioButton5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButton5.Location = new System.Drawing.Point(44, 105);
-            this.radioButton5.Name = "radioButton5";
-            this.radioButton5.Size = new System.Drawing.Size(152, 24);
-            this.radioButton5.TabIndex = 5;
-            this.radioButton5.TabStop = true;
-            this.radioButton5.Text = "Thống Kế  Phim\r\n";
-            this.radioButton5.UseVisualStyleBackColor = true;
+            this.rdbVe.AutoSize = true;
+            this.rdbVe.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdbVe.Location = new System.Drawing.Point(44, 45);
+            this.rdbVe.Name = "rdbVe";
+            this.rdbVe.Size = new System.Drawing.Size(130, 24);
+            this.rdbVe.TabIndex = 0;
+            this.rdbVe.TabStop = true;
+            this.rdbVe.Text = "Thống Kế Vé";
+            this.rdbVe.UseVisualStyleBackColor = true;
             // 
             // FormThongKe
             // 
@@ -142,10 +143,10 @@
 
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.RadioButton radioButton3;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.RadioButton radioButton5;
-        private System.Windows.Forms.RadioButton radioButton4;
+        private System.Windows.Forms.RadioButton rdbGiaVeTheoSuat;
+        private System.Windows.Forms.RadioButton rdbLuongNV;
+        private System.Windows.Forms.RadioButton rdbVe;
+        private System.Windows.Forms.RadioButton rdbPhim;
+        private System.Windows.Forms.RadioButton rdbNV;
     }
 }
