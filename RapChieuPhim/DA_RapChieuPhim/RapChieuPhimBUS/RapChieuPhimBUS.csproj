@@ -40,6 +40,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CaBUS.cs" />
+    <Compile Include="ChiTietLichChieuBUS.cs" />
+    <Compile Include="GheBUS.cs" />
     <Compile Include="LichChieuBUS.cs" />
     <Compile Include="LoaiNV_BUS.cs" />
     <Compile Include="LoaiThanhVienBUS.cs" />
@@ -51,6 +53,7 @@
     <Compile Include="ThanhVienBUS.cs" />
     <Compile Include="Util.cs" />
     <Compile Include="VeBUS.cs" />
+    <Compile Include="VoucherBUS.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\RapChieuPhimDAO\RapChieuPhimDAO.csproj">

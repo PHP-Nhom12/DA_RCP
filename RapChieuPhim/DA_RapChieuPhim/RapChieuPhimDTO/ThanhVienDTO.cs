@@ -18,6 +18,6 @@ namespace RapChieuPhimDTO
 
       public DateTime NgaySinh{get;set;}
 
-      public int MaVoucher { get; set; }
+      public int TrangThai { get; set; }
     }
 }

@@ -30,15 +30,15 @@ namespace RapChieuPhimDAO
             sdr.Close();
             return ls;
         }
-        public List<ThanhVienDTO> ThemThanhVien(string TenTV, int LoaiTV,int CMND,DateTime NgaySinh,int MaVoucher)
+        public List<ThanhVienDTO> ThemThanhVien(string TenTV, int LoaiTV, int CMND, DateTime NgaySinh, int TrangThai)
         {
-            string strTruyVan = "INSERT INTO ThanhVien(TenTV,LoaiTV,CMND,NgaySinh) VALUES(@TenTV,@LoaiTV,@CMND,@NgaySinh,@MaVoucher)";
+            string strTruyVan = "INSERT INTO ThanhVien(TenTV,LoaiTV,CMND,NgaySinh) VALUES(@TenTV,@LoaiTV,@CMND,@NgaySinh,@TrangThai)";
             SqlParameter[] par = new SqlParameter[5];
             par[0] = new SqlParameter("@TenTV", TenTV);
             par[1] = new SqlParameter("@LoaiTV", LoaiTV);
             par[2] = new SqlParameter("@CMND", CMND);
             par[3] = new SqlParameter("@NgaySinh", NgaySinh);
-            par[4] = new SqlParameter("@MaVoucher", MaVoucher);
+            par[4] = new SqlParameter("@TrangThai", TrangThai);
             SqlConnection conn = DataProvider.TaoKetNoi();
             SqlDataReader sdr = DataProvider.TruyVanDuLieu(strTruyVan,par, conn);
             List<ThanhVienDTO> ls = new List<ThanhVienDTO>();
@@ -51,7 +51,7 @@ namespace RapChieuPhimDAO
                 ketqua.LoaiTV = int.Parse(sdr["LoaiTV"].ToString());
                 ketqua.CMND = int.Parse(sdr["CMND"].ToString());
                 ketqua.NgaySinh = DateTime.Parse(sdr["NgaySinh"].ToString());
-                ketqua.MaVoucher = int.Parse(sdr["MaVoucher"].ToString());
+                ketqua.TrangThai = int.Parse(sdr["TrangThai"].ToString());
                 ls.Add(ketqua);
             }
             sdr.Close();

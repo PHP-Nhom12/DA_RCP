@@ -15,10 +15,10 @@ namespace RapChieuPhimBUS
             ThanhVienDAO tvDAO = new ThanhVienDAO();
             return tvDAO.LoadTV();
         }
-        public List<ThanhVienDTO> ThemTVien(string TenTV, int LoaiTV,int CMND,DateTime NgaySinh,int MaVoucher)
+        public List<ThanhVienDTO> ThemTVien(string TenTV, int LoaiTV, int CMND, DateTime NgaySinh, int TrangThai)
         {
             ThanhVienDAO ThemTV = new ThanhVienDAO();
-            return ThemTV.ThemThanhVien(TenTV, LoaiTV, CMND, NgaySinh,MaVoucher);
+            return ThemTV.ThemThanhVien(TenTV, LoaiTV, CMND, NgaySinh, TrangThai);
         }
     }
 }

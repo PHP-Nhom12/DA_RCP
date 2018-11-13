@@ -1,4 +1,5 @@
 ﻿using RapChieuPhimBUS;
+using RapChieuPhimDTO;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -31,6 +32,30 @@ namespace DA_RapChieuPhim
 
             lUpTenPhong.DataSource = phong.LoadPhong();
             lUPTenTV.DataSource = tv.LoadTV();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            List<VeDTO> lsVe = new List<VeDTO>();
+            VeBUS ve = new VeBUS();
+            if (radTenPhong.Checked)
+            {
+                lsVe = ve.TimVe(1, txtQuery.Text);
+            }
+            else if (radTenThanhVien.Checked)
+            {
+                lsVe = ve.TimVe(2, txtQuery.Text);
+            }
+            else if (radTenPhim.Checked)
+            {
+                lsVe = ve.TimVe(3, txtQuery.Text);
+            }
+            else
+            {
+                lsVe = ve.TimVe(0, txtQuery.Text);
+            }
+
+            gcVe.DataSource = lsVe;
         }
 
     }
