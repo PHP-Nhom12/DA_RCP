@@ -30,15 +30,9 @@ namespace RapChieuPhimDAO
             sdr.Close();
             return ls;
         }
-<<<<<<< HEAD
-        public List<ThanhVienDTO> ThemThanhVien(string TenTV, int LoaiTV, int CMND, DateTime NgaySinh, int TrangThai)
-        {
-            string strTruyVan = "INSERT INTO ThanhVien(TenTV,LoaiTV,CMND,NgaySinh) VALUES(@TenTV,@LoaiTV,@CMND,@NgaySinh,@TrangThai)";
-=======
         public List<ThanhVienDTO> ThemThanhVien(string TenTV, int LoaiTV,int CMND,DateTime NgaySinh, int TrangThai)
         {
             string strTruyVan = "INSERT INTO ThanhVien(TenTV,LoaiTV,CMND,NgaySinh,TrangThai) VALUES(@TenTV,@LoaiTV,@CMND,@NgaySinh,@TrangThai)";
->>>>>>> b2c2668c2f5c029858bc50deb7417ff5d1971f24
             SqlParameter[] par = new SqlParameter[5];
             par[0] = new SqlParameter("@TenTV", TenTV);
             par[1] = new SqlParameter("@LoaiTV", LoaiTV);

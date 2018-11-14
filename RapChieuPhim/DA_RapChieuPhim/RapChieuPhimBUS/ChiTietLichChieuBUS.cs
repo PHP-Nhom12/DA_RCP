@@ -15,5 +15,11 @@ namespace RapChieuPhimBUS
             ChiTietLichChieuDAO ctlc = new ChiTietLichChieuDAO();
             return ctlc.loadCTLC(MaLich);
         }
+
+        public List<ChiTietLichChieuDTO> loadCTLC_TheoMaCa(int MaCa)
+        {
+            ChiTietLichChieuDAO ctlc = new ChiTietLichChieuDAO();
+            return ctlc.loadCTLC_TheoMaCa(MaCa);
+        }
     }
 }

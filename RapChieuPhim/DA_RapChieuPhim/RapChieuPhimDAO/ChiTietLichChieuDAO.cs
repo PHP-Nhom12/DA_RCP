@@ -32,5 +32,29 @@ namespace RapChieuPhimDAO
             conn.Close();
             return ls;
         }
+
+
+        public List<ChiTietLichChieuDTO> loadCTLC_TheoMaCa(int MaCa)
+        {
+            SqlConnection conn = DataProvider.TaoKetNoi();
+            string strTruyVan = "Select * From ChiTietLichChieu where MaCa = @MaCa AND TrangThai=1";
+            SqlParameter[] par = new SqlParameter[1];
+            par[0] = new SqlParameter("@MaCa", MaCa);
+            SqlDataReader sdr = DataProvider.TruyVanDuLieu(strTruyVan, par, conn);
+            List<ChiTietLichChieuDTO> ls = new List<ChiTietLichChieuDTO>();
+            while (sdr.Read())
+            {
+                ChiTietLichChieuDTO ketqua = new ChiTietLichChieuDTO();
+                ketqua.MaLich = int.Parse(sdr["MaLich"].ToString());
+                ketqua.MaPhim = int.Parse(sdr["MaPhim"].ToString());
+                ketqua.MaPhong = int.Parse(sdr["MaPhong"].ToString());
+                ketqua.MaCa = int.Parse(sdr["MaCa"].ToString());
+                ketqua.TrangThai = int.Parse(sdr["TrangThai"].ToString());
+                ls.Add(ketqua);
+            }
+            sdr.Close();
+            conn.Close();
+            return ls;
+        }
     }
 }

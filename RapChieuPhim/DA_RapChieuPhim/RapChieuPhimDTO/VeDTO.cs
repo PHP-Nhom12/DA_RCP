@@ -15,7 +15,8 @@ namespace RapChieuPhimDTO
       public int GiaVe{get;set;}
       public DateTime NgayTaoVe{get;set;}
       public int MaTV{get;set;}
-      public int MaLichChieu{get;set;}
+      public int MaVoucher { get; set; }
+      public int MaLichChieu { get; set; }
       public int TrangThai{get;set;}
     }
 }

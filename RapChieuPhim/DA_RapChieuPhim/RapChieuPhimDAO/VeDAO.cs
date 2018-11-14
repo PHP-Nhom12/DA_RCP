@@ -24,6 +24,7 @@ namespace RapChieuPhimDAO
                 ketqua.PhongChieu = int.Parse(sdr["PhongChieu"].ToString());
                 ketqua.GiaVe = int.Parse(sdr["GiaVe"].ToString());
                 ketqua.MaTV = int.Parse(sdr["MaTV"].ToString());
+                ketqua.MaVoucher = int.Parse(sdr["MaVoucher"].ToString());
                 //ketqua.TrangThai = int.Parse(sdr["TrangThai"].ToString());
                 ls.Add(ketqua);
             }
@@ -71,6 +72,7 @@ namespace RapChieuPhimDAO
                 ketqua.PhongChieu = int.Parse(sdr["PhongChieu"].ToString());
                 ketqua.GiaVe = int.Parse(sdr["GiaVe"].ToString());
                 ketqua.MaTV = int.Parse(sdr["MaTV"].ToString());
+                ketqua.MaVoucher = int.Parse(sdr["MaVoucher"].ToString());
                 //ketqua.TrangThai = int.Parse(sdr["TrangThai"].ToString());
                 lsVe.Add(ketqua);
             }
@@ -81,31 +83,37 @@ namespace RapChieuPhimDAO
 
         public List<VeDTO> ThemVe(VeDTO ve)
         {
-            //SqlConnection conn = DataProvider.TaoKetNoi();
 
-            //string strTruyVan = "INSERT INTO Ve(TenTV,LoaiTV,CMND,NgaySinh) VALUES(@TenTV,@LoaiTV,@CMND,@NgaySinh,@TrangThai)";
-            //SqlParameter[] par = new SqlParameter[5];
-            //par[0] = new SqlParameter("@TenTV", TenTV);
-            //par[1] = new SqlParameter("@LoaiTV", LoaiTV);
-            //par[2] = new SqlParameter("@CMND", CMND);
-            //par[3] = new SqlParameter("@NgaySinh", NgaySinh);
-            //par[4] = new SqlParameter("@TrangThai", TrangThai);
-            //SqlConnection conn = DataProvider.TaoKetNoi();
-            //SqlDataReader sdr = DataProvider.TruyVanDuLieu(strTruyVan, par, conn);
+            string strTruyVan = "INSERT INTO Ve(MaVe, MaPhim, ViTriNgoi, PhongChieu, GiaVe, NgayTaoVe, MaVoucher, MaTV, MaLichChieu, TrangThai) VALUES (@MaVe, @MaPhim, @ViTriNgoi, @PhongChieu, @GiaVe, @NgayTaoVe, @MaVoucher, @MaTV, @MaLichChieu, 1)";
+            SqlParameter[] pars = new SqlParameter[9];
+            pars[0] = new SqlParameter("@MaVe", ve.MaVe);
+            pars[1] = new SqlParameter("@MaPhim", ve.MaPhim);
+            pars[2] = new SqlParameter("@ViTriNgoi", ve.ViTriNgoi);
+            pars[3] = new SqlParameter("@PhongChieu", ve.PhongChieu);
+            pars[4] = new SqlParameter("@GiaVe", ve.GiaVe);
+            pars[5] = new SqlParameter("@NgayTaoVe", ve.NgayTaoVe);
+            pars[6] = new SqlParameter("@MaVoucher", ve.MaVoucher);
+            pars[7] = new SqlParameter("@MaTV", ve.MaTV);
+            pars[8] = new SqlParameter("@MaLichChieu", ve.MaLichChieu);
+            SqlConnection conn = DataProvider.TaoKetNoi();
+            SqlDataReader sdr = DataProvider.TruyVanDuLieu(strTruyVan, pars, conn);
             List<VeDTO> ls = new List<VeDTO>();
-            //while (sdr.Read())
-            //{
+            while (sdr.Read())
+            {
 
-            //    ThanhVienDTO ketqua = new ThanhVienDTO();
-            //    ketqua.MaTV = int.Parse(sdr["MaTV"].ToString());
-            //    ketqua.TenTV = sdr["TenTV"].ToString();
-            //    ketqua.LoaiTV = int.Parse(sdr["LoaiTV"].ToString());
-            //    ketqua.CMND = int.Parse(sdr["CMND"].ToString());
-            //    ketqua.NgaySinh = DateTime.Parse(sdr["NgaySinh"].ToString());
-            //    ketqua.TrangThai = int.Parse(sdr["TrangThai"].ToString());
-            //    ls.Add(ketqua);
-            //}
-            //sdr.Close();
+                VeDTO ketqua = new VeDTO();
+                ketqua.MaVe = int.Parse(sdr["MaVe"].ToString());
+                ketqua.MaPhim = int.Parse(sdr["MaPhim"].ToString());
+                ketqua.ViTriNgoi = sdr["ViTriNgoi"].ToString();
+                ketqua.PhongChieu = int.Parse(sdr["PhongChieu"].ToString());
+                ketqua.GiaVe = int.Parse(sdr["GiaVe"].ToString());
+                ketqua.NgayTaoVe = DateTime.Parse(sdr["NgayTaoVe"].ToString());
+                ketqua.MaVoucher = int.Parse(sdr["MaVoucher"].ToString());
+                ketqua.MaTV = int.Parse(sdr["MaTV"].ToString());
+                ketqua.MaLichChieu = int.Parse(sdr["MaLichChieu"].ToString());
+                ls.Add(ketqua);
+            }
+            sdr.Close();
             return ls;
         }
     }

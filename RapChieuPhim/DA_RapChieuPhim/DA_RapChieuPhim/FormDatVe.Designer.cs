@@ -95,6 +95,7 @@
             this.lueVoucher.Properties.NullText = "Please Select";
             this.lueVoucher.Size = new System.Drawing.Size(185, 20);
             this.lueVoucher.TabIndex = 22;
+            this.lueVoucher.EditValueChanged += new System.EventHandler(this.lueVoucher_EditValueChanged);
             // 
             // lueGhe
             // 
@@ -144,7 +145,7 @@
             this.lueCa.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("TenCa", "Tên Ca"),
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("HeSo", "Hệ Số")});
-            this.lueCa.Properties.NullText = "Please Select";
+            this.lueCa.Properties.NullText = "";
             this.lueCa.Size = new System.Drawing.Size(185, 20);
             this.lueCa.TabIndex = 18;
             this.lueCa.EditValueChanged += new System.EventHandler(this.lueCa_EditValueChanged_1);
@@ -185,6 +186,7 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dateNgay.Size = new System.Drawing.Size(185, 20);
             this.dateNgay.TabIndex = 15;
+            this.dateNgay.EditValueChanged += new System.EventHandler(this.dateNgay_EditValueChanged);
             // 
             // btnDatVe
             // 

@@ -27,7 +27,26 @@ namespace RapChieuPhimDAO
             conn.Close();
             return ls;
         }
-        
-                
+
+
+        public List<PhimDTO> LoadPhim(int MaCa)
+        {
+            SqlConnection conn = DataProvider.TaoKetNoi();
+            string strTruyVan = "Select * From Movie, ChiTietLichChieu where Movie.MaPhim = ChiTietLichChieu.MaPhim AND ChiTietLichChieu.MaCa = @MaCa AND ChiTietLichChieu.TrangThai=1";
+            SqlParameter[] par = new SqlParameter[1];
+            par[0] = new SqlParameter("@MaCa", MaCa);
+            SqlDataReader sdr = DataProvider.TruyVanDuLieu(strTruyVan, par, conn);
+            List<PhimDTO> ls = new List<PhimDTO>();
+            while (sdr.Read())
+            {
+                PhimDTO ketqua = new PhimDTO();
+                ketqua.MaPhim = int.Parse(sdr["MaPhim"].ToString());
+                ketqua.TenPhim = sdr["TenPhim"].ToString();
+                ls.Add(ketqua);
+            }
+            sdr.Close();
+            conn.Close();
+            return ls;
+        }
     }
 }
