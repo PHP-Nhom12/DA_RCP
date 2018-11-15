@@ -41,6 +41,8 @@ namespace RapChieuPhimDAO
             {
                 PhimDTO ketqua = new PhimDTO();
                 ketqua.MaPhim = int.Parse(sdr["MaPhim"].ToString());
+                ketqua.Mac = sdr["Mac"].ToString();
+                ketqua.NDPhim = sdr["NDPhim"].ToString();
                 ketqua.TenPhim = sdr["TenPhim"].ToString();
                 ls.Add(ketqua);
             }

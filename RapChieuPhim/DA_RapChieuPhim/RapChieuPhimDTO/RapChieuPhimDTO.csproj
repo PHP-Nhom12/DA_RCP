@@ -44,6 +44,7 @@
     <Compile Include="GheDTO.cs" />
     <Compile Include="LichChieuDTO.cs" />
     <Compile Include="LoaiNV_DTO.cs" />
+    <Compile Include="LoaiPhongDTO.cs" />
     <Compile Include="LoaiThanhVienDTO.cs" />
     <Compile Include="LuongDTO.cs" />
     <Compile Include="NhanVienDTO.cs" />

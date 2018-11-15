@@ -45,6 +45,7 @@
     <Compile Include="GheDAO.cs" />
     <Compile Include="LichChieuDAO.cs" />
     <Compile Include="LoaiNV_DAO.cs" />
+    <Compile Include="LoaiPhongDAO.cs" />
     <Compile Include="LoaiThanhVienDAO.cs" />
     <Compile Include="LuongDAO.cs" />
     <Compile Include="NhanVienDAO.cs" />

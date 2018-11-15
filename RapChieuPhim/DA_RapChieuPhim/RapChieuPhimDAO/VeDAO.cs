@@ -81,40 +81,21 @@ namespace RapChieuPhimDAO
             return lsVe;
         }
 
-        public List<VeDTO> ThemVe(VeDTO ve)
+        public bool ThemVe(VeDTO ve)
         {
 
-            string strTruyVan = "INSERT INTO Ve(MaVe, MaPhim, ViTriNgoi, PhongChieu, GiaVe, NgayTaoVe, MaVoucher, MaTV, MaLichChieu, TrangThai) VALUES (@MaVe, @MaPhim, @ViTriNgoi, @PhongChieu, @GiaVe, @NgayTaoVe, @MaVoucher, @MaTV, @MaLichChieu, 1)";
-            SqlParameter[] pars = new SqlParameter[9];
-            pars[0] = new SqlParameter("@MaVe", ve.MaVe);
-            pars[1] = new SqlParameter("@MaPhim", ve.MaPhim);
-            pars[2] = new SqlParameter("@ViTriNgoi", ve.ViTriNgoi);
-            pars[3] = new SqlParameter("@PhongChieu", ve.PhongChieu);
-            pars[4] = new SqlParameter("@GiaVe", ve.GiaVe);
-            pars[5] = new SqlParameter("@NgayTaoVe", ve.NgayTaoVe);
-            pars[6] = new SqlParameter("@MaVoucher", ve.MaVoucher);
-            pars[7] = new SqlParameter("@MaTV", ve.MaTV);
-            pars[8] = new SqlParameter("@MaLichChieu", ve.MaLichChieu);
+            string strTruyVan = "INSERT INTO Ve(MaPhim, ViTriNgoi, PhongChieu, GiaVe, NgayTaoVe, MaVoucher, MaTV, MaLichChieu, TrangThai) VALUES (@MaPhim, @ViTriNgoi, @PhongChieu, @GiaVe, @NgayTaoVe, @MaVoucher, @MaTV, @MaLichChieu, 1)";
+            SqlParameter[] pars = new SqlParameter[8];
+            pars[0] = new SqlParameter("@MaPhim", ve.MaPhim);
+            pars[1] = new SqlParameter("@ViTriNgoi", ve.ViTriNgoi);
+            pars[2] = new SqlParameter("@PhongChieu", ve.PhongChieu);
+            pars[3] = new SqlParameter("@GiaVe", ve.GiaVe);
+            pars[4] = new SqlParameter("@NgayTaoVe", ve.NgayTaoVe);
+            pars[5] = new SqlParameter("@MaVoucher", ve.MaVoucher);
+            pars[6] = new SqlParameter("@MaTV", ve.MaTV);
+            pars[7] = new SqlParameter("@MaLichChieu", ve.MaLichChieu);
             SqlConnection conn = DataProvider.TaoKetNoi();
-            SqlDataReader sdr = DataProvider.TruyVanDuLieu(strTruyVan, pars, conn);
-            List<VeDTO> ls = new List<VeDTO>();
-            while (sdr.Read())
-            {
-
-                VeDTO ketqua = new VeDTO();
-                ketqua.MaVe = int.Parse(sdr["MaVe"].ToString());
-                ketqua.MaPhim = int.Parse(sdr["MaPhim"].ToString());
-                ketqua.ViTriNgoi = sdr["ViTriNgoi"].ToString();
-                ketqua.PhongChieu = int.Parse(sdr["PhongChieu"].ToString());
-                ketqua.GiaVe = int.Parse(sdr["GiaVe"].ToString());
-                ketqua.NgayTaoVe = DateTime.Parse(sdr["NgayTaoVe"].ToString());
-                ketqua.MaVoucher = int.Parse(sdr["MaVoucher"].ToString());
-                ketqua.MaTV = int.Parse(sdr["MaTV"].ToString());
-                ketqua.MaLichChieu = int.Parse(sdr["MaLichChieu"].ToString());
-                ls.Add(ketqua);
-            }
-            sdr.Close();
-            return ls;
+            return DataProvider.ThucThiCauLenh(strTruyVan, pars, conn);
         }
     }
 }

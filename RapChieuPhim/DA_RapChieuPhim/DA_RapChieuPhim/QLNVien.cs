@@ -28,6 +28,10 @@ namespace DA_RapChieuPhim
 
         private void QLNV_Load(object sender, EventArgs e)
         {
+            btnXoa.Enabled = false;
+            simpleButton3.Enabled = false;
+
+
             loadNV();
             loadLuong();
         }
@@ -75,51 +79,42 @@ namespace DA_RapChieuPhim
 
         private void btnThem_Click(object sender, EventArgs e)
         {
-            getDataDetail();
-            string hten = txtTenNV.Text;
-            DateTime NSinh = DateTime.Parse(dtNS.Text);
-            string DChi = txtDC.Text;
-            string GTinh = rdoNam.Checked? "Nam": "Nữ";
-            string Email = txtEmail.Text;
-            string Password = txtPass.Text;
-            DateTime NgayVaoLam = DateTime.Parse(dtNVL.Text);
-            int MaLuong = (int)lUpLuong.EditValue;
-            int LoaiNV = (int)lUpChucVu.EditValue;
-            string HinhAnh = pathHA + nvchon.MaNV + ".png";
-            int TrangThai =chkTrangthai.Checked ? 1 : 0;
-            List<NhanVienDTO> kq = nv_bus.ThemNV(hten,NSinh,GTinh,DChi,Email,Password,HinhAnh,NgayVaoLam,LoaiNV,MaLuong,TrangThai);
-            if (kq != null)
+            if (txtTenNV.Text != "" && dtNS.Text != "" && txtDC.Text != "" && (rdoNam.Checked == false || rdoNu.Checked == false) && txtEmail.Text != "" && txtPass.Text != "" && dtNVL.Text != "" && lUpLuong.EditValue != null && lUpChucVu.EditValue != null && pictureBox1.Image != null)
             {
-                if(pictureBox1.Image!=null)
+                if (nvchon == null)
                 {
-                    pictureBox1.Image.Save(HinhAnh);
+                    nvchon = new NhanVienDTO();
                 }
-                MessageBox.Show("Thêm Thành Công");
-                loadNV();
+                nvchon.HovaTen = txtTenNV.Text;
+                nvchon.NgaySinh = DateTime.Parse(dtNS.Text);
+                nvchon.DiaChi = txtDC.Text;
+                nvchon.GioiTinh = rdoNam.Checked ? "Nam" : "Nữ";
+                nvchon.Email = txtEmail.Text;
+                nvchon.Password = txtPass.Text;
+                nvchon.NgayVaoLam = DateTime.Parse(dtNVL.Text);
+                nvchon.MaLuong = (int)lUpLuong.EditValue;
+                nvchon.LoaiNV = (int)lUpChucVu.EditValue;
+                nvchon.HinhAnh = pathHA + nvchon.MaNV + ".png";
+                nvchon.TrangThai = chkTrangthai.Checked ? 1 : 0;
+
+                if (nv_bus.ThemNV(nvchon) == true)
+                {
+                    pictureBox1.Image.Save(nvchon.HinhAnh);
+                    
+                    MessageBox.Show("Thêm Thành Công");
+                    loadNV();
+                }
+                else
+                {
+                    MessageBox.Show("Thêm Thất Bại");
+                }
             }
             else
             {
-                MessageBox.Show("Thêm Thất Bại");
+                MessageBox.Show("Chưa nhập dữ liệu!");
+                return;
             }
            
-        }
-
-        private void getDataDetail()
-        {
-            if (nvchon == null)
-            {
-                nvchon = new NhanVienDTO();
-            }
-            nvchon.HovaTen = txtTenNV.Text;
-            nvchon.NgaySinh = DateTime.Parse(dtNS.Text);
-            nvchon.DiaChi = txtDC.Text;
-            nvchon.GioiTinh = rdoNam.Checked ? "Nam" : "Nữ";
-            nvchon.Email = txtEmail.Text;
-            nvchon.Password = txtPass.Text;
-            nvchon.NgayVaoLam = DateTime.Parse(dtNVL.Text);
-            nvchon.MaLuong = lUpLuong.SelectionStart;
-            nvchon.LoaiNV = lUpChucVu.SelectionStart;
-            nvchon.HinhAnh = pathHA + nvchon.MaNV + ".png";
         }
 
         private void btnXoa_Click(object sender, EventArgs e)
@@ -130,16 +125,17 @@ namespace DA_RapChieuPhim
             }
             else
             {
-                DialogResult r = MessageBox.Show("Bạn có chắn chắn muốn xóa nhân viên", "Thông Báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-                if(DialogResult.Yes==r)
+                int[] i = gvNhanVien.GetSelectedRows();
+                foreach (int rows in i)
                 {
-                    int[] i = gvNhanVien.GetSelectedRows();
-                    foreach(int rows in i)
+                    if (rows >= 0)
                     {
-                        if(rows>=0)
+                        string TenNV = gvNhanVien.GetRowCellValue(rows, ColTenNV).ToString();
+                        string MaNV = gvNhanVien.GetRowCellValue(rows, ColMaNV).ToString();
+
+                        DialogResult r = MessageBox.Show("Bạn có chắn chắn muốn xóa nhân viên '"+TenNV+"'?", "Thông Báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                        if(DialogResult.Yes==r)
                         {
-                            //string Email = gvNhanVien.GetRowCellValue(rows, ColMaNV).ToString();
-                            string MaNV = gvNhanVien.GetRowCellValue(rows, ColMaNV).ToString();
                             if (nv_bus.XoaNV(MaNV) >= 1)
                             {
                                 MessageBox.Show("Xóa Thành Công", "Thông Báo", MessageBoxButtons.OK);
@@ -150,6 +146,7 @@ namespace DA_RapChieuPhim
                             }
                         }
                         loadNV();
+                        ResetForm();
                     }
                     
                 }
@@ -158,20 +155,35 @@ namespace DA_RapChieuPhim
 
         private void gcNhanVien_Click(object sender, EventArgs e)
         {
-
+            if (gvNhanVien.SelectedRowsCount > 0)
+            {
+                btnXoa.Enabled = true;
+            }
         }
 
         private void gcNhanVien_DoubleClick(object sender, EventArgs e)
         {
+            if (nvchon != null)
+            {
+                nvchon = null;
+                ResetForm();
+                simpleButton3.Enabled = false;
+                return;
+            }
             if (gvNhanVien.SelectedRowsCount > 0)
             {
+                simpleButton3.Enabled = true;
+
                 int[] rows = gvNhanVien.GetSelectedRows();
 
                 foreach (int item in rows)
                 {
                     if (item >= 0)
                     {
-                        nvchon = new NhanVienDTO();
+                        if (nvchon == null)
+                        {
+                            nvchon = new NhanVienDTO();                            
+                        }
                         nvchon.HovaTen = gvNhanVien.GetRowCellValue(item, ColTenNV).ToString().Trim();
                         nvchon.NgaySinh = DateTime.Parse(gvNhanVien.GetRowCellValue(item, ColNgaySinh).ToString().Trim());
                         nvchon.GioiTinh = gvNhanVien.GetRowCellValue(item, ColGioiTinh).ToString().Trim();
@@ -183,11 +195,13 @@ namespace DA_RapChieuPhim
                         nvchon.NgayVaoLam = DateTime.Parse(gvNhanVien.GetRowCellValue(item, ColNVL).ToString().Trim());
                         nvchon.Password = gvNhanVien.GetRowCellValue(item, ColPass).ToString().Trim();
                         nvchon.MaNV = gvNhanVien.GetRowCellValue(item, ColMaNV).ToString().Trim();
+                        nvchon.TrangThai = int.Parse(gvNhanVien.GetRowCellValue(item, ColTrangThai).ToString().Trim());
                         txtPass.Enabled = false;
                     }
                     else
                     {
                         nvchon = null;
+                        return;
                     }
                 }
             }
@@ -218,7 +232,26 @@ namespace DA_RapChieuPhim
             {
                 pictureBox1.Image = null;
             }
+            chkTrangthai.Checked = (nvchon.TrangThai == 0) ? true : false;
            
+        }
+
+        private void ResetForm()
+        {
+            txtTenNV.Text = "";
+            dtNS.Text = "";
+            txtDC.Text = "";
+            rdoNam.Checked = false;
+            rdoNu.Checked = false;
+            txtEmail.Text = "";
+            txtPass.Text = "";
+            dtNVL.Text = "";
+            lUpLuong.EditValue = null;
+            lUpChucVu.EditValue = null;
+            chkTrangthai.Checked = false;
+            pictureBox1.Image = null;
+            btnXoa.Enabled = false;
+            simpleButton3.Enabled = false;
         }
 
         private void simpleButton3_Click(object sender, EventArgs e)
@@ -226,7 +259,7 @@ namespace DA_RapChieuPhim
             int[] i = gvNhanVien.GetSelectedRows();
             foreach (int rows in i)
             {
-                if (rows >= 0)
+                if (rows >= 0 && nvchon != null)
                 {
                     nvchon.HovaTen = txtTenNV.Text;
                     nvchon.NgaySinh = DateTime.Parse(dtNS.Text);
@@ -241,6 +274,7 @@ namespace DA_RapChieuPhim
                     {
                         MessageBox.Show("Cập nhật Thành Công", "Thông Báo");
                         loadNV();
+                        ResetForm();
                     }
                     else
                     {
@@ -250,13 +284,12 @@ namespace DA_RapChieuPhim
             }
         }
 
-       
-
-       
-
-        
-
-        
-        
+        private void gvNhanVien_RowClick(object sender, DevExpress.XtraGrid.Views.Grid.RowClickEventArgs e)
+        {
+            if (gvNhanVien.SelectedRowsCount > 0)
+            {
+                btnXoa.Enabled = true;
+            }
+        }
     }
 }

@@ -31,6 +31,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.lUpLoaiPhong = new DevExpress.XtraEditors.LookUpEdit();
             this.gcPhong = new DevExpress.XtraGrid.GridControl();
             this.gvPhong = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.ColMaPhong = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -45,14 +46,13 @@
             this.txtMPhong = new DevExpress.XtraEditors.TextEdit();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.lUpLoaiPhong = new DevExpress.XtraEditors.LookUpEdit();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.lUpLoaiPhong.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcPhong)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvPhong)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSLCho.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTenPhong.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMPhong.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lUpLoaiPhong.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -96,6 +96,15 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "groupBox1";
             // 
+            // lUpLoaiPhong
+            // 
+            this.lUpLoaiPhong.Location = new System.Drawing.Point(511, 41);
+            this.lUpLoaiPhong.Name = "lUpLoaiPhong";
+            this.lUpLoaiPhong.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.lUpLoaiPhong.Size = new System.Drawing.Size(200, 20);
+            this.lUpLoaiPhong.TabIndex = 12;
+            // 
             // gcPhong
             // 
             this.gcPhong.Location = new System.Drawing.Point(0, 219);
@@ -116,6 +125,12 @@
             this.ColSL});
             this.gvPhong.GridControl = this.gcPhong;
             this.gvPhong.Name = "gvPhong";
+            this.gvPhong.OptionsBehavior.AllowAddRows = DevExpress.Utils.DefaultBoolean.False;
+            this.gvPhong.OptionsBehavior.AllowDeleteRows = DevExpress.Utils.DefaultBoolean.False;
+            this.gvPhong.OptionsBehavior.Editable = false;
+            this.gvPhong.OptionsBehavior.ReadOnly = true;
+            this.gvPhong.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.gvPhong.RowClick += new DevExpress.XtraGrid.Views.Grid.RowClickEventHandler(this.gvPhong_RowClick);
             // 
             // ColMaPhong
             // 
@@ -223,15 +238,6 @@
             this.label3.TabIndex = 2;
             this.label3.Text = "Loại Phòng";
             // 
-            // lUpLoaiPhong
-            // 
-            this.lUpLoaiPhong.Location = new System.Drawing.Point(511, 41);
-            this.lUpLoaiPhong.Name = "lUpLoaiPhong";
-            this.lUpLoaiPhong.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.lUpLoaiPhong.Size = new System.Drawing.Size(200, 20);
-            this.lUpLoaiPhong.TabIndex = 12;
-            // 
             // FormPhong
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -243,12 +249,12 @@
             this.Load += new System.EventHandler(this.FormPhong_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.lUpLoaiPhong.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcPhong)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvPhong)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSLCho.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTenPhong.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMPhong.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lUpLoaiPhong.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }

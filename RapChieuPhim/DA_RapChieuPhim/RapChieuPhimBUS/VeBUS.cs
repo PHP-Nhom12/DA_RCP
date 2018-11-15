@@ -22,7 +22,7 @@ namespace RapChieuPhimBUS
             return ve.TimVe(MaFilter, strQuery);
         }
 
-        public List<VeDTO> ThemVe(VeDTO venew)
+        public bool ThemVe(VeDTO venew)
         {
             VeDAO ve = new VeDAO();
             return ve.ThemVe(venew);

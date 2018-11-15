@@ -92,7 +92,7 @@
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("TenVoucher", "Tên Voucher"),
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("TiLe", "Tỉ Lệ"),
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("HanSuDung", "Hạn SD")});
-            this.lueVoucher.Properties.NullText = "Please Select";
+            this.lueVoucher.Properties.NullText = "";
             this.lueVoucher.Size = new System.Drawing.Size(185, 20);
             this.lueVoucher.TabIndex = 22;
             this.lueVoucher.EditValueChanged += new System.EventHandler(this.lueVoucher_EditValueChanged);
@@ -105,7 +105,7 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.lueGhe.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("MaGhe", "Mã Ghế")});
-            this.lueGhe.Properties.NullText = "Please Select";
+            this.lueGhe.Properties.NullText = "";
             this.lueGhe.Size = new System.Drawing.Size(185, 20);
             this.lueGhe.TabIndex = 21;
             this.lueGhe.EditValueChanged += new System.EventHandler(this.lueGhe_EditValueChanged_1);
@@ -116,7 +116,10 @@
             this.lueTenPhong.Name = "lueTenPhong";
             this.lueTenPhong.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.lueTenPhong.Properties.NullText = "Please Select";
+            this.lueTenPhong.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("TenPhong", "Tên Phòng"),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("SLCho", "Số Ghế")});
+            this.lueTenPhong.Properties.NullText = "";
             this.lueTenPhong.Size = new System.Drawing.Size(185, 20);
             this.lueTenPhong.TabIndex = 20;
             this.lueTenPhong.EditValueChanged += new System.EventHandler(this.lueTenPhong_EditValueChanged);
@@ -128,10 +131,11 @@
             this.lueTenPhim.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.lueTenPhim.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Mac", "Mác"),
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("TenPhim", "Tên Phim"),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Mac", "Mác")});
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("NDPhim", "Mô Tả")});
             this.lueTenPhim.Properties.DisplayFormat.FormatString = "P";
-            this.lueTenPhim.Properties.NullText = "Please Select";
+            this.lueTenPhim.Properties.NullText = "";
             this.lueTenPhim.Size = new System.Drawing.Size(185, 20);
             this.lueTenPhim.TabIndex = 19;
             this.lueTenPhim.EditValueChanged += new System.EventHandler(this.lueTenPhim_EditValueChanged);
@@ -160,7 +164,7 @@
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("TenTV", "Tên Thành Viên"),
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("CMND", "CMND"),
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("NgaySinh", "Ngày Sinh")});
-            this.lueMaTV.Properties.NullText = "Please Select";
+            this.lueMaTV.Properties.NullText = "";
             this.lueMaTV.Size = new System.Drawing.Size(185, 20);
             this.lueMaTV.TabIndex = 17;
             this.lueMaTV.EditValueChanged += new System.EventHandler(this.lueMaTV_EditValueChanged);
@@ -174,6 +178,7 @@
             this.chbVoucher.Properties.Caption = "Voucher";
             this.chbVoucher.Size = new System.Drawing.Size(82, 22);
             this.chbVoucher.TabIndex = 16;
+            this.chbVoucher.CheckedChanged += new System.EventHandler(this.chbVoucher_CheckedChanged);
             // 
             // dateNgay
             // 

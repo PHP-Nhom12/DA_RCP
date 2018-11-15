@@ -15,10 +15,15 @@ namespace RapChieuPhimBUS
             PhongDAO phong = new PhongDAO();
             return phong.LoadDSPhong();
         }
-        public List<PhongDTO> ThemPhongChieu(int MaPhong, string TenPhong, int LoaiPhong, int SLCho)
+        public List<PhongDTO> LoadPhong(int MaPhim)
+        {
+            PhongDAO phong = new PhongDAO();
+            return phong.LoadDSPhong(MaPhim);
+        }
+        public bool ThemPhongChieu(PhongDTO phong)
         {
             PhongDAO pDAO = new PhongDAO();
-            return pDAO.ThemPhong(MaPhong,TenPhong,LoaiPhong,SLCho);
+            return pDAO.ThemPhong(phong);
         }
         public int Xoa(int MaPhong)
         {

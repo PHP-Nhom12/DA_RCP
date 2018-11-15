@@ -71,6 +71,7 @@
             this.txtPass = new DevExpress.XtraEditors.TextEdit();
             this.dtNS = new DevExpress.XtraEditors.DateEdit();
             this.txtTenNV = new DevExpress.XtraEditors.TextEdit();
+            this.ColTrangThai = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.gbQLNV.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).BeginInit();
@@ -359,6 +360,7 @@
             this.gcNhanVien.TabIndex = 33;
             this.gcNhanVien.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvNhanVien});
+            this.gcNhanVien.Click += new System.EventHandler(this.gcNhanVien_Click);
             this.gcNhanVien.DoubleClick += new System.EventHandler(this.gcNhanVien_DoubleClick);
             // 
             // gvNhanVien
@@ -374,10 +376,16 @@
             this.ColLuong,
             this.ColPass,
             this.ColHA,
-            this.ColNVL});
+            this.ColNVL,
+            this.ColTrangThai});
             this.gvNhanVien.GridControl = this.gcNhanVien;
             this.gvNhanVien.Name = "gvNhanVien";
+            this.gvNhanVien.OptionsBehavior.AllowAddRows = DevExpress.Utils.DefaultBoolean.False;
+            this.gvNhanVien.OptionsBehavior.AllowDeleteRows = DevExpress.Utils.DefaultBoolean.False;
+            this.gvNhanVien.OptionsBehavior.Editable = false;
             this.gvNhanVien.OptionsBehavior.ReadOnly = true;
+            this.gvNhanVien.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.gvNhanVien.RowClick += new DevExpress.XtraGrid.Views.Grid.RowClickEventHandler(this.gvNhanVien_RowClick);
             // 
             // ColMaNV
             // 
@@ -533,6 +541,12 @@
             this.txtTenNV.Size = new System.Drawing.Size(225, 20);
             this.txtTenNV.TabIndex = 25;
             // 
+            // ColTrangThai
+            // 
+            this.ColTrangThai.Caption = "Trạng Thái";
+            this.ColTrangThai.FieldName = "TrangThai";
+            this.ColTrangThai.Name = "ColTrangThai";
+            // 
             // QLNV
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -613,6 +627,7 @@
         private System.Windows.Forms.RadioButton rdoNam;
         private DevExpress.XtraGrid.Columns.GridColumn ColPass;
         private DevExpress.XtraGrid.Columns.GridColumn ColNVL;
+        private DevExpress.XtraGrid.Columns.GridColumn ColTrangThai;
 
     }
 }
