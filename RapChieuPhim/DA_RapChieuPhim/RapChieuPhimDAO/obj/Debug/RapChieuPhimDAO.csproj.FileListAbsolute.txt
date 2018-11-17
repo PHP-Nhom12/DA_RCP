@@ -19,10 +19,10 @@ D:\github_doanRapCHieuPhim\DA_RCP\DA_RCP\RapChieuPhim\DA_RapChieuPhim\RapChieuPh
 D:\github_doanRapCHieuPhim\DA_RCP\DA_RCP\RapChieuPhim\DA_RapChieuPhim\RapChieuPhimDAO\obj\Debug\RapChieuPhimDAO.csprojResolveAssemblyReference.cache
 D:\github_doanRapCHieuPhim\DA_RCP\DA_RCP\RapChieuPhim\DA_RapChieuPhim\RapChieuPhimDAO\obj\Debug\RapChieuPhimDAO.dll
 D:\github_doanRapCHieuPhim\DA_RCP\DA_RCP\RapChieuPhim\DA_RapChieuPhim\RapChieuPhimDAO\obj\Debug\RapChieuPhimDAO.pdb
-D:\Phong\DA_RCP\RapChieuPhim\DA_RapChieuPhim\RapChieuPhimDAO\obj\Debug\RapChieuPhimDAO.csprojResolveAssemblyReference.cache
 D:\Phong\DA_RCP\RapChieuPhim\DA_RapChieuPhim\RapChieuPhimDAO\bin\Debug\RapChieuPhimDAO.dll
 D:\Phong\DA_RCP\RapChieuPhim\DA_RapChieuPhim\RapChieuPhimDAO\bin\Debug\RapChieuPhimDAO.pdb
 D:\Phong\DA_RCP\RapChieuPhim\DA_RapChieuPhim\RapChieuPhimDAO\bin\Debug\RapChieuPhimDTO.dll
 D:\Phong\DA_RCP\RapChieuPhim\DA_RapChieuPhim\RapChieuPhimDAO\bin\Debug\RapChieuPhimDTO.pdb
+D:\Phong\DA_RCP\RapChieuPhim\DA_RapChieuPhim\RapChieuPhimDAO\obj\Debug\RapChieuPhimDAO.csprojResolveAssemblyReference.cache
 D:\Phong\DA_RCP\RapChieuPhim\DA_RapChieuPhim\RapChieuPhimDAO\obj\Debug\RapChieuPhimDAO.dll
 D:\Phong\DA_RCP\RapChieuPhim\DA_RapChieuPhim\RapChieuPhimDAO\obj\Debug\RapChieuPhimDAO.pdb

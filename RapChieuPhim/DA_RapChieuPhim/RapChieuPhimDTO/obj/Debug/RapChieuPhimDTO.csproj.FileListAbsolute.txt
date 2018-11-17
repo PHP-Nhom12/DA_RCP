@@ -15,3 +15,4 @@ D:\Phong\DA_RCP\RapChieuPhim\DA_RapChieuPhim\RapChieuPhimDTO\bin\Debug\RapChieuP
 D:\Phong\DA_RCP\RapChieuPhim\DA_RapChieuPhim\RapChieuPhimDTO\bin\Debug\RapChieuPhimDTO.pdb
 D:\Phong\DA_RCP\RapChieuPhim\DA_RapChieuPhim\RapChieuPhimDTO\obj\Debug\RapChieuPhimDTO.dll
 D:\Phong\DA_RCP\RapChieuPhim\DA_RapChieuPhim\RapChieuPhimDTO\obj\Debug\RapChieuPhimDTO.pdb
+D:\Phong\DA_RCP\RapChieuPhim\DA_RapChieuPhim\RapChieuPhimDTO\obj\Debug\RapChieuPhimDTO.csprojResolveAssemblyReference.cache

@@ -53,6 +53,7 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thống Kê";
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // rdbPhim
             // 
@@ -94,10 +95,10 @@
             this.rdbGiaVeTheoSuat.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rdbGiaVeTheoSuat.Location = new System.Drawing.Point(44, 165);
             this.rdbGiaVeTheoSuat.Name = "rdbGiaVeTheoSuat";
-            this.rdbGiaVeTheoSuat.Size = new System.Drawing.Size(251, 24);
+            this.rdbGiaVeTheoSuat.Size = new System.Drawing.Size(235, 24);
             this.rdbGiaVeTheoSuat.TabIndex = 2;
             this.rdbGiaVeTheoSuat.TabStop = true;
-            this.rdbGiaVeTheoSuat.Text = "Thống Kế Giá Vé Theo Suất";
+            this.rdbGiaVeTheoSuat.Text = "Thống Kế Giá Vé Theo Ca";
             this.rdbGiaVeTheoSuat.UseVisualStyleBackColor = true;
             // 
             // rdbLuongNV
@@ -133,6 +134,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormThongKe";
             this.Text = "FormThongKe";
+            this.Load += new System.EventHandler(this.FormThongKe_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);

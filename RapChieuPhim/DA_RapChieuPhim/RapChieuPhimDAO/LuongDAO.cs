@@ -56,5 +56,40 @@ namespace RapChieuPhimDAO
            sdr.Close();
            return ls;
        }
+
+        public double TongLuong ()
+        {
+            string strQuery = "select sum(L.lUONGcb * LO.heso) from NhanVien NV, Luong L, MaLoaiNV LO WHERE NV.maLuong = L.maluong AND NV.LoaiNV = LO.MaLoaiNV";
+            SqlConnection con = DataProvider.TaoKetNoi();
+            SqlDataReader rdr = DataProvider.TruyVanDuLieu(strQuery,con);
+            double luong = 0;
+            if(rdr.Read())
+            {
+                luong = (double)rdr[0];
+            }
+            rdr.Close();
+            con.Close();
+
+            return luong;
+        }
+
+       public double TinhLuongTungNV(NhanVienDTO MaNV)
+        {
+            string strTruyVan = "select L.lUONGcb * LO.heso from NhanVien NV, Luong L, MaLoaiNV LO WHERE NV.maLuong = L.maluong AND NV.LoaiNV = LO.MaLoaiNV";
+            SqlConnection con = DataProvider.TaoKetNoi();
+            SqlDataReader rdr = DataProvider.TruyVanDuLieu(strTruyVan, con);
+            SqlParameter[] par = new SqlParameter[1];
+            par[0] = new SqlParameter("@MaNV", MaNV);
+            double luong = 0;
+            if (rdr.Read())
+            {
+                luong = (double)rdr[0];
+            }
+            rdr.Close();
+            con.Close();
+
+            return luong;
+        }
+
     }
 }
