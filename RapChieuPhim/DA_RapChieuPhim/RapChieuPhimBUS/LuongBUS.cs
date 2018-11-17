@@ -10,6 +10,7 @@ namespace RapChieuPhimBUS
 {
     public class LuongBUS
     {
+       
         public List<LuongDTO> LuongNV()
         {
             LuongDAO nvBUS = new LuongDAO();
@@ -19,6 +20,16 @@ namespace RapChieuPhimBUS
         {
             LuongDAO nvBUS = new LuongDAO();
             return nvBUS.LuongOfNVien();
+        }
+        public double TongLuong()
+        {
+            LuongDAO luong = new LuongDAO();
+            return luong.TongLuong();
+        } 
+        public double TinhLuongTungNV(NhanVienDTO MaNV )
+        {
+            LuongDAO luongnv = new LuongDAO();
+            return luongnv.TinhLuongTungNV(MaNV);
         }
     }
 }
