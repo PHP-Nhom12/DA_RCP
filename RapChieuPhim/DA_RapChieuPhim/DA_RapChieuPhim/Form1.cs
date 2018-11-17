@@ -102,6 +102,7 @@ namespace DA_RapChieuPhim
 
         private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            DongTatCaForm();
             FormDoiMK frmDK = new FormDoiMK();
             frmDK.MdiParent = this;
             frmDK.Dock = DockStyle.Fill;
@@ -111,6 +112,7 @@ namespace DA_RapChieuPhim
 
         private void barButtonItem2_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            DongTatCaForm();
             QLNV frmQLNV = new QLNV();
             frmQLNV.MdiParent = this;
             frmQLNV.Dock = DockStyle.Fill;
@@ -167,8 +169,20 @@ namespace DA_RapChieuPhim
            
         }
 
+        private void DongTatCaForm()
+        {
+            foreach (Form f in this.MdiChildren)
+            {
+                if (f.MdiParent == this && !f.IsDisposed)
+                {
+                    f.Dispose();
+                }
+            }
+        }
+
         private void btnQLNV_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            DongTatCaForm();
             QLNV frmQLNV = new QLNV();
             frmQLNV.MdiParent = this;
             frmQLNV.Dock = DockStyle.Fill;
@@ -177,6 +191,7 @@ namespace DA_RapChieuPhim
 
         private void btnQLTV_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            DongTatCaForm();
             QLTV frmTV = new QLTV();
             frmTV.MdiParent = this;
             frmTV.Dock = DockStyle.Fill;
@@ -185,6 +200,7 @@ namespace DA_RapChieuPhim
 
         private void barButtonItem1_ItemClick_1(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            DongTatCaForm();
             FormThongKe frmTK = new FormThongKe();
             frmTK.Dock = DockStyle.Fill;
             frmTK.MdiParent = this;
@@ -193,6 +209,7 @@ namespace DA_RapChieuPhim
 
         private void btnQLVe_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            DongTatCaForm();
             QLVe frmVe = new QLVe();
             frmVe.Dock = DockStyle.Fill;
             frmVe.MdiParent = this;
@@ -201,6 +218,7 @@ namespace DA_RapChieuPhim
 
         private void btnQLyLChieu_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            DongTatCaForm();
             FormQL_LChieu FrmLC = new FormQL_LChieu(); 
             FrmLC.Dock = DockStyle.Fill;
             FrmLC.MdiParent = this;
@@ -209,6 +227,7 @@ namespace DA_RapChieuPhim
 
         private void barButtonItem5_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            DongTatCaForm();
             FormDatVe FrmDV = new FormDatVe();
             FrmDV.Dock = DockStyle.Fill;
             FrmDV.MdiParent = this;
@@ -217,6 +236,7 @@ namespace DA_RapChieuPhim
 
         private void btnQLPhong_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            DongTatCaForm();
             FormPhong FrmPhong = new FormPhong();
             FrmPhong.Dock = DockStyle.Fill;
             FrmPhong.MdiParent = this;

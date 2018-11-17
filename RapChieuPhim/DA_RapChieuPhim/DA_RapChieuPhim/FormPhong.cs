@@ -14,36 +14,55 @@ namespace DA_RapChieuPhim
 {
     public partial class FormPhong : Form
     {
+        PhongBUS pBUS = new PhongBUS();
+        LoaiPhongBUS loaiphong = new LoaiPhongBUS();
+        PhongDTO phongchon = null;
         
         public FormPhong()
         {
             InitializeComponent();
         }
-        PhongBUS pBUS = new PhongBUS();
-        PhongDTO phongchon = null;
+
         private void FormPhong_Load(object sender, EventArgs e)
         {
+            button2.Enabled = false;
+            button3.Enabled = false;
+
             gcPhong.DataSource = pBUS.LoadPhong();
-            lUpLoaiPhong.Properties.DataSource = pBUS.LoadPhong();
-            lUpLoaiPhong.Properties.DisplayMember = "LoaiPhong";
-            lUpLoaiPhong.Properties.ValueMember = "MaPhong";
+            lUpLoaiPhong.Properties.DataSource = loaiphong.LoadLoaiPhong();
+            lUpLoaiPhong.Properties.DisplayMember = "MaLoai";
+            lUpLoaiPhong.Properties.ValueMember = "MaLoai";
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            int MP =int.Parse( txtMPhong.Text);
-            string TP = txtTenPhong.Text;
-            int LP = (int)lUpLoaiPhong.EditValue;
-            int SL = int.Parse(txtSLCho.Text);
-            List<PhongDTO> kq =pBUS.ThemPhongChieu(MP,TP,LP,SL);
-            if(kq!=null)
+            if (txtMPhong.Text != "" && txtTenPhong.Text != "" && lUpLoaiPhong.EditValue != null && txtSLCho.Text != "")
             {
-                MessageBox.Show("Thêm Thành Công", "Thông Báo");
-                gcPhong.DataSource = pBUS.LoadPhong();
+                if (phongchon == null)
+                {
+                    phongchon = new PhongDTO();
+                }
+
+                phongchon.MaPhong =int.Parse( txtMPhong.Text);
+                phongchon.TenPhong = txtTenPhong.Text;
+                phongchon.LoaiPhong = int.Parse(lUpLoaiPhong.EditValue.ToString());
+                phongchon.SLCho = int.Parse(txtSLCho.Text);
+
+                if (pBUS.ThemPhongChieu(phongchon))
+                {
+                    MessageBox.Show("Thêm Thành Công", "Thông Báo");
+                    gcPhong.DataSource = pBUS.LoadPhong();
+                }
+                else
+                {
+                    MessageBox.Show("Thêm Thất Bại", "Thông Báo");
+                }
+                ResetForm();
             }
             else
             {
-                MessageBox.Show("Thêm Thất Bại", "Thông Báo");
+                MessageBox.Show("Chưa nhập dữ liệu!");
+                return;
             }
         }
 
@@ -51,20 +70,20 @@ namespace DA_RapChieuPhim
         {
             if (gvPhong.SelectedRowsCount == 0)
             {
-                MessageBox.Show("Chưa chọn đối tượng để xóa", "Thông Báo");
+                MessageBox.Show("Chưa chọn đối tượng để xóa!", "Thông Báo");
             }
             else
             {
-                DialogResult r = MessageBox.Show("Bạn có chắn chắn muốn xóa nhân viên", "Thông Báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-                if (DialogResult.Yes == r)
+                int[] i = gvPhong.GetSelectedRows();
+                foreach (int rows in i)
                 {
-                    int[] i = gvPhong.GetSelectedRows();
-                    foreach (int rows in i)
+                    if (rows >= 0)
                     {
-                        if (rows >= 0)
+                        string TenPhong = gvPhong.GetRowCellValue(rows, ColTenPhong).ToString();
+                        int MaPhong = int.Parse(gvPhong.GetRowCellValue(rows,ColMaPhong).ToString());
+                        DialogResult r = MessageBox.Show("Bạn có chắn chắn muốn xóa phòng '"+TenPhong+"'?", "Thông Báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                        if (DialogResult.Yes == r)
                         {
-                            //string Email = gvNhanVien.GetRowCellValue(rows, ColMaNV).ToString();
-                            int MaPhong = int.Parse(gvPhong.GetRowCellValue(rows,ColMaPhong).ToString());
                             if (pBUS.Xoa(MaPhong) >= 1)
                             {
                                 MessageBox.Show("Xóa Thành Công", "Thông Báo", MessageBoxButtons.OK);
@@ -75,6 +94,7 @@ namespace DA_RapChieuPhim
                                 MessageBox.Show("Xóa Thất Bại", "Thông Báo", MessageBoxButtons.OK);
                             }
                         }
+                        ResetForm();
                         gcPhong.DataSource = pBUS.LoadPhong();
                     }
 
@@ -82,14 +102,27 @@ namespace DA_RapChieuPhim
             }
         }
 
+        private void ResetForm()
+        {
+            txtMPhong.Text = "";
+            txtTenPhong.Text = "";
+            lUpLoaiPhong.EditValue = null;
+            txtSLCho.Text = "";
+            button2.Enabled = false;
+            button3.Enabled=false;
+        }
+
         private void button3_Click(object sender, EventArgs e)
         {
             int[] i = gvPhong.GetSelectedRows();
             foreach (int rows in i)
             {
-                if (rows > 0)
+                if (rows >= 0)
                 {
-
+                    if (phongchon == null)
+                    {
+                        phongchon = new PhongDTO();
+                    }
 
                     phongchon.TenPhong = txtTenPhong.Text;
                     phongchon.LoaiPhong = int.Parse(lUpLoaiPhong.EditValue.ToString());
@@ -104,14 +137,23 @@ namespace DA_RapChieuPhim
                     {
                         MessageBox.Show("Cập Nhật Thất Bại", "Thông Báo");
                     }
+                    ResetForm();
                 }
             }
         }
 
         private void gcPhong_DoubleClick(object sender, EventArgs e)
         {
+            if (phongchon != null)
+            {
+                phongchon = null;
+                ResetForm();
+                button3.Enabled = false;
+                return;
+            }
             if (gvPhong.SelectedRowsCount > 0)
             {
+                button3.Enabled = true;
                 int[] rows = gvPhong.GetSelectedRows();
 
                 foreach (int item in rows)
@@ -137,6 +179,14 @@ namespace DA_RapChieuPhim
             lUpLoaiPhong.EditValue = (int)phongchon.LoaiPhong;
 
           
+        }
+
+        private void gvPhong_RowClick(object sender, DevExpress.XtraGrid.Views.Grid.RowClickEventArgs e)
+        {
+            if (gvPhong.SelectedRowsCount > 0)
+            {
+                button2.Enabled = true;
+            }
         }
     }
 }

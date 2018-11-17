@@ -30,30 +30,49 @@ namespace RapChieuPhimDAO
             conn.Close();
             return ls;
         }
-        public List<PhongDTO> ThemPhong(int MaPhong, string TenPhong, int LoaiPhong, int SLCho)
+        public List<PhongDTO> LoadDSPhong(int MaPhim)
         {
-            string strTruyVan = "INSERT INTO PhongChieu(MaPhong,TenPhong,LoaiPhong,SLCho,TrangThai)" + " VALUES(@MaPhong,@TenPhong,@LoaiPhong,@SLCho,1)";
-            SqlParameter[] par = new SqlParameter[4];
-            par[0] = new SqlParameter("@MaPhong", MaPhong);
-            par[1] = new SqlParameter("@TenPhong", TenPhong);
-            par[2] = new SqlParameter("@LoaiPhong", LoaiPhong);
-            par[3] = new SqlParameter("@SLCho", SLCho);
             SqlConnection conn = DataProvider.TaoKetNoi();
+            string strTruyVan = "Select * From PhongChieu, ChiTietLichChieu where ChiTietLichChieu.MaPhim = @MaPhim AND PhongChieu.MaPhong = ChiTietLichChieu.MaPhong AND PhongChieu.TrangThai=1";
+            SqlParameter[] par = new SqlParameter[1];
+            par[0] = new SqlParameter("@MaPhim", MaPhim);
             SqlDataReader sdr = DataProvider.TruyVanDuLieu(strTruyVan, par, conn);
             List<PhongDTO> ls = new List<PhongDTO>();
             while (sdr.Read())
             {
-
                 PhongDTO ketqua = new PhongDTO();
                 ketqua.MaPhong = int.Parse(sdr["MaPhong"].ToString());
                 ketqua.TenPhong = sdr["TenPhong"].ToString();
                 ketqua.LoaiPhong = int.Parse(sdr["LoaiPhong"].ToString());
                 ketqua.SLCho = int.Parse(sdr["SLCho"].ToString());
+                //ketqua.TrangThai = int.Parse(sdr["TrangThai"].ToString());
                 ls.Add(ketqua);
             }
             sdr.Close();
             conn.Close();
             return ls;
+        }
+        public bool ThemPhong(PhongDTO phong)
+        {
+            string strTruyVan = "INSERT INTO PhongChieu(MaPhong,TenPhong,LoaiPhong,SLCho,TrangThai)" + " VALUES(@MaPhong,@TenPhong,@LoaiPhong,@SLCho,1)";
+
+            string strTruyVanPhu = "INSERT INTO Ghe(MaGhe, MaPhong, TrangThai) VALUES ('A1', "+phong.MaPhong+", 1)";
+            for (int i = 2; i <= phong.SLCho; i++)
+            {
+                strTruyVanPhu += ",('A"+i+"',"+phong.MaPhong+",1)";
+            }
+            SqlParameter[] par = new SqlParameter[4];
+            par[0] = new SqlParameter("@MaPhong", phong.MaPhong);
+            par[1] = new SqlParameter("@TenPhong", phong.TenPhong);
+            par[2] = new SqlParameter("@LoaiPhong", phong.LoaiPhong);
+            par[3] = new SqlParameter("@SLCho", phong.SLCho);
+
+            SqlConnection conn = DataProvider.TaoKetNoi();
+            bool kq = DataProvider.ThucThiCauLenh(strTruyVan, par, conn);
+            DataProvider.ThucThiCauLenh(strTruyVanPhu, conn);
+
+            return kq;
+
         }
         public int XoaPhong(int MaPhong)
         {

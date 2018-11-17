@@ -185,12 +185,10 @@
     <EmbeddedResource Include="QLVe.resx">
       <DependentUpon>QLVe.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="rptGiaVetheoCa.rdlc" />
     <EmbeddedResource Include="rptSubHeSo.rdlc" />
     <EmbeddedResource Include="rptNV.rdlc" />
     <EmbeddedResource Include="rptLuongNV.rdlc" />
     <EmbeddedResource Include="rptPhim.rdlc" />
-    <EmbeddedResource Include="rptSubGiaVeTheoCa.rdlc" />
     <EmbeddedResource Include="rptSubLuongNV.rdlc" />
     <EmbeddedResource Include="rptVe.rdlc" />
     <None Include="Properties\DataSources\RapChieuPhimDTO.CaDTO.datasource" />

@@ -15,5 +15,17 @@ namespace RapChieuPhimBUS
             VeDAO ve = new VeDAO();
             return ve.LoadVe();
         }
+
+        public List<VeDTO> TimVe ( int MaFilter, string strQuery )
+        {
+            VeDAO ve = new VeDAO();
+            return ve.TimVe(MaFilter, strQuery);
+        }
+
+        public bool ThemVe(VeDTO venew)
+        {
+            VeDAO ve = new VeDAO();
+            return ve.ThemVe(venew);
+        }
     }
 }

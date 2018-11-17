@@ -40,9 +40,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CaDAO.cs" />
+    <Compile Include="ChiTietLichChieuDAO.cs" />
     <Compile Include="DataProvider.cs" />
+    <Compile Include="GheDAO.cs" />
     <Compile Include="LichChieuDAO.cs" />
     <Compile Include="LoaiNV_DAO.cs" />
+    <Compile Include="LoaiPhongDAO.cs" />
     <Compile Include="LoaiThanhVienDAO.cs" />
     <Compile Include="LuongDAO.cs" />
     <Compile Include="NhanVienDAO.cs" />
@@ -51,6 +54,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ThanhVienDAO.cs" />
     <Compile Include="VeDAO.cs" />
+    <Compile Include="VoucherDAO.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\RapChieuPhimDTO\RapChieuPhimDTO.csproj">
