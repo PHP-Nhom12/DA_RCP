@@ -39,17 +39,20 @@
             this.radTenPhim = new System.Windows.Forms.RadioButton();
             this.gcVe = new DevExpress.XtraGrid.GridControl();
             this.gvVe = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.ColMaPhim = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.ColTenPhim = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.lUpTenPhim = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
             this.ColVitri = new DevExpress.XtraGrid.Columns.GridColumn();
             this.ColPhong = new DevExpress.XtraGrid.Columns.GridColumn();
             this.lUpTenPhong = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
             this.ColGiaVe = new DevExpress.XtraGrid.Columns.GridColumn();
             this.ColTenTV = new DevExpress.XtraGrid.Columns.GridColumn();
             this.lUPTenTV = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
+            this.ColMaVe = new DevExpress.XtraGrid.Columns.GridColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtQuery.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcVe)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvVe)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lUpTenPhim)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lUpTenPhong)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lUPTenTV)).BeginInit();
             this.SuspendLayout();
@@ -117,6 +120,7 @@
             this.button1.TabIndex = 5;
             this.button1.Text = "Xóa Vé";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // txtQuery
             // 
@@ -156,7 +160,8 @@
             this.gcVe.Name = "gcVe";
             this.gcVe.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.lUpTenPhong,
-            this.lUPTenTV});
+            this.lUPTenTV,
+            this.lUpTenPhim});
             this.gcVe.Size = new System.Drawing.Size(782, 247);
             this.gcVe.TabIndex = 0;
             this.gcVe.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -165,21 +170,38 @@
             // gvVe
             // 
             this.gvVe.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.ColMaPhim,
+            this.ColTenPhim,
             this.ColVitri,
             this.ColPhong,
             this.ColGiaVe,
-            this.ColTenTV});
+            this.ColTenTV,
+            this.ColMaVe});
             this.gvVe.GridControl = this.gcVe;
             this.gvVe.Name = "gvVe";
+            this.gvVe.OptionsBehavior.AllowAddRows = DevExpress.Utils.DefaultBoolean.False;
+            this.gvVe.OptionsBehavior.AllowDeleteRows = DevExpress.Utils.DefaultBoolean.False;
+            this.gvVe.OptionsBehavior.Editable = false;
+            this.gvVe.OptionsBehavior.ReadOnly = true;
+            this.gvVe.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.gvVe.RowClick += new DevExpress.XtraGrid.Views.Grid.RowClickEventHandler(this.gvVe_RowClick);
             // 
-            // ColMaPhim
+            // ColTenPhim
             // 
-            this.ColMaPhim.Caption = "Mã Phim";
-            this.ColMaPhim.FieldName = "MaPhim";
-            this.ColMaPhim.Name = "ColMaPhim";
-            this.ColMaPhim.Visible = true;
-            this.ColMaPhim.VisibleIndex = 0;
+            this.ColTenPhim.Caption = "Tên Phim";
+            this.ColTenPhim.ColumnEdit = this.lUpTenPhim;
+            this.ColTenPhim.FieldName = "MaPhim";
+            this.ColTenPhim.Name = "ColTenPhim";
+            this.ColTenPhim.Visible = true;
+            this.ColTenPhim.VisibleIndex = 0;
+            // 
+            // lUpTenPhim
+            // 
+            this.lUpTenPhim.AutoHeight = false;
+            this.lUpTenPhim.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.lUpTenPhim.DisplayMember = "TenPhim";
+            this.lUpTenPhim.Name = "lUpTenPhim";
+            this.lUpTenPhim.ValueMember = "MaPhim";
             // 
             // ColVitri
             // 
@@ -233,6 +255,12 @@
             this.lUPTenTV.Name = "lUPTenTV";
             this.lUPTenTV.ValueMember = "MaTV";
             // 
+            // ColMaVe
+            // 
+            this.ColMaVe.Caption = "Mã Vé";
+            this.ColMaVe.FieldName = "MaVe";
+            this.ColMaVe.Name = "ColMaVe";
+            // 
             // QLVe
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -241,12 +269,13 @@
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "QLVe";
-            this.Text = "QLVe";
+            this.Text = "Quản Lý Vé";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtQuery.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcVe)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvVe)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lUpTenPhim)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lUpTenPhong)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lUPTenTV)).EndInit();
             this.ResumeLayout(false);
@@ -265,12 +294,14 @@
         private DevExpress.XtraGrid.GridControl gcVe;
         private DevExpress.XtraGrid.Views.Grid.GridView gvVe;
         private System.Windows.Forms.Button btnSearch;
-        private DevExpress.XtraGrid.Columns.GridColumn ColMaPhim;
+        private DevExpress.XtraGrid.Columns.GridColumn ColTenPhim;
         private DevExpress.XtraGrid.Columns.GridColumn ColVitri;
         private DevExpress.XtraGrid.Columns.GridColumn ColPhong;
         private DevExpress.XtraGrid.Columns.GridColumn ColGiaVe;
         private DevExpress.XtraGrid.Columns.GridColumn ColTenTV;
         private DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit lUpTenPhong;
         private DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit lUPTenTV;
+        private DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit lUpTenPhim;
+        private DevExpress.XtraGrid.Columns.GridColumn ColMaVe;
     }
 }

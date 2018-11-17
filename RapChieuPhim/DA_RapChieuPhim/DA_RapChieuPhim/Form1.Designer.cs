@@ -43,6 +43,7 @@
             this.btnThoat = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem5 = new DevExpress.XtraBars.BarButtonItem();
+            this.btnQuanLyPhim = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.PnThongtin = new System.Windows.Forms.Panel();
@@ -76,9 +77,10 @@
             this.btnQLTV,
             this.btnThoat,
             this.barButtonItem1,
-            this.barButtonItem5});
+            this.barButtonItem5,
+            this.btnQuanLyPhim});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 13;
+            this.ribbonControl1.MaxItemId = 14;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1});
@@ -189,6 +191,14 @@
             this.barButtonItem5.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
             this.barButtonItem5.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem5_ItemClick);
             // 
+            // btnQuanLyPhim
+            // 
+            this.btnQuanLyPhim.Caption = "Quản Lý Phim";
+            this.btnQuanLyPhim.Id = 13;
+            this.btnQuanLyPhim.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem6.ImageOptions.Image")));
+            this.btnQuanLyPhim.Name = "btnQuanLyPhim";
+            this.btnQuanLyPhim.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            // 
             // ribbonPage1
             // 
             this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -202,6 +212,7 @@
             this.ribbonPageGroup1.ItemLinks.Add(this.btnQLNV);
             this.ribbonPageGroup1.ItemLinks.Add(this.btnQLPhong);
             this.ribbonPageGroup1.ItemLinks.Add(this.btnQLVe);
+            this.ribbonPageGroup1.ItemLinks.Add(this.btnQuanLyPhim);
             this.ribbonPageGroup1.ItemLinks.Add(this.btnQLyLChieu);
             this.ribbonPageGroup1.ItemLinks.Add(this.btnQLTV);
             this.ribbonPageGroup1.ItemLinks.Add(this.barButtonItem5);
@@ -307,10 +318,11 @@
             this.ClientSize = new System.Drawing.Size(754, 512);
             this.Controls.Add(this.PnThongtin);
             this.Controls.Add(this.ribbonControl1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.IsMdiContainer = true;
             this.Name = "Form1";
             this.Ribbon = this.ribbonControl1;
-            this.Text = "Form1";
+            this.Text = "Quản Lý Rạp Chiếu Phim";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).EndInit();
@@ -349,6 +361,7 @@
         private DevExpress.XtraBars.BarButtonItem btnThoat;
         private DevExpress.XtraBars.BarButtonItem barButtonItem1;
         private DevExpress.XtraBars.BarButtonItem barButtonItem5;
+        private DevExpress.XtraBars.BarButtonItem btnQuanLyPhim;
     }
 }
 

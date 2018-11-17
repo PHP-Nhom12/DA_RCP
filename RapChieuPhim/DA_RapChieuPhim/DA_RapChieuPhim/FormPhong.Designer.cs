@@ -94,7 +94,7 @@
             this.groupBox1.Size = new System.Drawing.Size(787, 419);
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "groupBox1";
+            this.groupBox1.Text = "Quản Lý Phòng";
             // 
             // lUpLoaiPhong
             // 
@@ -245,7 +245,7 @@
             this.ClientSize = new System.Drawing.Size(811, 454);
             this.Controls.Add(this.groupBox1);
             this.Name = "FormPhong";
-            this.Text = "FormPhong";
+            this.Text = "Quản Lý Phòng";
             this.Load += new System.EventHandler(this.FormPhong_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

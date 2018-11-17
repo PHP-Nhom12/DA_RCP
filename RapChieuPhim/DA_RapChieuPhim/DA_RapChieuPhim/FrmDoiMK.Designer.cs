@@ -100,7 +100,7 @@
             this.ClientSize = new System.Drawing.Size(524, 312);
             this.Controls.Add(this.groupBox1);
             this.Name = "FormDoiMK";
-            this.Text = "FrmDoiMK";
+            this.Text = "Đổi Mật Khẩu";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);

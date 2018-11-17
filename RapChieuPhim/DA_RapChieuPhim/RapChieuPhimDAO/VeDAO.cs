@@ -19,6 +19,7 @@ namespace RapChieuPhimDAO
             while (sdr.Read())
             {
                 VeDTO ketqua = new VeDTO();
+                ketqua.MaVe = int.Parse(sdr["MaVe"].ToString());
                 ketqua.MaPhim = int.Parse(sdr["MaPhim"].ToString());
                 ketqua.ViTriNgoi = sdr["ViTriNgoi"].ToString();
                 ketqua.PhongChieu = int.Parse(sdr["PhongChieu"].ToString());
@@ -38,31 +39,29 @@ namespace RapChieuPhimDAO
         {
             SqlConnection conn = DataProvider.TaoKetNoi();
 
-            string strTruyVan = "Select * From Ve where TrangThai=1";
-            SqlParameter[] par = new SqlParameter[1];
+            string strTruyVan;
 
             switch (MaFilter)
             {
                 // Tim theo Phong
                 case 1:
-                    strTruyVan = "Select * From Ve where PhongChieu LIKE %@PhongChieu% AND TrangThai=1";
-                    par[0] = new SqlParameter("@PhongChieu", strQuery);
+                    strTruyVan = "Select * From Ve, PhongChieu where Ve.PhongChieu = PhongChieu.MaPhong AND Ve.TrangThai=1 AND TenPhong LIKE N'%" + strQuery + "%'";
                     break;
                 // Tim theo ThanhVien
                 case 2:
-                    strTruyVan = "Select * From Ve where MaTV LIKE %@MaTV% AND TrangThai=1";
-                    par[0] = new SqlParameter("@MaTV", strQuery);
+                    strTruyVan = "Select * From Ve, ThanhVien where Ve.MaTV = ThanhVien.MaTV AND Ve.TrangThai=1 AND TenTV LIKE N'%" + strQuery + "%'";
                     break;
                 // Tim theo Phim
                 case 3:
-                    strTruyVan = "Select * From Ve where MaPhim LIKE %@MaPhim% AND TrangThai=1";
-                    par[0] = new SqlParameter("@MaPhim", strQuery);
+                    strTruyVan = "Select * From Ve, Movie where Ve.MaPhim = Movie.MaPhim AND Ve.TrangThai=1 AND TenPhim LIKE N'%" + strQuery + "%'";
                     break;
                 default:
+                    strTruyVan = "Select * From Ve, Movie, PhongChieu, ThanhVien where  Ve.TrangThai=1 AND Ve.MaPhim = Movie.MaPhim AND Ve.PhongChieu = PhongChieu.MaPhong AND Ve.MaTV = ThanhVien.MaTV AND TenPhim LIKE N'%" + strQuery + "%' OR ViTriNgoi LIKE N'%" + strQuery + "%' OR TenPhong LIKE N'%" + strQuery + "%' OR GiaVe LIKE N'%" + strQuery + "%' OR TenTV LIKE N'%" + strQuery + "%'";
                     break;
             }
 
-            SqlDataReader sdr = DataProvider.TruyVanDuLieu(strTruyVan, par, conn);
+            SqlDataReader sdr = DataProvider.TruyVanDuLieu(strTruyVan, conn);
+            
             List<VeDTO> lsVe = new List<VeDTO>();
             while (sdr.Read())
             {
@@ -96,6 +95,15 @@ namespace RapChieuPhimDAO
             pars[7] = new SqlParameter("@MaLichChieu", ve.MaLichChieu);
             SqlConnection conn = DataProvider.TaoKetNoi();
             return DataProvider.ThucThiCauLenh(strTruyVan, pars, conn);
+        }
+
+        public bool XoaVe(int MaVe)
+        {
+            VeDTO nv = new VeDTO();
+            SqlConnection conn = DataProvider.TaoKetNoi();
+            string strTruyVan = "Update Ve Set TrangThai=0 WHERE MaVe = " + MaVe;
+
+            return DataProvider.ThucThiCauLenh(strTruyVan, conn);
         }
     }
 }

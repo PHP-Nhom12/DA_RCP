@@ -46,6 +46,7 @@ namespace DA_RapChieuPhim
             btnQLPhong.Enabled = false;
             btnQLVe.Enabled = false;
             btnQLyLChieu.Enabled = false;
+            btnQuanLyPhim.Enabled = false;
         }
         private void XulyDangNhapDangXuat()
         {

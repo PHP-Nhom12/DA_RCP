@@ -65,13 +65,13 @@
             this.ColPass = new DevExpress.XtraGrid.Columns.GridColumn();
             this.ColHA = new DevExpress.XtraGrid.Columns.GridColumn();
             this.ColNVL = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.ColTrangThai = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemComboBox1 = new DevExpress.XtraEditors.Repository.RepositoryItemComboBox();
             this.dtNVL = new DevExpress.XtraEditors.DateEdit();
             this.txtEmail = new DevExpress.XtraEditors.TextEdit();
             this.txtPass = new DevExpress.XtraEditors.TextEdit();
             this.dtNS = new DevExpress.XtraEditors.DateEdit();
             this.txtTenNV = new DevExpress.XtraEditors.TextEdit();
-            this.ColTrangThai = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.gbQLNV.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).BeginInit();
@@ -489,6 +489,12 @@
             this.ColNVL.FieldName = "NgayVaoLam";
             this.ColNVL.Name = "ColNVL";
             // 
+            // ColTrangThai
+            // 
+            this.ColTrangThai.Caption = "Trạng Thái";
+            this.ColTrangThai.FieldName = "TrangThai";
+            this.ColTrangThai.Name = "ColTrangThai";
+            // 
             // repositoryItemComboBox1
             // 
             this.repositoryItemComboBox1.AutoHeight = false;
@@ -541,12 +547,6 @@
             this.txtTenNV.Size = new System.Drawing.Size(225, 20);
             this.txtTenNV.TabIndex = 25;
             // 
-            // ColTrangThai
-            // 
-            this.ColTrangThai.Caption = "Trạng Thái";
-            this.ColTrangThai.FieldName = "TrangThai";
-            this.ColTrangThai.Name = "ColTrangThai";
-            // 
             // QLNV
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -556,7 +556,7 @@
             this.Controls.Add(this.gbQLNV);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "QLNV";
-            this.Text = "QLTV";
+            this.Text = "Quản Lý Nhân Viên";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.QLNV_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

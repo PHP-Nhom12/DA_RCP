@@ -35,6 +35,7 @@
             this.txtTenTV = new DevExpress.XtraEditors.TextEdit();
             this.gcThanhVien = new DevExpress.XtraGrid.GridControl();
             this.gvThanhVien = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.ColMaTV = new DevExpress.XtraGrid.Columns.GridColumn();
             this.ColTenTVien = new DevExpress.XtraGrid.Columns.GridColumn();
             this.ColLoaiTv = new DevExpress.XtraGrid.Columns.GridColumn();
             this.LUpLoaiTV = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
@@ -47,7 +48,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.ColMaTV = new DevExpress.XtraGrid.Columns.GridColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.lookUpEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtNS.Properties.CalendarTimeProperties)).BeginInit();
@@ -139,6 +139,14 @@
             this.ColNS});
             this.gvThanhVien.GridControl = this.gcThanhVien;
             this.gvThanhVien.Name = "gvThanhVien";
+            // 
+            // ColMaTV
+            // 
+            this.ColMaTV.Caption = "Mã Thành Viên";
+            this.ColMaTV.FieldName = "MaTV";
+            this.ColMaTV.Name = "ColMaTV";
+            this.ColMaTV.Visible = true;
+            this.ColMaTV.VisibleIndex = 0;
             // 
             // ColTenTVien
             // 
@@ -255,14 +263,6 @@
             this.label1.TabIndex = 2;
             this.label1.Text = "Tên Thành Viên";
             // 
-            // ColMaTV
-            // 
-            this.ColMaTV.Caption = "Mã Thành Viên";
-            this.ColMaTV.FieldName = "MaTV";
-            this.ColMaTV.Name = "ColMaTV";
-            this.ColMaTV.Visible = true;
-            this.ColMaTV.VisibleIndex = 0;
-            // 
             // QLTV
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -271,7 +271,7 @@
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "QLTV";
-            this.Text = "QLTV";
+            this.Text = "Quản Lý Thành Viên";
             this.Load += new System.EventHandler(this.QLTV_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

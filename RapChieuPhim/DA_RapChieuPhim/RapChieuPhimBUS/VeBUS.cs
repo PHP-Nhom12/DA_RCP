@@ -27,5 +27,11 @@ namespace RapChieuPhimBUS
             VeDAO ve = new VeDAO();
             return ve.ThemVe(venew);
         }
+
+        public bool XoaVe(int MaVe)
+        {
+            VeDAO ve = new VeDAO();
+            return ve.XoaVe(MaVe);
+        }
     }
 }

@@ -272,7 +272,7 @@
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormDatVe";
-            this.Text = "FormDatVe";
+            this.Text = "Đặt Vé";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.lueVoucher.Properties)).EndInit();

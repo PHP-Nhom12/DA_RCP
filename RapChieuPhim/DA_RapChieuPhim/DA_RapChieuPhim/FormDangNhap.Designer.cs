@@ -124,7 +124,7 @@
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormDangNhap";
-            this.Text = "FormDangNhap";
+            this.Text = "Đăng Nhập";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).EndInit();
