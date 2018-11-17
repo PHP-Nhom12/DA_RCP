@@ -9,6 +9,8 @@ namespace RapChieuPhimDTO
     public class LoaiPhongDTO
     {
         public int MaLoai { get; set; }
-        public float GiaCB { get; set; }
+        public string TenPhong { get; set; }
+        public float HeSo { get; set; }
+        public int TrangThai { get; set; }
     }
 }

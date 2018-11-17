@@ -8,15 +8,17 @@ namespace RapChieuPhimDTO
 {
     public class VeDTO
     {
-       public int MaVe{get;set;}
-      public int MaPhim{get;set;}
-      public string ViTriNgoi{get;set;}
-      public int PhongChieu{get;set;}
-      public int GiaVe{get;set;}
-      public DateTime NgayTaoVe{get;set;}
-      public int MaTV{get;set;}
-      public int MaVoucher { get; set; }
-      public int MaLichChieu { get; set; }
-      public int TrangThai{get;set;}
+        public int MaVe{get;set;}
+        public int MaPhim{get;set;}
+        public string ViTriNgoi{get;set;}
+        public int PhongChieu{get;set;}
+        public int GiaVe{get;set;}
+        public DateTime NgayTaoVe{get;set;}
+        public int MaTV{get;set;}
+        public int MaVoucher { get; set; }
+        public int MaLichChieu { get; set; }
+        public string TGBatDau { get; set; }
+        public string TGKetThuc { get; set; }
+        public int TrangThai{get;set;}
     }
 }

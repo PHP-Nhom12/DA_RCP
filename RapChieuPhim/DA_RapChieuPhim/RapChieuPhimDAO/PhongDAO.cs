@@ -23,7 +23,7 @@ namespace RapChieuPhimDAO
                 ketqua.TenPhong = sdr["TenPhong"].ToString();
                 ketqua.LoaiPhong = int.Parse(sdr["LoaiPhong"].ToString());
                 ketqua.SLCho = int.Parse(sdr["SLCho"].ToString());
-                //ketqua.TrangThai = int.Parse(sdr["TrangThai"].ToString());
+                ketqua.TrangThai = int.Parse(sdr["TrangThai"].ToString());
                 ls.Add(ketqua);
             }
             sdr.Close();

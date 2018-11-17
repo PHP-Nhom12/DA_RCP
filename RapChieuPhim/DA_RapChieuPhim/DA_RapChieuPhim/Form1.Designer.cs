@@ -195,7 +195,7 @@
             // 
             this.btnQuanLyPhim.Caption = "Quản Lý Phim";
             this.btnQuanLyPhim.Id = 13;
-            this.btnQuanLyPhim.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem6.ImageOptions.Image")));
+            this.btnQuanLyPhim.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnQuanLyPhim.ImageOptions.Image")));
             this.btnQuanLyPhim.Name = "btnQuanLyPhim";
             this.btnQuanLyPhim.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
             // 

@@ -22,8 +22,6 @@ namespace RapChieuPhimDAO
                 ketqua.MaCa = int.Parse(sdr["MaCa"].ToString());
                 ketqua.TenCa = sdr["TenCa"].ToString();
                 ketqua.HeSo = float.Parse(sdr["HeSo"].ToString());
-                ketqua.ThoiGianBD = DateTime.Parse(sdr["ThoiGianBD"].ToString());
-                ketqua.ThoiGianKT = DateTime.Parse(sdr["ThoiGianKT"].ToString());
                 ketqua.TrangThai = int.Parse(sdr["TrangThai"].ToString());
                 ls.Add(ketqua);
             }

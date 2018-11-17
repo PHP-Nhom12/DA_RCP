@@ -26,7 +26,9 @@ namespace RapChieuPhimDAO
                 ketqua.GiaVe = int.Parse(sdr["GiaVe"].ToString());
                 ketqua.MaTV = int.Parse(sdr["MaTV"].ToString());
                 ketqua.MaVoucher = int.Parse(sdr["MaVoucher"].ToString());
-                //ketqua.TrangThai = int.Parse(sdr["TrangThai"].ToString());
+                ketqua.TGBatDau = sdr["TGBatDau"].ToString();
+                ketqua.TGKetThuc = sdr["TGKetThuc"].ToString();
+                ketqua.TrangThai = int.Parse(sdr["TrangThai"].ToString());
                 ls.Add(ketqua);
             }
             sdr.Close();
@@ -72,7 +74,9 @@ namespace RapChieuPhimDAO
                 ketqua.GiaVe = int.Parse(sdr["GiaVe"].ToString());
                 ketqua.MaTV = int.Parse(sdr["MaTV"].ToString());
                 ketqua.MaVoucher = int.Parse(sdr["MaVoucher"].ToString());
-                //ketqua.TrangThai = int.Parse(sdr["TrangThai"].ToString());
+                ketqua.TGBatDau = sdr["TGBatDau"].ToString();
+                ketqua.TGKetThuc = sdr["TGKetThuc"].ToString();
+                ketqua.TrangThai = int.Parse(sdr["TrangThai"].ToString());
                 lsVe.Add(ketqua);
             }
             sdr.Close();

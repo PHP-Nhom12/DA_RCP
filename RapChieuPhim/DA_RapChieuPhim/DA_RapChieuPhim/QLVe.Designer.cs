@@ -41,6 +41,8 @@
             this.gvVe = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.ColTenPhim = new DevExpress.XtraGrid.Columns.GridColumn();
             this.lUpTenPhim = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
+            this.ColTGBatDau = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.ColTGKetThuc = new DevExpress.XtraGrid.Columns.GridColumn();
             this.ColVitri = new DevExpress.XtraGrid.Columns.GridColumn();
             this.ColPhong = new DevExpress.XtraGrid.Columns.GridColumn();
             this.lUpTenPhong = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
@@ -171,6 +173,8 @@
             // 
             this.gvVe.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.ColTenPhim,
+            this.ColTGBatDau,
+            this.ColTGKetThuc,
             this.ColVitri,
             this.ColPhong,
             this.ColGiaVe,
@@ -183,6 +187,7 @@
             this.gvVe.OptionsBehavior.Editable = false;
             this.gvVe.OptionsBehavior.ReadOnly = true;
             this.gvVe.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.gvVe.OptionsView.ShowGroupPanel = false;
             this.gvVe.RowClick += new DevExpress.XtraGrid.Views.Grid.RowClickEventHandler(this.gvVe_RowClick);
             // 
             // ColTenPhim
@@ -202,6 +207,22 @@
             this.lUpTenPhim.DisplayMember = "TenPhim";
             this.lUpTenPhim.Name = "lUpTenPhim";
             this.lUpTenPhim.ValueMember = "MaPhim";
+            // 
+            // ColTGBatDau
+            // 
+            this.ColTGBatDau.Caption = "Thời Gian Bắt Đầu";
+            this.ColTGBatDau.FieldName = "ColTGBatDau";
+            this.ColTGBatDau.Name = "ColTGBatDau";
+            this.ColTGBatDau.Visible = true;
+            this.ColTGBatDau.VisibleIndex = 5;
+            // 
+            // ColTGKetThuc
+            // 
+            this.ColTGKetThuc.Caption = "Thời Gian Kết Thúc";
+            this.ColTGKetThuc.FieldName = "ColTGKetThuc";
+            this.ColTGKetThuc.Name = "ColTGKetThuc";
+            this.ColTGKetThuc.Visible = true;
+            this.ColTGKetThuc.VisibleIndex = 6;
             // 
             // ColVitri
             // 
@@ -303,5 +324,7 @@
         private DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit lUPTenTV;
         private DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit lUpTenPhim;
         private DevExpress.XtraGrid.Columns.GridColumn ColMaVe;
+        private DevExpress.XtraGrid.Columns.GridColumn ColTGBatDau;
+        private DevExpress.XtraGrid.Columns.GridColumn ColTGKetThuc;
     }
 }

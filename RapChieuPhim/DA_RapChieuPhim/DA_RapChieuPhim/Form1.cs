@@ -60,6 +60,7 @@ namespace DA_RapChieuPhim
                 btnQLPhong.Enabled = true;
                 btnQLVe.Enabled = true;
                 btnQLyLChieu.Enabled = true;
+                btnQuanLyPhim.Enabled = true;
                 //btnDMK.Enabled = true;  
                 btnDNDX.Text = "ĐĂNG XUẤT";
 
@@ -136,6 +137,7 @@ namespace DA_RapChieuPhim
                 btnQLVe.Enabled = false;
                 btnQLyLChieu.Enabled = false;
                 PnThongtin.Visible = false;
+                btnQuanLyPhim.Enabled = false;
                 frmDN = new FormDangNhap();
                 frmDN.MdiParent = this;
                 frmDN.Dock = DockStyle.Fill;

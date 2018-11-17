@@ -45,7 +45,14 @@ namespace DA_RapChieuPhim
             LupTPhim.DataSource = phim.LoadPhim();
             LupTphong.DataSource = pBUS.LoadPhong();
             LupMaCa.DataSource = ca.LoadCa();
-            
+
+            dtpGioBatDau.Format = DateTimePickerFormat.Custom;
+            dtpGioBatDau.CustomFormat = "HH:mm";
+            dtpGioBatDau.ShowUpDown = true;
+            dtpGioKetThuc.Format = DateTimePickerFormat.Custom;
+            dtpGioKetThuc.CustomFormat = "HH:mm";
+            dtpGioKetThuc.ShowUpDown = true;
+
         }     
     }
 }
