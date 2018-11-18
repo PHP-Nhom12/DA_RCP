@@ -1,9 +1,0 @@
-C:\Users\Tuan - Kun\Desktop\DA_RCP\RapChieuPhim\DA_RapChieuPhim\RapChieuPhimBUS\bin\Debug\RapChieuPhimBUS.dll
-C:\Users\Tuan - Kun\Desktop\DA_RCP\RapChieuPhim\DA_RapChieuPhim\RapChieuPhimBUS\bin\Debug\RapChieuPhimBUS.pdb
-C:\Users\Tuan - Kun\Desktop\DA_RCP\RapChieuPhim\DA_RapChieuPhim\RapChieuPhimBUS\bin\Debug\RapChieuPhimDAO.dll
-C:\Users\Tuan - Kun\Desktop\DA_RCP\RapChieuPhim\DA_RapChieuPhim\RapChieuPhimBUS\bin\Debug\RapChieuPhimDTO.dll
-C:\Users\Tuan - Kun\Desktop\DA_RCP\RapChieuPhim\DA_RapChieuPhim\RapChieuPhimBUS\bin\Debug\RapChieuPhimDAO.pdb
-C:\Users\Tuan - Kun\Desktop\DA_RCP\RapChieuPhim\DA_RapChieuPhim\RapChieuPhimBUS\bin\Debug\RapChieuPhimDTO.pdb
-C:\Users\Tuan - Kun\Desktop\DA_RCP\RapChieuPhim\DA_RapChieuPhim\RapChieuPhimBUS\obj\Debug\RapChieuPhimBUS.csprojResolveAssemblyReference.cache
-C:\Users\Tuan - Kun\Desktop\DA_RCP\RapChieuPhim\DA_RapChieuPhim\RapChieuPhimBUS\obj\Debug\RapChieuPhimBUS.dll
-C:\Users\Tuan - Kun\Desktop\DA_RCP\RapChieuPhim\DA_RapChieuPhim\RapChieuPhimBUS\obj\Debug\RapChieuPhimBUS.pdb
