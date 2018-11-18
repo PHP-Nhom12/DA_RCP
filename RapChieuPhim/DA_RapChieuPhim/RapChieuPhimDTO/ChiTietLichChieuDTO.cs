@@ -12,6 +12,8 @@ namespace RapChieuPhimDTO
       public int MaPhim { get; set; }
       public int MaPhong { get; set; }
       public int MaCa { get; set; }
+      public string ThoiGianBD { get; set; }
+      public string ThoiGianKT { get; set; }
       public int TrangThai { get; set; }
     }
 }

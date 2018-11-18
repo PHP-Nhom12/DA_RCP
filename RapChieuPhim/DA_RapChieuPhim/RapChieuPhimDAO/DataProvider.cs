@@ -9,7 +9,7 @@ namespace RapChieuPhimDAO
 {
     public class DataProvider
     {
-        static string strKetNoi = @"Data Source=.;Initial Catalog=QL_rap_chieu_phim;Integrated Security=True";
+        static string strKetNoi = @"Data Source=DESKTOP-SVBURCQ\SQLEXPRESS;Initial Catalog=QL_rap_chieu_phim;Integrated Security=True";
 
         public static SqlConnection TaoKetNoi()
         {

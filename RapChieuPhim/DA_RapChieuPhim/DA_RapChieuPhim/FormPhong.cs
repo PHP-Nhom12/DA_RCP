@@ -30,8 +30,12 @@ namespace DA_RapChieuPhim
 
             gcPhong.DataSource = pBUS.LoadPhong();
             lUpLoaiPhong.Properties.DataSource = loaiphong.LoadLoaiPhong();
-            lUpLoaiPhong.Properties.DisplayMember = "MaLoai";
+            lUpLoaiPhong.Properties.DisplayMember = "TenPhong";
             lUpLoaiPhong.Properties.ValueMember = "MaLoai";
+
+            repositoryItemLookUpEdit1.DataSource = loaiphong.LoadLoaiPhong();
+            repositoryItemLookUpEdit1.DisplayMember = "TenPhong";
+            repositoryItemLookUpEdit1.ValueMember = "MaLoai";
         }
 
         private void button1_Click(object sender, EventArgs e)

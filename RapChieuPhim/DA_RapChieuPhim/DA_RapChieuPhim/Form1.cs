@@ -93,9 +93,10 @@ namespace DA_RapChieuPhim
             isDangNhap = true;
             lblHoTen.Text = nvDangNhap.HovaTen;
             lblChucVu.Text = strLoaiNV;
-            if (File.Exists(nvDangNhap.HinhAnh))
+            string path = Path.Combine(Environment.CurrentDirectory, @"..\..\..\img\avatar\", nvDangNhap.HinhAnh);
+            if (File.Exists(path))
             {
-                byte[] byteHA = File.ReadAllBytes(nvDangNhap.HinhAnh);
+                byte[] byteHA = File.ReadAllBytes(path);
                 MemoryStream ms = new MemoryStream(byteHA);
                 picHinhNV.Image = Image.FromStream(ms);
             }
@@ -244,6 +245,11 @@ namespace DA_RapChieuPhim
             FrmPhong.Dock = DockStyle.Fill;
             FrmPhong.MdiParent = this;
             FrmPhong.Show();
+        }
+
+        private void picHinhNV_Click(object sender, EventArgs e)
+        {
+
         }
 
        

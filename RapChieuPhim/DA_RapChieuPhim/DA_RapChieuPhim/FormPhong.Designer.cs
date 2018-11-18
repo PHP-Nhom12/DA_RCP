@@ -46,6 +46,7 @@
             this.txtMPhong = new DevExpress.XtraEditors.TextEdit();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.repositoryItemLookUpEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.lUpLoaiPhong.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcPhong)).BeginInit();
@@ -53,6 +54,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtSLCho.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTenPhong.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMPhong.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEdit1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -110,6 +112,8 @@
             this.gcPhong.Location = new System.Drawing.Point(0, 219);
             this.gcPhong.MainView = this.gvPhong;
             this.gcPhong.Name = "gcPhong";
+            this.gcPhong.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
+            this.repositoryItemLookUpEdit1});
             this.gcPhong.Size = new System.Drawing.Size(787, 200);
             this.gcPhong.TabIndex = 11;
             this.gcPhong.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -130,6 +134,7 @@
             this.gvPhong.OptionsBehavior.Editable = false;
             this.gvPhong.OptionsBehavior.ReadOnly = true;
             this.gvPhong.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.gvPhong.OptionsView.ShowGroupPanel = false;
             this.gvPhong.RowClick += new DevExpress.XtraGrid.Views.Grid.RowClickEventHandler(this.gvPhong_RowClick);
             // 
             // ColMaPhong
@@ -151,6 +156,7 @@
             // ColLoaiPhong
             // 
             this.ColLoaiPhong.Caption = "Loại Phòng";
+            this.ColLoaiPhong.ColumnEdit = this.repositoryItemLookUpEdit1;
             this.ColLoaiPhong.FieldName = "LoaiPhong";
             this.ColLoaiPhong.Name = "ColLoaiPhong";
             this.ColLoaiPhong.Visible = true;
@@ -238,12 +244,20 @@
             this.label3.TabIndex = 2;
             this.label3.Text = "Loại Phòng";
             // 
+            // repositoryItemLookUpEdit1
+            // 
+            this.repositoryItemLookUpEdit1.AutoHeight = false;
+            this.repositoryItemLookUpEdit1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryItemLookUpEdit1.Name = "repositoryItemLookUpEdit1";
+            // 
             // FormPhong
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(811, 454);
             this.Controls.Add(this.groupBox1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormPhong";
             this.Text = "Quản Lý Phòng";
             this.Load += new System.EventHandler(this.FormPhong_Load);
@@ -255,6 +269,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtSLCho.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTenPhong.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMPhong.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEdit1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -279,5 +294,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private DevExpress.XtraEditors.LookUpEdit lUpLoaiPhong;
+        private DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit repositoryItemLookUpEdit1;
     }
 }

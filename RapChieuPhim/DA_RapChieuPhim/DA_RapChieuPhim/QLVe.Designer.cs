@@ -43,13 +43,13 @@
             this.lUpTenPhim = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
             this.ColTGBatDau = new DevExpress.XtraGrid.Columns.GridColumn();
             this.ColTGKetThuc = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.ColVitri = new DevExpress.XtraGrid.Columns.GridColumn();
             this.ColPhong = new DevExpress.XtraGrid.Columns.GridColumn();
             this.lUpTenPhong = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
             this.ColGiaVe = new DevExpress.XtraGrid.Columns.GridColumn();
             this.ColTenTV = new DevExpress.XtraGrid.Columns.GridColumn();
             this.lUPTenTV = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
             this.ColMaVe = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.ColViTri = new DevExpress.XtraGrid.Columns.GridColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtQuery.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcVe)).BeginInit();
@@ -171,11 +171,12 @@
             // 
             // gvVe
             // 
+            this.gvVe.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Style3D;
             this.gvVe.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.ColTenPhim,
             this.ColTGBatDau,
             this.ColTGKetThuc,
-            this.ColVitri,
+            this.ColViTri,
             this.ColPhong,
             this.ColGiaVe,
             this.ColTenTV,
@@ -198,6 +199,7 @@
             this.ColTenPhim.Name = "ColTenPhim";
             this.ColTenPhim.Visible = true;
             this.ColTenPhim.VisibleIndex = 0;
+            this.ColTenPhim.Width = 176;
             // 
             // lUpTenPhim
             // 
@@ -210,27 +212,21 @@
             // 
             // ColTGBatDau
             // 
-            this.ColTGBatDau.Caption = "Thời Gian Bắt Đầu";
-            this.ColTGBatDau.FieldName = "ColTGBatDau";
+            this.ColTGBatDau.Caption = "TGBĐ";
+            this.ColTGBatDau.FieldName = "TGBatDau";
             this.ColTGBatDau.Name = "ColTGBatDau";
             this.ColTGBatDau.Visible = true;
-            this.ColTGBatDau.VisibleIndex = 5;
+            this.ColTGBatDau.VisibleIndex = 1;
+            this.ColTGBatDau.Width = 40;
             // 
             // ColTGKetThuc
             // 
-            this.ColTGKetThuc.Caption = "Thời Gian Kết Thúc";
-            this.ColTGKetThuc.FieldName = "ColTGKetThuc";
+            this.ColTGKetThuc.Caption = "TGKT";
+            this.ColTGKetThuc.FieldName = "TGKetThuc";
             this.ColTGKetThuc.Name = "ColTGKetThuc";
             this.ColTGKetThuc.Visible = true;
-            this.ColTGKetThuc.VisibleIndex = 6;
-            // 
-            // ColVitri
-            // 
-            this.ColVitri.Caption = "Ghế Ngồi";
-            this.ColVitri.FieldName = "ViTriNgoi";
-            this.ColVitri.Name = "ColVitri";
-            this.ColVitri.Visible = true;
-            this.ColVitri.VisibleIndex = 1;
+            this.ColTGKetThuc.VisibleIndex = 2;
+            this.ColTGKetThuc.Width = 42;
             // 
             // ColPhong
             // 
@@ -239,7 +235,8 @@
             this.ColPhong.FieldName = "PhongChieu";
             this.ColPhong.Name = "ColPhong";
             this.ColPhong.Visible = true;
-            this.ColPhong.VisibleIndex = 2;
+            this.ColPhong.VisibleIndex = 3;
+            this.ColPhong.Width = 117;
             // 
             // lUpTenPhong
             // 
@@ -256,7 +253,8 @@
             this.ColGiaVe.FieldName = "GiaVe";
             this.ColGiaVe.Name = "ColGiaVe";
             this.ColGiaVe.Visible = true;
-            this.ColGiaVe.VisibleIndex = 3;
+            this.ColGiaVe.VisibleIndex = 6;
+            this.ColGiaVe.Width = 73;
             // 
             // ColTenTV
             // 
@@ -265,7 +263,8 @@
             this.ColTenTV.FieldName = "MaTV";
             this.ColTenTV.Name = "ColTenTV";
             this.ColTenTV.Visible = true;
-            this.ColTenTV.VisibleIndex = 4;
+            this.ColTenTV.VisibleIndex = 5;
+            this.ColTenTV.Width = 149;
             // 
             // lUPTenTV
             // 
@@ -281,6 +280,15 @@
             this.ColMaVe.Caption = "Mã Vé";
             this.ColMaVe.FieldName = "MaVe";
             this.ColMaVe.Name = "ColMaVe";
+            // 
+            // ColViTri
+            // 
+            this.ColViTri.Caption = "Vị Trí";
+            this.ColViTri.FieldName = "ViTriNgoi";
+            this.ColViTri.Name = "ColViTri";
+            this.ColViTri.Visible = true;
+            this.ColViTri.VisibleIndex = 4;
+            this.ColViTri.Width = 42;
             // 
             // QLVe
             // 
@@ -316,7 +324,6 @@
         private DevExpress.XtraGrid.Views.Grid.GridView gvVe;
         private System.Windows.Forms.Button btnSearch;
         private DevExpress.XtraGrid.Columns.GridColumn ColTenPhim;
-        private DevExpress.XtraGrid.Columns.GridColumn ColVitri;
         private DevExpress.XtraGrid.Columns.GridColumn ColPhong;
         private DevExpress.XtraGrid.Columns.GridColumn ColGiaVe;
         private DevExpress.XtraGrid.Columns.GridColumn ColTenTV;
@@ -326,5 +333,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn ColMaVe;
         private DevExpress.XtraGrid.Columns.GridColumn ColTGBatDau;
         private DevExpress.XtraGrid.Columns.GridColumn ColTGKetThuc;
+        private DevExpress.XtraGrid.Columns.GridColumn ColViTri;
     }
 }

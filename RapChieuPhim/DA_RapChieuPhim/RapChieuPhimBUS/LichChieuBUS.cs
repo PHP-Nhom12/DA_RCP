@@ -16,7 +16,7 @@ namespace RapChieuPhimBUS
             return lich.loadLC();
         }
 
-        public List<LichChieuDTO> LoadLich(DateTime ngay)
+        public LichChieuDTO LoadLich(DateTime ngay)
         {
             LichChieuDAO lich = new LichChieuDAO();
             return lich.loadLC(ngay);

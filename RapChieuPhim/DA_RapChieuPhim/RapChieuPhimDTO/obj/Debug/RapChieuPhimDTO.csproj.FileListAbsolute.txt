@@ -1,0 +1,5 @@
+C:\Users\Tuan - Kun\Desktop\DA_RCP\RapChieuPhim\DA_RapChieuPhim\RapChieuPhimDTO\bin\Debug\RapChieuPhimDTO.dll
+C:\Users\Tuan - Kun\Desktop\DA_RCP\RapChieuPhim\DA_RapChieuPhim\RapChieuPhimDTO\bin\Debug\RapChieuPhimDTO.pdb
+C:\Users\Tuan - Kun\Desktop\DA_RCP\RapChieuPhim\DA_RapChieuPhim\RapChieuPhimDTO\obj\Debug\RapChieuPhimDTO.csprojResolveAssemblyReference.cache
+C:\Users\Tuan - Kun\Desktop\DA_RCP\RapChieuPhim\DA_RapChieuPhim\RapChieuPhimDTO\obj\Debug\RapChieuPhimDTO.dll
+C:\Users\Tuan - Kun\Desktop\DA_RCP\RapChieuPhim\DA_RapChieuPhim\RapChieuPhimDTO\obj\Debug\RapChieuPhimDTO.pdb

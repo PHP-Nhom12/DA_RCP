@@ -10,13 +10,13 @@ namespace RapChieuPhimBUS
 {
     public class ChiTietLichChieuBUS
     {
-        public List<ChiTietLichChieuDTO> loadCTLC(int MaLich)
+        public ChiTietLichChieuDTO loadCTLC(int MaLich)
         {
             ChiTietLichChieuDAO ctlc = new ChiTietLichChieuDAO();
             return ctlc.loadCTLC(MaLich);
         }
 
-        public List<ChiTietLichChieuDTO> loadCTLC_TheoMaCa(int MaCa)
+        public ChiTietLichChieuDTO loadCTLC_TheoMaCa(int MaCa)
         {
             ChiTietLichChieuDAO ctlc = new ChiTietLichChieuDAO();
             return ctlc.loadCTLC_TheoMaCa(MaCa);

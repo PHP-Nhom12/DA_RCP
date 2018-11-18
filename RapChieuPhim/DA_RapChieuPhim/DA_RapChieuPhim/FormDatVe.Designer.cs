@@ -29,69 +29,206 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.lbTongTien = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.lvDSGhe = new System.Windows.Forms.ListView();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.lvDSPhim = new System.Windows.Forms.ListView();
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.cbbNgay = new System.Windows.Forms.ComboBox();
             this.lueVoucher = new DevExpress.XtraEditors.LookUpEdit();
-            this.lueGhe = new DevExpress.XtraEditors.LookUpEdit();
-            this.lueTenPhong = new DevExpress.XtraEditors.LookUpEdit();
-            this.lueTenPhim = new DevExpress.XtraEditors.LookUpEdit();
-            this.lueCa = new DevExpress.XtraEditors.LookUpEdit();
             this.lueMaTV = new DevExpress.XtraEditors.LookUpEdit();
-            this.chbVoucher = new DevExpress.XtraEditors.CheckEdit();
-            this.dateNgay = new DevExpress.XtraEditors.DateEdit();
             this.btnDatVe = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.txtGioBatDau = new System.Windows.Forms.TextBox();
-            this.txtGioKetThuc = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.lueVoucher.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lueGhe.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lueTenPhong.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lueTenPhim.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lueCa.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lueMaTV.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chbVoucher.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateNgay.Properties.CalendarTimeProperties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateNgay.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.txtGioKetThuc);
-            this.groupBox1.Controls.Add(this.txtGioBatDau);
-            this.groupBox1.Controls.Add(this.label8);
-            this.groupBox1.Controls.Add(this.label7);
+            this.groupBox1.Controls.Add(this.groupBox2);
+            this.groupBox1.Controls.Add(this.label4);
+            this.groupBox1.Controls.Add(this.lbTongTien);
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.lvDSGhe);
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Controls.Add(this.lvDSPhim);
+            this.groupBox1.Controls.Add(this.cbbNgay);
             this.groupBox1.Controls.Add(this.lueVoucher);
-            this.groupBox1.Controls.Add(this.lueGhe);
-            this.groupBox1.Controls.Add(this.lueTenPhong);
-            this.groupBox1.Controls.Add(this.lueTenPhim);
-            this.groupBox1.Controls.Add(this.lueCa);
             this.groupBox1.Controls.Add(this.lueMaTV);
-            this.groupBox1.Controls.Add(this.chbVoucher);
-            this.groupBox1.Controls.Add(this.dateNgay);
             this.groupBox1.Controls.Add(this.btnDatVe);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(6, 3);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(813, 497);
+            this.groupBox1.Size = new System.Drawing.Size(1067, 568);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Đặt Vé";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.label7);
+            this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox2.Location = new System.Drawing.Point(352, 375);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(673, 128);
+            this.groupBox2.TabIndex = 38;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Chi tiết giao dịch";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(23, 33);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(84, 18);
+            this.label7.TabIndex = 39;
+            this.label7.Text = "Tên Phim:";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.Teal;
+            this.label4.Location = new System.Drawing.Point(375, 80);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(84, 18);
+            this.label4.TabIndex = 37;
+            this.label4.Text = "Chọn Ghế";
+            // 
+            // lbTongTien
+            // 
+            this.lbTongTien.AutoSize = true;
+            this.lbTongTien.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTongTien.ForeColor = System.Drawing.Color.Red;
+            this.lbTongTien.Location = new System.Drawing.Point(505, 509);
+            this.lbTongTien.Name = "lbTongTien";
+            this.lbTongTien.Size = new System.Drawing.Size(31, 18);
+            this.lbTongTien.TabIndex = 36;
+            this.lbTongTien.Text = "0 đ";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.Red;
+            this.label2.Location = new System.Drawing.Point(349, 509);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(150, 18);
+            this.label2.TabIndex = 35;
+            this.label2.Text = "Tổng Thanh Toán: ";
+            // 
+            // lvDSGhe
+            // 
+            this.lvDSGhe.Activation = System.Windows.Forms.ItemActivation.OneClick;
+            this.lvDSGhe.Alignment = System.Windows.Forms.ListViewAlignment.SnapToGrid;
+            this.lvDSGhe.FullRowSelect = true;
+            this.lvDSGhe.HideSelection = false;
+            this.lvDSGhe.Location = new System.Drawing.Point(352, 112);
+            this.lvDSGhe.Name = "lvDSGhe";
+            this.lvDSGhe.Size = new System.Drawing.Size(673, 257);
+            this.lvDSGhe.TabIndex = 34;
+            this.lvDSGhe.UseCompatibleStateImageBehavior = false;
+            this.lvDSGhe.View = System.Windows.Forms.View.SmallIcon;
+            this.lvDSGhe.SelectedIndexChanged += new System.EventHandler(this.lvDSGhe_SelectedIndexChanged);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Teal;
+            this.label1.Location = new System.Drawing.Point(26, 80);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(91, 18);
+            this.label1.TabIndex = 33;
+            this.label1.Text = "Chọn Phim";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.Teal;
+            this.label3.Location = new System.Drawing.Point(764, 42);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(70, 18);
+            this.label3.TabIndex = 32;
+            this.label3.Text = "Voucher";
+            // 
+            // lvDSPhim
+            // 
+            this.lvDSPhim.Activation = System.Windows.Forms.ItemActivation.OneClick;
+            this.lvDSPhim.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader1,
+            this.columnHeader2,
+            this.columnHeader3,
+            this.columnHeader4,
+            this.columnHeader6});
+            this.lvDSPhim.FullRowSelect = true;
+            this.lvDSPhim.GridLines = true;
+            this.lvDSPhim.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
+            this.lvDSPhim.HideSelection = false;
+            this.lvDSPhim.Location = new System.Drawing.Point(29, 112);
+            this.lvDSPhim.MultiSelect = false;
+            this.lvDSPhim.Name = "lvDSPhim";
+            this.lvDSPhim.Size = new System.Drawing.Size(314, 425);
+            this.lvDSPhim.TabIndex = 30;
+            this.lvDSPhim.UseCompatibleStateImageBehavior = false;
+            this.lvDSPhim.View = System.Windows.Forms.View.Details;
+            this.lvDSPhim.SelectedIndexChanged += new System.EventHandler(this.lvDSPhim_SelectedIndexChanged);
+            // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "Mác";
+            this.columnHeader1.Width = 40;
+            // 
+            // columnHeader2
+            // 
+            this.columnHeader2.Text = "Tên Phim";
+            this.columnHeader2.Width = 140;
+            // 
+            // columnHeader3
+            // 
+            this.columnHeader3.Text = "BĐ";
+            this.columnHeader3.Width = 40;
+            // 
+            // columnHeader4
+            // 
+            this.columnHeader4.Text = "KT";
+            this.columnHeader4.Width = 40;
+            // 
+            // columnHeader6
+            // 
+            this.columnHeader6.Text = "Số Ghế";
+            this.columnHeader6.Width = 50;
+            // 
+            // cbbNgay
+            // 
+            this.cbbNgay.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbbNgay.FormattingEnabled = true;
+            this.cbbNgay.Location = new System.Drawing.Point(78, 41);
+            this.cbbNgay.Name = "cbbNgay";
+            this.cbbNgay.Size = new System.Drawing.Size(251, 24);
+            this.cbbNgay.TabIndex = 29;
+            this.cbbNgay.SelectedIndexChanged += new System.EventHandler(this.cbbNgay_SelectedIndexChanged);
+            // 
             // lueVoucher
             // 
-            this.lueVoucher.Location = new System.Drawing.Point(529, 227);
+            this.lueVoucher.Location = new System.Drawing.Point(840, 43);
             this.lueVoucher.Name = "lueVoucher";
             this.lueVoucher.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -105,66 +242,9 @@
             this.lueVoucher.TabIndex = 22;
             this.lueVoucher.EditValueChanged += new System.EventHandler(this.lueVoucher_EditValueChanged);
             // 
-            // lueGhe
-            // 
-            this.lueGhe.Location = new System.Drawing.Point(144, 350);
-            this.lueGhe.Name = "lueGhe";
-            this.lueGhe.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.lueGhe.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("MaGhe", "Mã Ghế")});
-            this.lueGhe.Properties.NullText = "";
-            this.lueGhe.Size = new System.Drawing.Size(185, 20);
-            this.lueGhe.TabIndex = 21;
-            this.lueGhe.EditValueChanged += new System.EventHandler(this.lueGhe_EditValueChanged_1);
-            // 
-            // lueTenPhong
-            // 
-            this.lueTenPhong.Location = new System.Drawing.Point(144, 306);
-            this.lueTenPhong.Name = "lueTenPhong";
-            this.lueTenPhong.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.lueTenPhong.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("TenPhong", "Tên Phòng"),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("SLCho", "Số Ghế")});
-            this.lueTenPhong.Properties.NullText = "";
-            this.lueTenPhong.Size = new System.Drawing.Size(185, 20);
-            this.lueTenPhong.TabIndex = 20;
-            this.lueTenPhong.EditValueChanged += new System.EventHandler(this.lueTenPhong_EditValueChanged);
-            // 
-            // lueTenPhim
-            // 
-            this.lueTenPhim.Location = new System.Drawing.Point(144, 266);
-            this.lueTenPhim.Name = "lueTenPhim";
-            this.lueTenPhim.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.lueTenPhim.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Mac", "Mác"),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("TenPhim", "Tên Phim"),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("NDPhim", "Mô Tả")});
-            this.lueTenPhim.Properties.DisplayFormat.FormatString = "P";
-            this.lueTenPhim.Properties.NullText = "";
-            this.lueTenPhim.Size = new System.Drawing.Size(185, 20);
-            this.lueTenPhim.TabIndex = 19;
-            this.lueTenPhim.EditValueChanged += new System.EventHandler(this.lueTenPhim_EditValueChanged);
-            // 
-            // lueCa
-            // 
-            this.lueCa.Location = new System.Drawing.Point(144, 224);
-            this.lueCa.Name = "lueCa";
-            this.lueCa.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.lueCa.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("TenCa", "Tên Ca"),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("HeSo", "Hệ Số")});
-            this.lueCa.Properties.NullText = "";
-            this.lueCa.Size = new System.Drawing.Size(185, 20);
-            this.lueCa.TabIndex = 18;
-            this.lueCa.EditValueChanged += new System.EventHandler(this.lueCa_EditValueChanged_1);
-            // 
             // lueMaTV
             // 
-            this.lueMaTV.Location = new System.Drawing.Point(529, 190);
+            this.lueMaTV.Location = new System.Drawing.Point(500, 43);
             this.lueMaTV.Name = "lueMaTV";
             this.lueMaTV.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -177,46 +257,25 @@
             this.lueMaTV.TabIndex = 17;
             this.lueMaTV.EditValueChanged += new System.EventHandler(this.lueMaTV_EditValueChanged);
             // 
-            // chbVoucher
-            // 
-            this.chbVoucher.Location = new System.Drawing.Point(434, 224);
-            this.chbVoucher.Name = "chbVoucher";
-            this.chbVoucher.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold);
-            this.chbVoucher.Properties.Appearance.Options.UseFont = true;
-            this.chbVoucher.Properties.Caption = "Voucher";
-            this.chbVoucher.Size = new System.Drawing.Size(82, 22);
-            this.chbVoucher.TabIndex = 16;
-            this.chbVoucher.CheckedChanged += new System.EventHandler(this.chbVoucher_CheckedChanged);
-            // 
-            // dateNgay
-            // 
-            this.dateNgay.EditValue = null;
-            this.dateNgay.Location = new System.Drawing.Point(144, 190);
-            this.dateNgay.Name = "dateNgay";
-            this.dateNgay.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dateNgay.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dateNgay.Size = new System.Drawing.Size(185, 20);
-            this.dateNgay.TabIndex = 15;
-            this.dateNgay.EditValueChanged += new System.EventHandler(this.dateNgay_EditValueChanged);
-            // 
             // btnDatVe
             // 
+            this.btnDatVe.BackColor = System.Drawing.Color.SeaGreen;
             this.btnDatVe.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDatVe.Location = new System.Drawing.Point(472, 340);
+            this.btnDatVe.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnDatVe.Location = new System.Drawing.Point(898, 509);
             this.btnDatVe.Name = "btnDatVe";
             this.btnDatVe.Size = new System.Drawing.Size(127, 37);
             this.btnDatVe.TabIndex = 14;
-            this.btnDatVe.Text = "In Vé";
-            this.btnDatVe.UseVisualStyleBackColor = true;
+            this.btnDatVe.Text = "Đặt Vé";
+            this.btnDatVe.UseVisualStyleBackColor = false;
             this.btnDatVe.Click += new System.EventHandler(this.btnDatVe_Click);
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(397, 189);
+            this.label6.ForeColor = System.Drawing.Color.Teal;
+            this.label6.Location = new System.Drawing.Point(375, 42);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(119, 18);
             this.label6.TabIndex = 5;
@@ -226,106 +285,28 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(44, 189);
+            this.label5.ForeColor = System.Drawing.Color.Teal;
+            this.label5.Location = new System.Drawing.Point(26, 42);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(46, 18);
             this.label5.TabIndex = 4;
             this.label5.Text = "Ngày";
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(44, 349);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(39, 18);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "Ghế";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(44, 226);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(93, 18);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Loại Phòng";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(44, 305);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(89, 18);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Tên Phòng";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(44, 265);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(79, 18);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Tên Phim";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(416, 265);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(100, 18);
-            this.label7.TabIndex = 25;
-            this.label7.Text = "Giờ Bắt Đầu";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(549, 265);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(107, 18);
-            this.label8.TabIndex = 26;
-            this.label8.Text = "Giờ Kết Thúc";
-            // 
-            // txtGioBatDau
-            // 
-            this.txtGioBatDau.Location = new System.Drawing.Point(419, 287);
-            this.txtGioBatDau.Name = "txtGioBatDau";
-            this.txtGioBatDau.Size = new System.Drawing.Size(100, 20);
-            this.txtGioBatDau.TabIndex = 27;
-            // 
-            // txtGioKetThuc
-            // 
-            this.txtGioKetThuc.Location = new System.Drawing.Point(552, 286);
-            this.txtGioKetThuc.Name = "txtGioKetThuc";
-            this.txtGioKetThuc.Size = new System.Drawing.Size(100, 20);
-            this.txtGioKetThuc.TabIndex = 28;
-            // 
             // FormDatVe
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(823, 512);
+            this.ClientSize = new System.Drawing.Size(1075, 572);
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormDatVe";
             this.Text = "Đặt Vé";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.lueVoucher.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lueGhe.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lueTenPhong.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lueTenPhim.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lueCa.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lueMaTV.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chbVoucher.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateNgay.Properties.CalendarTimeProperties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateNgay.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -335,22 +316,23 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnDatVe;
-        private DevExpress.XtraEditors.DateEdit dateNgay;
-        private DevExpress.XtraEditors.CheckEdit chbVoucher;
         private DevExpress.XtraEditors.LookUpEdit lueMaTV;
         private DevExpress.XtraEditors.LookUpEdit lueVoucher;
-        private DevExpress.XtraEditors.LookUpEdit lueGhe;
-        private DevExpress.XtraEditors.LookUpEdit lueTenPhong;
-        private DevExpress.XtraEditors.LookUpEdit lueTenPhim;
-        private DevExpress.XtraEditors.LookUpEdit lueCa;
-        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.ComboBox cbbNgay;
+        private System.Windows.Forms.Label lbTongTien;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ListView lvDSGhe;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ListView lvDSPhim;
+        private System.Windows.Forms.ColumnHeader columnHeader1;
+        private System.Windows.Forms.ColumnHeader columnHeader2;
+        private System.Windows.Forms.ColumnHeader columnHeader3;
+        private System.Windows.Forms.ColumnHeader columnHeader4;
+        private System.Windows.Forms.ColumnHeader columnHeader6;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox txtGioKetThuc;
-        private System.Windows.Forms.TextBox txtGioBatDau;
     }
 }

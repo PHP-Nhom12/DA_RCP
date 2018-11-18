@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.ribbonControl1 = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.btnDoiMK = new DevExpress.XtraBars.BarButtonItem();
@@ -53,8 +52,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.picHinhNV = new System.Windows.Forms.PictureBox();
-            this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
-            this.defaultLookAndFeel1 = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
+            this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager();
+            this.defaultLookAndFeel1 = new DevExpress.LookAndFeel.DefaultLookAndFeel();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             this.PnThongtin.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picHinhNV)).BeginInit();
@@ -301,6 +300,7 @@
             this.picHinhNV.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picHinhNV.TabIndex = 0;
             this.picHinhNV.TabStop = false;
+            this.picHinhNV.Click += new System.EventHandler(this.picHinhNV_Click);
             // 
             // xtraTabbedMdiManager1
             // 

@@ -16,10 +16,10 @@ namespace RapChieuPhimBUS
             return phim.LoadPhim();
         }
 
-        public List<PhimDTO> LoadPhim(int MaCa)
+        public List<PhimDTO> LoadPhim(int MaLich)
         {
             PhimDAO phim = new PhimDAO();
-            return phim.LoadPhim(MaCa);
+            return phim.LoadPhim(MaLich);
         }
     }
 }

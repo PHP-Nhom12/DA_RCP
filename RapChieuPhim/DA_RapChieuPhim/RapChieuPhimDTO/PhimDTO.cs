@@ -8,7 +8,7 @@ namespace RapChieuPhimDTO
 {
     public class PhimDTO
     {
-        public int MaPhim{get;set;}
+      public int MaPhim{get;set;}
       public string TenPhim{get;set;}
       public string NDPhim{get;set;}
       public int TheLoai{get;set;}

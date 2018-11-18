@@ -89,7 +89,7 @@ namespace DA_RapChieuPhim
                     }
                     vechon.MaVe = int.Parse(gvVe.GetRowCellValue(item, ColMaVe).ToString().Trim());
                     vechon.MaPhim = int.Parse(gvVe.GetRowCellValue(item, ColTenPhim).ToString().Trim());
-                    vechon.ViTriNgoi = gvVe.GetRowCellValue(item, ColVitri).ToString().Trim();
+                    vechon.ViTriNgoi = gvVe.GetRowCellValue(item, ColViTri).ToString().Trim();
                     vechon.PhongChieu = int.Parse(gvVe.GetRowCellValue(item, ColPhong).ToString().Trim());
                     vechon.GiaVe = int.Parse(gvVe.GetRowCellValue(item, ColGiaVe).ToString().Trim());
                     vechon.MaTV = int.Parse(gvVe.GetRowCellValue(item, ColTenTV).ToString().Trim());

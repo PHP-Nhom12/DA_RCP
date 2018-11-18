@@ -29,12 +29,12 @@ namespace RapChieuPhimDAO
         }
 
 
-        public List<PhimDTO> LoadPhim(int MaCa)
+        public List<PhimDTO> LoadPhim(int MaLich)
         {
             SqlConnection conn = DataProvider.TaoKetNoi();
-            string strTruyVan = "Select * From Movie, ChiTietLichChieu where Movie.MaPhim = ChiTietLichChieu.MaPhim AND ChiTietLichChieu.MaCa = @MaCa AND ChiTietLichChieu.TrangThai=1";
+            string strTruyVan = "Select * From Movie, ChiTietLichChieu, PhongChieu, CTLoaiPhong where Movie.MaPhim = ChiTietLichChieu.MaPhim AND ChiTietLichChieu.MaPhong = PhongChieu.MaPhong AND PhongChieu.LoaiPhong = CTLoaiPhong.MaLoai AND ChiTietLichChieu.MaLich = @MaLich AND Movie.TrangThai=1";
             SqlParameter[] par = new SqlParameter[1];
-            par[0] = new SqlParameter("@MaCa", MaCa);
+            par[0] = new SqlParameter("@MaLich", MaLich);
             SqlDataReader sdr = DataProvider.TruyVanDuLieu(strTruyVan, par, conn);
             List<PhimDTO> ls = new List<PhimDTO>();
             while (sdr.Read())
