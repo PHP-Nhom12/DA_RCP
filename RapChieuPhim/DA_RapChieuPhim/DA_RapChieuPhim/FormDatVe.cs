@@ -28,7 +28,6 @@ namespace DA_RapChieuPhim
         // Khai báo các biến để lấy dữ liệu cho dễ
         LichChieuDTO lcDTO = new LichChieuDTO();
         ChiTietLichChieuDTO ctlcDTO = new ChiTietLichChieuDTO();
-        List<ChiTietLichChieuDTO> lsCTLC = null;
         List<LichChieuDTO> lsLC = new List<LichChieuDTO>();
         List<SuatChieuDTO> lsPhim = new List<SuatChieuDTO>();
         SuatChieuDTO suatchieuchon = new SuatChieuDTO();
@@ -38,13 +37,13 @@ namespace DA_RapChieuPhim
         
         float Voucher_TiLe = 1;
         int LichChieu_MaLC;
-        DateTime LichChieu_NgayNhap;
-        int Phim_MaPhim;
-        int PhongChieu_MaPhong;
-        int PhongChieu_LoaiPhong;
-        string Ghe_ViTriNgoi;
         int MaTV;
         int Voucher_MaVoucher;
+        int tongthanhtoan = 0;
+        int tam = 0;
+        int GiaCB = 0;
+        float tongtien = 0;
+        float dagiam = 0;
 
         public FormDatVe()
         {
@@ -192,11 +191,24 @@ namespace DA_RapChieuPhim
                 if (MaTV != 0)
                     LoadVoucher(MaTV);
                 lueVoucher.Enabled = true;
+
+                lbNamSX.Text = "Chưa chọn voucher";
             }
         }
 
         private void btnDatVe_Click(object sender, EventArgs e)
         {
+            if (Voucher_MaVoucher == 0 || MaTV == 0)
+            {
+                MessageBox.Show("Mời nhập thông tin Thành viên và Voucher");
+                return;
+            }
+
+            if (vechon != null)
+            {
+                vechon.MaVoucher = Voucher_MaVoucher;
+                vechon.MaTV = MaTV;
+            }
             //if (CheckVeChon())
             //{
             //    ThemVeMoi();
@@ -219,11 +231,49 @@ namespace DA_RapChieuPhim
 
         private void lueVoucher_EditValueChanged(object sender, EventArgs e)
         {
+            if (tam != 0)
+            {
+                tongthanhtoan = tam;
+                tam = 0;
+            }
+            else if (tongthanhtoan != 0)
+            {
+                tam = tongthanhtoan;
+                tongthanhtoan = 0;
+            }
+            
+            dagiam = 0;
+
             if (lueVoucher.EditValue != null)
             {
                 Voucher_MaVoucher = (int)(lueVoucher.EditValue);
                 VoucherDTO vou = (VoucherDTO)lueVoucher.GetSelectedDataRow();
                 Voucher_TiLe = vou.TiLe / 100;
+                if (lvDSGhe.SelectedItems.Count == 0)
+                {
+                    lbTheLoai.Text = "Chưa chọn Ghế";
+                }
+
+                if (lsVeChon.Count > 0)
+                {
+                    foreach (VeDTO ve in lsVeChon)
+                    {
+                        int gb = (int)(ve.GiaVe * Voucher_TiLe);
+                        if (tam == 0)
+                        {
+                            tam += gb;
+                        } else if (tongthanhtoan == 0)
+                        {
+                            tongthanhtoan += gb;
+                        }
+                        else
+                        {
+                            tam += gb;
+                        }
+                    }
+
+                    lbTongThanhToan.Text = (tam == 0 ? tam : tongthanhtoan) + "đ";
+                }
             }
         }
 
@@ -240,6 +290,15 @@ namespace DA_RapChieuPhim
             {
                 suatchieuchon = lsPhim.Find(o => o.TenPhim == lvDSPhim.SelectedItems[0].SubItems[1].Text);
 
+                GiaCB = (int)(50000 * (new LoaiPhongBUS()).LoadLoaiPhong().Find(o=>o.MaLoai == suatchieuchon.Maloai).HeSo);
+
+                lbNDPhim.Text = suatchieuchon.NDPhim;
+                lbNamSX.Text = suatchieuchon.NamXS;
+                lbNhaSX.Text = suatchieuchon.NhaXS;
+                lbDaoDien.Text = suatchieuchon.DaoDien;
+                lbThoiLuong.Text = suatchieuchon.ThoiLuong + " phút";
+                //lbTheLoai.Text = (new TheLoaiBUS()).LoadTheLoai().Find(o => o.MaTheLoai == suatchieuchon.TheLoai.Trim()).TenTheLoai;
+
                 lvDSGhe.Items.Clear();
 
                 lvDSGhe.Groups.Add(new ListViewGroup("Màn Hình", HorizontalAlignment.Center));
@@ -252,18 +311,19 @@ namespace DA_RapChieuPhim
 
                 lvDSGhe.Visible = true;
 
+                ResetLabel();
             }
+        }
+
+        private void ResetLabel()
+        {
+            
         }
 
         private void lvDSGhe_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (Voucher_MaVoucher == 0 || MaTV == 0)
-            {
-                MessageBox.Show("Mời nhập thông tin Thành viên và Voucher");
-                return;
-            }
-
-            int tongtien = 0;
+            tongthanhtoan = 0;
+            tongtien = 0;
 
             if (lvDSGhe.SelectedItems.Count > 0)
             {
@@ -278,24 +338,27 @@ namespace DA_RapChieuPhim
                 
                 lsVeChon.Clear();
 
+                lbTheLoai.Text = "";
+
                 foreach (ListViewItem item in lvDSGhe.SelectedItems)
                 {
+                    tongtien += GiaCB * Ca_HeSo;
+                    vechon.GiaVe = (int)tongtien;
                     vechon.MaPhim = suatchieuchon.MaPhim;
                     vechon.ViTriNgoi = item.Text;
+                    lbTheLoai.Text += item.Text + ", ";
                     vechon.PhongChieu = suatchieuchon.MaPhong;
-                    vechon.GiaVe = int.Parse((50000 * Ca_HeSo * Voucher_TiLe).ToString());
                     vechon.TGBatDau = suatchieuchon.ThoiGianBD;
                     vechon.TGKetThuc = suatchieuchon.ThoiGianKT;
                     vechon.NgayTaoVe = DateTime.Today;
-                    vechon.MaVoucher = Voucher_MaVoucher;
-                    vechon.MaTV = MaTV;
                     vechon.MaLichChieu = LichChieu_MaLC;
-                    tongtien += vechon.GiaVe;
                     lsVeChon.Add(vechon);
                 }
+                tongthanhtoan = (int)tongtien;
             }
 
-            lbTongTien.Text = tongtien + "đ";
+            lbNhaSX.Text = tongtien + "đ";
+            lbTongThanhToan.Text = (int)tongtien + "đ";
         }
 
     }

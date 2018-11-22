@@ -23,7 +23,7 @@ namespace RapChieuPhimDAO
                 SuatChieuDTO ketqua = new SuatChieuDTO();
                 ketqua.MaPhim = int.Parse(sdr["MaPhim"].ToString());
                 ketqua.TenPhim = sdr["TenPhim"].ToString();
-                ketqua.TheLoai = int.Parse(sdr["TheLoai"].ToString());
+                ketqua.TheLoai = sdr["TheLoai"].ToString();
                 ketqua.ThoiLuong = int.Parse(sdr["ThoiLuong"].ToString());
                 ketqua.HinhAnh = sdr["HinhAnh"].ToString();
                 ketqua.DaoDien = sdr["DaoDien"].ToString();
@@ -33,7 +33,7 @@ namespace RapChieuPhimDAO
                 ketqua.MaPhong = int.Parse(sdr["MaPhong"].ToString());
                 ketqua.TenPhong = sdr["TenPhong"].ToString();
                 ketqua.Maloai = int.Parse(sdr["Maloai"].ToString());
-                ketqua.TenLoaiPhong = sdr["TenLoaiPhong"].ToString();
+                ketqua.TenLoaiPhong = sdr["LoaiPhong"].ToString();
                 ketqua.SLCho = int.Parse(sdr["SLCho"].ToString());
                 ketqua.MaCa = int.Parse(sdr["MaCa"].ToString());
                 ketqua.ThoiGianBD = sdr["ThoiGianBD"].ToString();

@@ -11,7 +11,7 @@ namespace RapChieuPhimDTO
         public int MaPhim { get; set; }
         public string TenPhim { get; set; }
         public string NDPhim { get; set; }
-        public int TheLoai { get; set; }
+        public string TheLoai { get; set; }
         public int ThoiLuong { get; set; }
         public string NamXS { get; set; }
         public string DaoDien { get; set; }
