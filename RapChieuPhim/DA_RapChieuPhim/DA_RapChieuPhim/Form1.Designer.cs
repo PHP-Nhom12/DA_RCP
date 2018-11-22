@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.ribbonControl1 = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.btnDoiMK = new DevExpress.XtraBars.BarButtonItem();
@@ -40,8 +41,8 @@
             this.btnQLyLChieu = new DevExpress.XtraBars.BarButtonItem();
             this.btnQLTV = new DevExpress.XtraBars.BarButtonItem();
             this.btnThoat = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem5 = new DevExpress.XtraBars.BarButtonItem();
+            this.btnThongKe = new DevExpress.XtraBars.BarButtonItem();
+            this.btnDatVe = new DevExpress.XtraBars.BarButtonItem();
             this.btnQuanLyPhim = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -52,8 +53,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.picHinhNV = new System.Windows.Forms.PictureBox();
-            this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager();
-            this.defaultLookAndFeel1 = new DevExpress.LookAndFeel.DefaultLookAndFeel();
+            this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
+            this.defaultLookAndFeel1 = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             this.PnThongtin.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picHinhNV)).BeginInit();
@@ -75,8 +76,8 @@
             this.btnQLyLChieu,
             this.btnQLTV,
             this.btnThoat,
-            this.barButtonItem1,
-            this.barButtonItem5,
+            this.btnThongKe,
+            this.btnDatVe,
             this.btnQuanLyPhim});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
             this.ribbonControl1.MaxItemId = 14;
@@ -172,23 +173,23 @@
             this.btnThoat.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
             this.btnThoat.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnThoat_ItemClick);
             // 
-            // barButtonItem1
+            // btnThongKe
             // 
-            this.barButtonItem1.Caption = "Thống Kê";
-            this.barButtonItem1.Id = 11;
-            this.barButtonItem1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.Image")));
-            this.barButtonItem1.Name = "barButtonItem1";
-            this.barButtonItem1.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
-            this.barButtonItem1.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem1_ItemClick_1);
+            this.btnThongKe.Caption = "Thống Kê";
+            this.btnThongKe.Id = 11;
+            this.btnThongKe.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.Image")));
+            this.btnThongKe.Name = "btnThongKe";
+            this.btnThongKe.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.btnThongKe.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem1_ItemClick_1);
             // 
-            // barButtonItem5
+            // btnDatVe
             // 
-            this.barButtonItem5.Caption = "Đặt Vé";
-            this.barButtonItem5.Id = 12;
-            this.barButtonItem5.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem5.ImageOptions.Image")));
-            this.barButtonItem5.Name = "barButtonItem5";
-            this.barButtonItem5.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
-            this.barButtonItem5.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem5_ItemClick);
+            this.btnDatVe.Caption = "Đặt Vé";
+            this.btnDatVe.Id = 12;
+            this.btnDatVe.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem5.ImageOptions.Image")));
+            this.btnDatVe.Name = "btnDatVe";
+            this.btnDatVe.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.btnDatVe.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem5_ItemClick);
             // 
             // btnQuanLyPhim
             // 
@@ -197,6 +198,7 @@
             this.btnQuanLyPhim.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnQuanLyPhim.ImageOptions.Image")));
             this.btnQuanLyPhim.Name = "btnQuanLyPhim";
             this.btnQuanLyPhim.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.btnQuanLyPhim.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnQuanLyPhim_ItemClick);
             // 
             // ribbonPage1
             // 
@@ -214,8 +216,8 @@
             this.ribbonPageGroup1.ItemLinks.Add(this.btnQuanLyPhim);
             this.ribbonPageGroup1.ItemLinks.Add(this.btnQLyLChieu);
             this.ribbonPageGroup1.ItemLinks.Add(this.btnQLTV);
-            this.ribbonPageGroup1.ItemLinks.Add(this.barButtonItem5);
-            this.ribbonPageGroup1.ItemLinks.Add(this.barButtonItem1);
+            this.ribbonPageGroup1.ItemLinks.Add(this.btnDatVe);
+            this.ribbonPageGroup1.ItemLinks.Add(this.btnThongKe);
             this.ribbonPageGroup1.ItemLinks.Add(this.btnThoat);
             this.ribbonPageGroup1.Name = "ribbonPageGroup1";
             this.ribbonPageGroup1.Text = "Chức Năng";
@@ -246,7 +248,7 @@
             this.btnDNDX.Name = "btnDNDX";
             this.btnDNDX.Size = new System.Drawing.Size(131, 52);
             this.btnDNDX.TabIndex = 5;
-            this.btnDNDX.Text = "simpleButton1";
+            this.btnDNDX.Text = "Đăng Xuất";
             this.btnDNDX.Click += new System.EventHandler(this.btnDNDX_Click);
             // 
             // lblChucVu
@@ -255,9 +257,8 @@
             this.lblChucVu.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblChucVu.Location = new System.Drawing.Point(17, 262);
             this.lblChucVu.Name = "lblChucVu";
-            this.lblChucVu.Size = new System.Drawing.Size(55, 18);
+            this.lblChucVu.Size = new System.Drawing.Size(0, 18);
             this.lblChucVu.TabIndex = 4;
-            this.lblChucVu.Text = "label4";
             // 
             // lblHoTen
             // 
@@ -265,9 +266,8 @@
             this.lblHoTen.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblHoTen.Location = new System.Drawing.Point(20, 193);
             this.lblHoTen.Name = "lblHoTen";
-            this.lblHoTen.Size = new System.Drawing.Size(55, 18);
+            this.lblHoTen.Size = new System.Drawing.Size(0, 18);
             this.lblHoTen.TabIndex = 3;
-            this.lblHoTen.Text = "label3";
             // 
             // label2
             // 
@@ -359,8 +359,8 @@
         private DevExpress.LookAndFeel.DefaultLookAndFeel defaultLookAndFeel1;
         private DevExpress.XtraBars.BarButtonItem btnQLTV;
         private DevExpress.XtraBars.BarButtonItem btnThoat;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem1;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem5;
+        private DevExpress.XtraBars.BarButtonItem btnThongKe;
+        private DevExpress.XtraBars.BarButtonItem btnDatVe;
         private DevExpress.XtraBars.BarButtonItem btnQuanLyPhim;
     }
 }

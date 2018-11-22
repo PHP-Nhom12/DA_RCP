@@ -42,11 +42,11 @@
             this.gcLichCHieu = new DevExpress.XtraGrid.GridControl();
             this.gvLichChieu = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.ColTenPhong = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.LupTphong = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
+            this.LueTenPhog = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
             this.ColPhim = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.LupTPhim = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
+            this.LueTenPhim = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
             this.ColCa = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.LupMaCa = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
+            this.LueMaCa = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
             this.ColTG = new DevExpress.XtraGrid.Columns.GridColumn();
             this.lUPCa = new DevExpress.XtraEditors.LookUpEdit();
             this.lUPtenPhim = new DevExpress.XtraEditors.LookUpEdit();
@@ -58,9 +58,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcLichCHieu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvLichChieu)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.LupTphong)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.LupTPhim)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.LupMaCa)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LueTenPhog)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LueTenPhim)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LueMaCa)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lUPCa.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lUPtenPhim.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lUpTenPhong.Properties)).BeginInit();
@@ -190,9 +190,9 @@
             this.gcLichCHieu.MainView = this.gvLichChieu;
             this.gcLichCHieu.Name = "gcLichCHieu";
             this.gcLichCHieu.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
-            this.LupTphong,
-            this.LupTPhim,
-            this.LupMaCa});
+            this.LueTenPhog,
+            this.LueTenPhim,
+            this.LueMaCa});
             this.gcLichCHieu.Size = new System.Drawing.Size(814, 270);
             this.gcLichCHieu.TabIndex = 10;
             this.gcLichCHieu.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -212,56 +212,56 @@
             // ColTenPhong
             // 
             this.ColTenPhong.Caption = "Tên Phòng";
-            this.ColTenPhong.ColumnEdit = this.LupTphong;
+            this.ColTenPhong.ColumnEdit = this.LueTenPhog;
             this.ColTenPhong.FieldName = "MaPhong";
             this.ColTenPhong.Name = "ColTenPhong";
             this.ColTenPhong.Visible = true;
             this.ColTenPhong.VisibleIndex = 0;
             // 
-            // LupTphong
+            // LueTenPhog
             // 
-            this.LupTphong.AutoHeight = false;
-            this.LupTphong.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.LueTenPhog.AutoHeight = false;
+            this.LueTenPhog.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.LupTphong.DisplayMember = "TenPhong";
-            this.LupTphong.Name = "LupTphong";
-            this.LupTphong.ValueMember = "MaPhong";
+            this.LueTenPhog.DisplayMember = "TenPhong";
+            this.LueTenPhog.Name = "LueTenPhog";
+            this.LueTenPhog.ValueMember = "MaPhong";
             // 
             // ColPhim
             // 
             this.ColPhim.Caption = "Tên Phim";
-            this.ColPhim.ColumnEdit = this.LupTPhim;
+            this.ColPhim.ColumnEdit = this.LueTenPhim;
             this.ColPhim.FieldName = "MaPhim";
             this.ColPhim.Name = "ColPhim";
             this.ColPhim.Visible = true;
             this.ColPhim.VisibleIndex = 1;
             // 
-            // LupTPhim
+            // LueTenPhim
             // 
-            this.LupTPhim.AutoHeight = false;
-            this.LupTPhim.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.LueTenPhim.AutoHeight = false;
+            this.LueTenPhim.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.LupTPhim.DisplayMember = "TenPhim";
-            this.LupTPhim.Name = "LupTPhim";
-            this.LupTPhim.ValueMember = "MaPhim";
+            this.LueTenPhim.DisplayMember = "TenPhim";
+            this.LueTenPhim.Name = "LueTenPhim";
+            this.LueTenPhim.ValueMember = "MaPhim";
             // 
             // ColCa
             // 
             this.ColCa.Caption = "Ca";
-            this.ColCa.ColumnEdit = this.LupMaCa;
+            this.ColCa.ColumnEdit = this.LueMaCa;
             this.ColCa.FieldName = "MaCa";
             this.ColCa.Name = "ColCa";
             this.ColCa.Visible = true;
             this.ColCa.VisibleIndex = 2;
             // 
-            // LupMaCa
+            // LueMaCa
             // 
-            this.LupMaCa.AutoHeight = false;
-            this.LupMaCa.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.LueMaCa.AutoHeight = false;
+            this.LueMaCa.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.LupMaCa.DisplayMember = "TenCa";
-            this.LupMaCa.Name = "LupMaCa";
-            this.LupMaCa.ValueMember = "MaCa";
+            this.LueMaCa.DisplayMember = "TenCa";
+            this.LueMaCa.Name = "LueMaCa";
+            this.LueMaCa.ValueMember = "MaCa";
             // 
             // ColTG
             // 
@@ -361,9 +361,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcLichCHieu)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvLichChieu)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.LupTphong)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.LupTPhim)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.LupMaCa)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LueTenPhog)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LueTenPhim)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LueMaCa)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lUPCa.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lUPtenPhim.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lUpTenPhong.Properties)).EndInit();
@@ -392,9 +392,9 @@
         private DevExpress.XtraGrid.Columns.GridColumn ColPhim;
         private DevExpress.XtraGrid.Columns.GridColumn ColCa;
         private DevExpress.XtraGrid.Columns.GridColumn ColTG;
-        private DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit LupTphong;
-        private DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit LupTPhim;
-        private DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit LupMaCa;
+        private DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit LueTenPhog;
+        private DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit LueTenPhim;
+        private DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit LueMaCa;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.DateTimePicker dtpGioKetThuc;

@@ -31,19 +31,19 @@ namespace DA_RapChieuPhim
         List<LichChieuDTO> lsLC = new List<LichChieuDTO>();
         List<SuatChieuDTO> lsPhim = new List<SuatChieuDTO>();
         SuatChieuDTO suatchieuchon = new SuatChieuDTO();
+        List<GheDTO> lsGhe = new List<GheDTO>();
 
 
         // khai báo các biến giữ giá trị lấy về để tính toán và cho 'vechon'
         
-        float Voucher_TiLe = 1;
+        float Voucher_TiLe = 0;
         int LichChieu_MaLC;
         int MaTV;
         int Voucher_MaVoucher;
-        int tongthanhtoan = 0;
-        int tam = 0;
+        float GiaVe = 0;
         int GiaCB = 0;
+        int GiaGoc = 0;
         float tongtien = 0;
-        float dagiam = 0;
 
         public FormDatVe()
         {
@@ -103,6 +103,9 @@ namespace DA_RapChieuPhim
             lueVoucher.Enabled = false;
             lueMaTV.EditValue = null;
             lueVoucher.EditValue = null;
+            lvDSPhim.SelectedItems.Clear();
+            lvDSGhe.Visible = false;
+            ResetLabel();
         }
 
         private void LoadLichChieuTheoNgay(DateTime NgayChieu)
@@ -191,34 +194,35 @@ namespace DA_RapChieuPhim
                 if (MaTV != 0)
                     LoadVoucher(MaTV);
                 lueVoucher.Enabled = true;
-
-                lbNamSX.Text = "Chưa chọn voucher";
             }
         }
 
         private void btnDatVe_Click(object sender, EventArgs e)
         {
-            if (Voucher_MaVoucher == 0 || MaTV == 0)
+            if (Voucher_MaVoucher != 0 || MaTV != 0)
             {
-                MessageBox.Show("Mời nhập thông tin Thành viên và Voucher");
-                return;
+                if (vechon != null)
+                {
+                    vechon.MaVoucher = Voucher_MaVoucher;
+                    vechon.MaTV = MaTV;
+                }
             }
 
-            if (vechon != null)
+            if (lsVeChon.Count > 0)
             {
-                vechon.MaVoucher = Voucher_MaVoucher;
-                vechon.MaTV = MaTV;
+                ThemVeMoi();
             }
-            //if (CheckVeChon())
-            //{
-            //    ThemVeMoi();
-            //}
+            else
+            {
+                MessageBox.Show("Vui lòng chọn ghế !");
+                return;
+            }
         }
 
 
         private void ThemVeMoi()
         {
-            if (ve.ThemVe(vechon))
+            if (ve.ThemVe(lsVeChon))
             {
                 MessageBox.Show("Thêm Vé Thành Công!");
                 ResetForm();
@@ -231,48 +235,35 @@ namespace DA_RapChieuPhim
 
         private void lueVoucher_EditValueChanged(object sender, EventArgs e)
         {
-            if (tam != 0)
-            {
-                tongthanhtoan = tam;
-                tam = 0;
-            }
-            else if (tongthanhtoan != 0)
-            {
-                tam = tongthanhtoan;
-                tongthanhtoan = 0;
-            }
-            
-            dagiam = 0;
 
             if (lueVoucher.EditValue != null)
             {
                 Voucher_MaVoucher = (int)(lueVoucher.EditValue);
                 VoucherDTO vou = (VoucherDTO)lueVoucher.GetSelectedDataRow();
                 Voucher_TiLe = vou.TiLe / 100;
-                if (lvDSGhe.SelectedItems.Count == 0)
-                {
-                    lbTheLoai.Text = "Chưa chọn Ghế";
-                }
+                //    if (lvDSGhe.SelectedItems.Count == 0)
+                //    {
+                //        lbTheLoai.Text = "Chưa chọn Ghế";
+                //    }
 
                 if (lsVeChon.Count > 0)
                 {
+                    tongtien = 0;
                     foreach (VeDTO ve in lsVeChon)
                     {
-                        int gb = (int)(ve.GiaVe * Voucher_TiLe);
-                        if (tam == 0)
+                        if (GiaGoc > ve.GiaVe)
                         {
-                            tam += gb;
-                        } else if (tongthanhtoan == 0)
-                        {
-                            tongthanhtoan += gb;
+                            ve.GiaVe = GiaGoc;
                         }
                         else
                         {
-                            tam += gb;
+                            GiaGoc = ve.GiaVe;
                         }
+                        ve.GiaVe -= int.Parse((ve.GiaVe * Voucher_TiLe).ToString());
+                        tongtien += ve.GiaVe;
                     }
 
-                    lbTongThanhToan.Text = (tam == 0 ? tam : tongthanhtoan) + "đ";
+                    lbTongThanhToan.Text = tongtien + "đ";
                 }
             }
         }
@@ -297,69 +288,70 @@ namespace DA_RapChieuPhim
                 lbNhaSX.Text = suatchieuchon.NhaXS;
                 lbDaoDien.Text = suatchieuchon.DaoDien;
                 lbThoiLuong.Text = suatchieuchon.ThoiLuong + " phút";
-                //lbTheLoai.Text = (new TheLoaiBUS()).LoadTheLoai().Find(o => o.MaTheLoai == suatchieuchon.TheLoai.Trim()).TenTheLoai;
+                lbTheLoai.Text = (new TheLoaiBUS()).LoadTheLoai().Find(o => o.MaTheLoai == suatchieuchon.TheLoai).TenTheLoai;
 
                 lvDSGhe.Items.Clear();
+                lbTongThanhToan.Text = "0đ";
 
                 lvDSGhe.Groups.Add(new ListViewGroup("Màn Hình", HorizontalAlignment.Center));
 
-                for (int i = 0; i < suatchieuchon.SLCho; i++)
+                lsGhe = (new GheBUS()).LoadGhe(suatchieuchon.MaPhong);
+
+                foreach (GheDTO ghe in lsGhe)
                 {
-                    lvDSGhe.Items.Add("A" + (i + 1));
-                    lvDSGhe.Items[i].Group = lvDSGhe.Groups[0];
+                    lvDSGhe.Items.Add(ghe.MaGhe).Group = lvDSGhe.Groups[0];
                 }
-
+                
                 lvDSGhe.Visible = true;
-
-                ResetLabel();
             }
         }
 
         private void ResetLabel()
         {
-            
+            lbNDPhim.Text = "Chưa chọn Phim";
+            lbNamSX.Text = "Chưa chọn Phim";
+            lbNhaSX.Text = "Chưa chọn Phim";
+            lbDaoDien.Text = "Chưa chọn Phim";
+            lbThoiLuong.Text = "Chưa chọn Phim";
+            lbTheLoai.Text = "Chưa chọn Phim";
+            lbTongThanhToan.Text = "0đ";
         }
 
         private void lvDSGhe_SelectedIndexChanged(object sender, EventArgs e)
         {
-            tongthanhtoan = 0;
             tongtien = 0;
 
             if (lvDSGhe.SelectedItems.Count > 0)
             {
-                if (vechon == null)
-                {
-                    vechon = new VeDTO();
-                }
+                //if (vechon == null)
+                //{
+                //    vechon = new VeDTO();
+                //}
 
                 float Ca_HeSo = (new CaBUS()).LoadCa().Find(o => o.MaCa == suatchieuchon.MaCa).HeSo;
-                if (Voucher_TiLe == 0)
-                    Voucher_TiLe = 1;
                 
                 lsVeChon.Clear();
 
-                lbTheLoai.Text = "";
-
                 foreach (ListViewItem item in lvDSGhe.SelectedItems)
                 {
-                    tongtien += GiaCB * Ca_HeSo;
-                    vechon.GiaVe = (int)tongtien;
+                    vechon = new VeDTO();
+                    GiaVe = GiaCB * Ca_HeSo;
+                    if (Voucher_TiLe != 0)
+                        GiaVe -= (GiaVe * Voucher_TiLe);
+                    vechon.GiaVe = int.Parse(GiaVe.ToString());
                     vechon.MaPhim = suatchieuchon.MaPhim;
                     vechon.ViTriNgoi = item.Text;
-                    lbTheLoai.Text += item.Text + ", ";
                     vechon.PhongChieu = suatchieuchon.MaPhong;
                     vechon.TGBatDau = suatchieuchon.ThoiGianBD;
                     vechon.TGKetThuc = suatchieuchon.ThoiGianKT;
                     vechon.NgayTaoVe = DateTime.Today;
                     vechon.MaLichChieu = LichChieu_MaLC;
                     lsVeChon.Add(vechon);
+                    tongtien += GiaVe;
                 }
-                tongthanhtoan = (int)tongtien;
             }
-
-            lbNhaSX.Text = tongtien + "đ";
-            lbTongThanhToan.Text = (int)tongtien + "đ";
+            
+            lbTongThanhToan.Text = Math.Round(tongtien) + "đ";
         }
-
     }
 }

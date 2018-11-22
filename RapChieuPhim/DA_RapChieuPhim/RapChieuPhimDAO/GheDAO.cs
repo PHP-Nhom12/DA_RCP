@@ -32,7 +32,7 @@ namespace RapChieuPhimDAO
         public List<GheDTO> LoadGhe(int MaPhong)
         {
             SqlConnection conn = DataProvider.TaoKetNoi();
-            string strTruyVan = "Select * From Ghe where TrangThai=1 AND MaPhong = @MaPhong";
+            string strTruyVan = "Select * From Ghe where TrangThai=1 AND MaPhong = @MaPhong ORDER BY len(MaGhe), MaGhe";
             SqlParameter[] par = new SqlParameter[1];
             par[0] = new SqlParameter("@MaPhong", MaPhong);
             SqlDataReader sdr = DataProvider.TruyVanDuLieu(strTruyVan, par, conn);

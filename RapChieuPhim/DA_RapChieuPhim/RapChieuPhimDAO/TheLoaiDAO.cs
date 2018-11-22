@@ -12,7 +12,7 @@ namespace RapChieuPhimDAO
     {
         public List<TheLoaiDTO> LoadTheLoai()
         {
-            string strTruyVan = "Select * From TheLoai";
+            string strTruyVan = "Select * From TheLoai ";
             SqlConnection conn = DataProvider.TaoKetNoi();
             SqlDataReader sdr = DataProvider.TruyVanDuLieu(strTruyVan, conn);
             List<TheLoaiDTO> ls = new List<TheLoaiDTO>();
@@ -22,8 +22,10 @@ namespace RapChieuPhimDAO
                 TheLoaiDTO ketqua = new TheLoaiDTO();
                 ketqua.MaTheLoai = sdr["MaTheLoai"].ToString();
                 ketqua.TenTheLoai = sdr["TenTheLoai"].ToString();
+                ls.Add(ketqua);
             }
             sdr.Close();
+            conn.Close();
             return ls;
         }
     }

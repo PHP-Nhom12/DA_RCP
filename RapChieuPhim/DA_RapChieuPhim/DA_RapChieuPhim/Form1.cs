@@ -20,7 +20,6 @@ namespace DA_RapChieuPhim
         FormDangNhap frmDN;
         public NhanVienDTO nvDangNhap = new NhanVienDTO();
         NhanVienBUS nvBUS = new NhanVienBUS();
-       // NhanVienDTO nv = new NhanVienDTO();
         public Form1()
         {
             InitializeComponent();
@@ -47,30 +46,84 @@ namespace DA_RapChieuPhim
             btnQLVe.Enabled = false;
             btnQLyLChieu.Enabled = false;
             btnQuanLyPhim.Enabled = false;
+            btnDatVe.Enabled = false;
+            btnThongKe.Enabled = false;
         }
         private void XulyDangNhapDangXuat()
         {
             if (isDangNhap)
-            {
+            { 
                 btnDNDX.Visible = true;
                 PnThongtin.Visible = true;
-                btnDoiMK.Enabled = true;
-                btnQLNV.Enabled = true;
-                btnQLTV.Enabled = true;
-                btnQLPhong.Enabled = true;
-                btnQLVe.Enabled = true;
-                btnQLyLChieu.Enabled = true;
-                btnQuanLyPhim.Enabled = true;
-                //btnDMK.Enabled = true;  
-                btnDNDX.Text = "ĐĂNG XUẤT";
-
-
-            }
-            else
-            {
-                btnDNDX.Text = "ĐĂNG NHẬP";
-
-
+                switch (nvDangNhap.LoaiNV)
+                {
+                    case 1:
+                        btnDoiMK.Enabled = true;
+                        btnQLNV.Enabled = true;
+                        btnQLTV.Enabled = true;
+                        btnQLPhong.Enabled = true;
+                        btnQLVe.Enabled = true;
+                        btnQLyLChieu.Enabled = true;
+                        btnQuanLyPhim.Enabled = true;
+                        btnDatVe.Enabled = true;
+                        btnThongKe.Enabled = true;
+                        break;
+                    case 2:
+                        btnDatVe.Enabled = true;
+                        btnDoiMK.Enabled = false;
+                        btnQLNV.Enabled = false;
+                        btnQLTV.Enabled = false;
+                        btnQLPhong.Enabled = false;
+                        btnQLVe.Enabled = false;
+                        btnQLyLChieu.Enabled = false;
+                        btnQuanLyPhim.Enabled = false;
+                        btnThongKe.Enabled = false;
+                        break;
+                    case 3:
+                        btnQLPhong.Enabled = true;
+                        btnDatVe.Enabled = false;
+                        btnDoiMK.Enabled = false;
+                        btnQLNV.Enabled = false;
+                        btnQLTV.Enabled = false;
+                        btnQLVe.Enabled = false;
+                        btnQLyLChieu.Enabled = false;
+                        btnQuanLyPhim.Enabled = false;
+                        btnThongKe.Enabled = false;
+                        break;
+                    case 4:
+                        btnQuanLyPhim.Enabled = true;
+                        btnDatVe.Enabled = false;
+                        btnDoiMK.Enabled = false;
+                        btnQLNV.Enabled = false;
+                        btnQLTV.Enabled = false;
+                        btnQLPhong.Enabled = false;
+                        btnQLVe.Enabled = false;
+                        btnQLyLChieu.Enabled = false;
+                        btnThongKe.Enabled = false;
+                        break;
+                    case 5:
+                        btnQLyLChieu.Enabled = true;
+                        btnDatVe.Enabled = false;
+                        btnDoiMK.Enabled = false;
+                        btnQLNV.Enabled = false;
+                        btnQLTV.Enabled = false;
+                        btnQLPhong.Enabled = false;
+                        btnQLVe.Enabled = false;
+                        btnQuanLyPhim.Enabled = false;
+                        btnThongKe.Enabled = false;
+                        break;
+                    default:
+                        btnDatVe.Enabled = false;
+                        btnDoiMK.Enabled = false;
+                        btnQLNV.Enabled = false;
+                        btnQLTV.Enabled = false;
+                        btnQLPhong.Enabled = false;
+                        btnQLVe.Enabled = false;
+                        btnQLyLChieu.Enabled = false;
+                        btnQuanLyPhim.Enabled = false;
+                        btnThongKe.Enabled = false;
+                        break;
+                }
             }
         }
         internal void SetDangNhapThanhCong()
@@ -147,7 +200,9 @@ namespace DA_RapChieuPhim
             }
             else
             {
-                if(frmDN==null&& frmDN.IsDisposed)
+                btnDatVe.Enabled = false;
+                btnThongKe.Enabled = false;
+                if (frmDN==null&& frmDN.IsDisposed)
                 {
                     frmDN = new FormDangNhap();
                     frmDN.MdiParent = this;
@@ -179,6 +234,10 @@ namespace DA_RapChieuPhim
             {
                 if (f.MdiParent == this && !f.IsDisposed)
                 {
+                    if (f.Name == "FormDangNhap")
+                    {
+                        return;
+                    }
                     f.Dispose();
                 }
             }
@@ -252,7 +311,13 @@ namespace DA_RapChieuPhim
 
         }
 
-       
-       
+        private void btnQuanLyPhim_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            DongTatCaForm();
+            FormQLPhim frmPhim = new FormQLPhim();
+            frmPhim.Dock = DockStyle.Fill;
+            frmPhim.MdiParent = this;
+            frmPhim.Show();
+        }
     }
 }

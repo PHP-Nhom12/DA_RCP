@@ -28,7 +28,24 @@ namespace RapChieuPhimDAO
             return ls;
         }
 
-
+        public List<PhimDTO> LoadPhimm()
+        {
+            SqlConnection conn = DataProvider.TaoKetNoi();
+            string strTruyVan = "Select * From Movie where TrangThai=1";
+            SqlDataReader sdr = DataProvider.TruyVanDuLieu(strTruyVan, conn);
+            List<PhimDTO> ls = new List<PhimDTO>();
+            while (sdr.Read())
+            {
+                PhimDTO ketqua = new PhimDTO();
+                ketqua.MaPhim = int.Parse(sdr["MaPhim"].ToString());
+                ketqua.TenPhim = sdr["TenPhim"].ToString();
+                ketqua.Mac = sdr["Mac"].ToString();
+                ls.Add(ketqua);
+            }
+            sdr.Close();
+            conn.Close();
+            return ls;
+        }
         public List<PhimDTO> LoadPhim(int MaLich)
         {
             SqlConnection conn = DataProvider.TaoKetNoi();

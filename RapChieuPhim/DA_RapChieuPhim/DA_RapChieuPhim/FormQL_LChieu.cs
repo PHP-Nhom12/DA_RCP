@@ -42,9 +42,9 @@ namespace DA_RapChieuPhim
 
             gcLichCHieu.DataSource = lich.LoadLich();
 
-            LupTPhim.DataSource = phim.LoadPhim();
-            LupTphong.DataSource = pBUS.LoadPhong();
-            LupMaCa.DataSource = ca.LoadCa();
+            LueTenPhim.DataSource = phim.LoadPhim();
+            LueTenPhog.DataSource = pBUS.LoadPhong();
+            LueMaCa.DataSource = ca.LoadCa();
 
             dtpGioBatDau.Format = DateTimePickerFormat.Custom;
             dtpGioBatDau.CustomFormat = "HH:mm";

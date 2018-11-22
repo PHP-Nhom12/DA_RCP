@@ -38,13 +38,21 @@ namespace DA_RapChieuPhim
                     Form1 fcha = (Form1)this.MdiParent;
                     fcha.nvDangNhap = nvdn;
                     fcha.SetDangNhapThanhCong();
-                    this.Close();
+                    this.Dispose();
                 }
                 else
                 {
                     MessageBox.Show("Đăng nhập thất bại");
                 }
            }
+        }
+
+        private void FormDangNhap_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (e.CloseReason == CloseReason.UserClosing)
+            {
+                e.Cancel = true;
+            }
         }
     }
 }

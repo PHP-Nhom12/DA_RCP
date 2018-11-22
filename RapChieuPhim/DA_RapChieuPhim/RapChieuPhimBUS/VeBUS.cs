@@ -28,6 +28,12 @@ namespace RapChieuPhimBUS
             return ve.ThemVe(venew);
         }
 
+        public bool ThemVe(List<VeDTO> lsVe)
+        {
+            VeDAO ve = new VeDAO();
+            return ve.ThemVe(lsVe);
+        }
+
         public bool XoaVe(int MaVe)
         {
             VeDAO ve = new VeDAO();

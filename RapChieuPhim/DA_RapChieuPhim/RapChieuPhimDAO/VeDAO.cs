@@ -87,8 +87,8 @@ namespace RapChieuPhimDAO
         public bool ThemVe(VeDTO ve)
         {
 
-            string strTruyVan = "INSERT INTO Ve(MaPhim, ViTriNgoi, PhongChieu, GiaVe, NgayTaoVe, MaVoucher, MaTV, MaLichChieu, TrangThai) VALUES (@MaPhim, @ViTriNgoi, @PhongChieu, @GiaVe, @NgayTaoVe, @MaVoucher, @MaTV, @MaLichChieu, 1)";
-            SqlParameter[] pars = new SqlParameter[8];
+            string strTruyVan = "INSERT INTO Ve(MaPhim, ViTriNgoi, PhongChieu, GiaVe, NgayTaoVe, MaVoucher, MaTV, MaLichChieu, TGBatDau, TGKetThuc, TrangThai) VALUES (@MaPhim, @ViTriNgoi, @PhongChieu, @GiaVe, @NgayTaoVe, @MaVoucher, @MaTV, @MaLichChieu, @TGBatDau, @TGKetThuc, 1)";
+            SqlParameter[] pars = new SqlParameter[10];
             pars[0] = new SqlParameter("@MaPhim", ve.MaPhim);
             pars[1] = new SqlParameter("@ViTriNgoi", ve.ViTriNgoi);
             pars[2] = new SqlParameter("@PhongChieu", ve.PhongChieu);
@@ -97,8 +97,22 @@ namespace RapChieuPhimDAO
             pars[5] = new SqlParameter("@MaVoucher", ve.MaVoucher);
             pars[6] = new SqlParameter("@MaTV", ve.MaTV);
             pars[7] = new SqlParameter("@MaLichChieu", ve.MaLichChieu);
+            pars[8] = new SqlParameter("@TGBatDau", ve.TGBatDau);
+            pars[9] = new SqlParameter("@TGKetThuc", ve.TGKetThuc);
             SqlConnection conn = DataProvider.TaoKetNoi();
             return DataProvider.ThucThiCauLenh(strTruyVan, pars, conn);
+        }
+
+        public bool ThemVe(List<VeDTO> lsVe)
+        {
+            foreach (VeDTO vechon in lsVe)
+            {
+                if (!ThemVe(vechon))
+                {
+                    return false;
+                }
+            }
+            return true;
         }
 
         public bool XoaVe(int MaVe)
@@ -109,5 +123,6 @@ namespace RapChieuPhimDAO
 
             return DataProvider.ThucThiCauLenh(strTruyVan, conn);
         }
+
     }
 }

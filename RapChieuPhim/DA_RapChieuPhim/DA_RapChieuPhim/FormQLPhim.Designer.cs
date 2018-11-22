@@ -28,8 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lueTheLoai = new DevExpress.XtraEditors.LookUpEdit();
-            this.lueTenPhim = new DevExpress.XtraEditors.LookUpEdit();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.ColTG = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -40,6 +38,11 @@
             this.LupTphong = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
             this.ColTenPhong = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gvLichChieu = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gcLichCHieu = new DevExpress.XtraGrid.GridControl();
             this.label8 = new System.Windows.Forms.Label();
             this.button5 = new System.Windows.Forms.Button();
@@ -51,22 +54,18 @@
             this.textEdit1 = new DevExpress.XtraEditors.TextEdit();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.lueTheLoai = new DevExpress.XtraEditors.LookUpEdit();
+            this.lueMac = new DevExpress.XtraEditors.LookUpEdit();
             this.label6 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            ((System.ComponentModel.ISupportInitialize)(this.lueTheLoai.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lueTenPhim.Properties)).BeginInit();
+            this.label5 = new System.Windows.Forms.Label();
+            this.txtNSX = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.txtDaoDien = new System.Windows.Forms.TextBox();
+            this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.txtNoiDUng = new System.Windows.Forms.TextBox();
+            this.txtTenPhim = new DevExpress.XtraEditors.TextEdit();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.LupMaCa)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.LupTPhim)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.LupTphong)).BeginInit();
@@ -74,39 +73,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.gcLichCHieu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).BeginInit();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lueTheLoai.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lueMac.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtTenPhim.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // lueTheLoai
-            // 
-            this.lueTheLoai.Location = new System.Drawing.Point(157, 84);
-            this.lueTheLoai.Name = "lueTheLoai";
-            this.lueTheLoai.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lueTheLoai.Properties.Appearance.Options.UseFont = true;
-            this.lueTheLoai.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.lueTheLoai.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("MaCa", "Mã Ca"),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("TenCa", "Tên Ca")});
-            this.lueTheLoai.Properties.NullText = "Please Selected";
-            this.lueTheLoai.Size = new System.Drawing.Size(222, 22);
-            this.lueTheLoai.TabIndex = 7;
-            // 
-            // lueTenPhim
-            // 
-            this.lueTenPhim.Location = new System.Drawing.Point(157, 43);
-            this.lueTenPhim.Name = "lueTenPhim";
-            this.lueTenPhim.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lueTenPhim.Properties.Appearance.Options.UseFont = true;
-            this.lueTenPhim.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.lueTenPhim.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("MaPhong", "Mã Phòng"),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("TenPhong", "Tên Phòng")});
-            this.lueTenPhim.Properties.NullText = "Please Selected";
-            this.lueTenPhim.Size = new System.Drawing.Size(222, 22);
-            this.lueTenPhim.TabIndex = 5;
             // 
             // label3
             // 
@@ -201,6 +174,41 @@
             this.gvLichChieu.GridControl = this.gcLichCHieu;
             this.gvLichChieu.Name = "gvLichChieu";
             this.gvLichChieu.OptionsView.ShowGroupPanel = false;
+            // 
+            // gridColumn1
+            // 
+            this.gridColumn1.Caption = "Năm sản xuất";
+            this.gridColumn1.Name = "gridColumn1";
+            this.gridColumn1.Visible = true;
+            this.gridColumn1.VisibleIndex = 4;
+            // 
+            // gridColumn2
+            // 
+            this.gridColumn2.Caption = "Đạo diễn";
+            this.gridColumn2.Name = "gridColumn2";
+            this.gridColumn2.Visible = true;
+            this.gridColumn2.VisibleIndex = 5;
+            // 
+            // gridColumn3
+            // 
+            this.gridColumn3.Caption = "Nhà sản xuất";
+            this.gridColumn3.Name = "gridColumn3";
+            this.gridColumn3.Visible = true;
+            this.gridColumn3.VisibleIndex = 6;
+            // 
+            // gridColumn4
+            // 
+            this.gridColumn4.Caption = "Mác";
+            this.gridColumn4.Name = "gridColumn4";
+            this.gridColumn4.Visible = true;
+            this.gridColumn4.VisibleIndex = 7;
+            // 
+            // gridColumn5
+            // 
+            this.gridColumn5.Caption = "Ngày nhập";
+            this.gridColumn5.Name = "gridColumn5";
+            this.gridColumn5.Visible = true;
+            this.gridColumn5.VisibleIndex = 8;
             // 
             // gcLichCHieu
             // 
@@ -302,20 +310,22 @@
             this.label2.Size = new System.Drawing.Size(83, 40);
             this.label2.TabIndex = 1;
             this.label2.Text = "Nội Dung\r\nTóm Tắt";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // groupBox1
             // 
             this.groupBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.groupBox1.Controls.Add(this.comboBox1);
+            this.groupBox1.Controls.Add(this.pictureBox1);
+            this.groupBox1.Controls.Add(this.txtTenPhim);
+            this.groupBox1.Controls.Add(this.lueTheLoai);
+            this.groupBox1.Controls.Add(this.lueMac);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.textBox3);
+            this.groupBox1.Controls.Add(this.txtNSX);
             this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.textBox2);
+            this.groupBox1.Controls.Add(this.txtDaoDien);
             this.groupBox1.Controls.Add(this.numericUpDown2);
             this.groupBox1.Controls.Add(this.numericUpDown1);
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.txtNoiDUng);
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.button5);
             this.groupBox1.Controls.Add(this.label7);
@@ -325,108 +335,43 @@
             this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Controls.Add(this.textEdit1);
             this.groupBox1.Controls.Add(this.gcLichCHieu);
-            this.groupBox1.Controls.Add(this.lueTheLoai);
-            this.groupBox1.Controls.Add(this.lueTenPhim);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(22, 12);
+            this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(886, 532);
+            this.groupBox1.Size = new System.Drawing.Size(1009, 532);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Quản Lý Phim";
             // 
-            // textBox1
+            // lueTheLoai
             // 
-            this.textBox1.Location = new System.Drawing.Point(157, 171);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(222, 51);
-            this.textBox1.TabIndex = 31;
+            this.lueTheLoai.Location = new System.Drawing.Point(157, 87);
+            this.lueTheLoai.Name = "lueTheLoai";
+            this.lueTheLoai.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lueTheLoai.Properties.Appearance.Options.UseFont = true;
+            this.lueTheLoai.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.lueTheLoai.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("MaTheLoai", "Mã Thể Loại"),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("TenTheLoai", "Tên Thể Loại")});
+            this.lueTheLoai.Properties.NullText = "Please Selected";
+            this.lueTheLoai.Size = new System.Drawing.Size(222, 22);
+            this.lueTheLoai.TabIndex = 42;
             // 
-            // gridColumn1
+            // lueMac
             // 
-            this.gridColumn1.Caption = "Năm sản xuất";
-            this.gridColumn1.Name = "gridColumn1";
-            this.gridColumn1.Visible = true;
-            this.gridColumn1.VisibleIndex = 4;
-            // 
-            // gridColumn2
-            // 
-            this.gridColumn2.Caption = "Đạo diễn";
-            this.gridColumn2.Name = "gridColumn2";
-            this.gridColumn2.Visible = true;
-            this.gridColumn2.VisibleIndex = 5;
-            // 
-            // gridColumn3
-            // 
-            this.gridColumn3.Caption = "Nhà sản xuất";
-            this.gridColumn3.Name = "gridColumn3";
-            this.gridColumn3.Visible = true;
-            this.gridColumn3.VisibleIndex = 6;
-            // 
-            // gridColumn4
-            // 
-            this.gridColumn4.Caption = "Mác";
-            this.gridColumn4.Name = "gridColumn4";
-            this.gridColumn4.Visible = true;
-            this.gridColumn4.VisibleIndex = 7;
-            // 
-            // gridColumn5
-            // 
-            this.gridColumn5.Caption = "Ngày nhập";
-            this.gridColumn5.Name = "gridColumn5";
-            this.gridColumn5.Visible = true;
-            this.gridColumn5.VisibleIndex = 8;
-            // 
-            // numericUpDown1
-            // 
-            this.numericUpDown1.Location = new System.Drawing.Point(157, 128);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(222, 20);
-            this.numericUpDown1.TabIndex = 32;
-            // 
-            // numericUpDown2
-            // 
-            this.numericUpDown2.Location = new System.Drawing.Point(622, 43);
-            this.numericUpDown2.Name = "numericUpDown2";
-            this.numericUpDown2.Size = new System.Drawing.Size(203, 20);
-            this.numericUpDown2.TabIndex = 33;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(622, 84);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(203, 20);
-            this.textBox2.TabIndex = 34;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(453, 88);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(75, 18);
-            this.label4.TabIndex = 35;
-            this.label4.Text = "Đạo diễn";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(453, 130);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(106, 18);
-            this.label5.TabIndex = 37;
-            this.label5.Text = "Nhà sản xuất";
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(622, 126);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(203, 20);
-            this.textBox3.TabIndex = 36;
+            this.lueMac.Location = new System.Drawing.Point(622, 169);
+            this.lueMac.Name = "lueMac";
+            this.lueMac.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lueMac.Properties.Appearance.Options.UseFont = true;
+            this.lueMac.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.lueMac.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Mac", "Mác")});
+            this.lueMac.Size = new System.Drawing.Size(203, 22);
+            this.lueMac.TabIndex = 41;
             // 
             // label6
             // 
@@ -438,25 +383,87 @@
             this.label6.TabIndex = 39;
             this.label6.Text = "Mác";
             // 
-            // comboBox1
+            // label5
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(623, 171);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(202, 21);
-            this.comboBox1.TabIndex = 40;
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(453, 130);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(106, 18);
+            this.label5.TabIndex = 37;
+            this.label5.Text = "Nhà sản xuất";
+            // 
+            // txtNSX
+            // 
+            this.txtNSX.Location = new System.Drawing.Point(622, 126);
+            this.txtNSX.Name = "txtNSX";
+            this.txtNSX.Size = new System.Drawing.Size(203, 20);
+            this.txtNSX.TabIndex = 36;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(453, 88);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(75, 18);
+            this.label4.TabIndex = 35;
+            this.label4.Text = "Đạo diễn";
+            // 
+            // txtDaoDien
+            // 
+            this.txtDaoDien.Location = new System.Drawing.Point(622, 84);
+            this.txtDaoDien.Name = "txtDaoDien";
+            this.txtDaoDien.Size = new System.Drawing.Size(203, 20);
+            this.txtDaoDien.TabIndex = 34;
+            // 
+            // numericUpDown2
+            // 
+            this.numericUpDown2.Location = new System.Drawing.Point(622, 43);
+            this.numericUpDown2.Name = "numericUpDown2";
+            this.numericUpDown2.Size = new System.Drawing.Size(203, 20);
+            this.numericUpDown2.TabIndex = 33;
+            // 
+            // numericUpDown1
+            // 
+            this.numericUpDown1.Location = new System.Drawing.Point(157, 128);
+            this.numericUpDown1.Name = "numericUpDown1";
+            this.numericUpDown1.Size = new System.Drawing.Size(222, 20);
+            this.numericUpDown1.TabIndex = 32;
+            // 
+            // txtNoiDUng
+            // 
+            this.txtNoiDUng.Location = new System.Drawing.Point(157, 171);
+            this.txtNoiDUng.Multiline = true;
+            this.txtNoiDUng.Name = "txtNoiDUng";
+            this.txtNoiDUng.Size = new System.Drawing.Size(222, 51);
+            this.txtNoiDUng.TabIndex = 31;
+            // 
+            // txtTenPhim
+            // 
+            this.txtTenPhim.Location = new System.Drawing.Point(157, 45);
+            this.txtTenPhim.Name = "txtTenPhim";
+            this.txtTenPhim.Size = new System.Drawing.Size(222, 20);
+            this.txtTenPhim.TabIndex = 43;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(867, 48);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(100, 143);
+            this.pictureBox1.TabIndex = 44;
+            this.pictureBox1.TabStop = false;
             // 
             // FormQLPhim
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(928, 556);
+            this.ClientSize = new System.Drawing.Size(1033, 556);
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormQLPhim";
             this.Text = "Quản Lý Phim";
-            ((System.ComponentModel.ISupportInitialize)(this.lueTheLoai.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lueTenPhim.Properties)).EndInit();
+            this.Load += new System.EventHandler(this.FormQLPhim_Load);
             ((System.ComponentModel.ISupportInitialize)(this.LupMaCa)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.LupTPhim)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.LupTphong)).EndInit();
@@ -465,16 +472,17 @@
             ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lueTheLoai.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lueMac.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtTenPhim.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private DevExpress.XtraEditors.LookUpEdit lueTheLoai;
-        private DevExpress.XtraEditors.LookUpEdit lueTenPhim;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label1;
         private DevExpress.XtraGrid.Columns.GridColumn ColTG;
@@ -501,15 +509,17 @@
         private DevExpress.XtraEditors.TextEdit textEdit1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtNSX;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtDaoDien;
         private System.Windows.Forms.NumericUpDown numericUpDown2;
         private System.Windows.Forms.NumericUpDown numericUpDown1;
-        private System.Windows.Forms.TextBox textBox1;
-
+        private System.Windows.Forms.TextBox txtNoiDUng;
+        private DevExpress.XtraEditors.LookUpEdit lueMac;
+        private DevExpress.XtraEditors.LookUpEdit lueTheLoai;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private DevExpress.XtraEditors.TextEdit txtTenPhim;
     }
 }
