@@ -20,7 +20,7 @@ namespace DA_RapChieuPhim
 
             BonusSkins.Register();
             SkinManager.EnableFormSkins();
-            Application.Run(new FormDatVe());
+            Application.Run(new FormQLPhim());
         }
     }
 }

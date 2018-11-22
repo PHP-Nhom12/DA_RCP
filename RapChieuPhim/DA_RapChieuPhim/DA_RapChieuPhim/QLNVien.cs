@@ -8,6 +8,7 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -289,6 +290,57 @@ namespace DA_RapChieuPhim
             if (gvNhanVien.SelectedRowsCount > 0)
             {
                 btnXoa.Enabled = true;
+            }
+        }
+
+        private void txtTenNV_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //if ((char)e.KeyChar <= 57 && (char)e.KeyChar >= 48 | (char)e.KeyChar == 8 | (char)e.KeyChar == 13)
+            //{
+            //    e.Handled = true;
+
+            //}
+            //else
+            //{
+               
+            //    e.Handled = fai;
+            //    MessageBox.Show("CMND là ký tự chữ!!!", "Error", MessageBoxButtons.OK);
+
+            //}
+            if (!Char.IsLetter(e.KeyChar) && (e.KeyChar != 8 || e.KeyChar != 13))
+                e.Handled = true;
+            if (e.KeyChar == 8)
+                e.Handled = false;
+            if (e.KeyChar >= 'a' && e.KeyChar <= 'z') e.KeyChar = char.ToLower(e.KeyChar);
+
+        }
+        public static bool isEmail(string inputEmail)
+        {
+            inputEmail = inputEmail ?? string.Empty;
+            string strRegex = @"^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}" +
+                  @"\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\" +
+                  @".)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$";
+            Regex re = new Regex(strRegex);
+            if (re.IsMatch(inputEmail))
+                return (true);
+            else
+                return (false);
+        }
+
+        private void txtEmail_KeyPress(object sender, KeyPressEventArgs e)
+        {
+          
+           
+
+
+        }
+
+        private void txtEmail_Leave(object sender, EventArgs e)
+        {
+            if(isEmail(txtEmail.Text)==false)
+            {
+                MessageBox.Show("Nhập sai ");
+                txtEmail.Text = "";
             }
         }
     }

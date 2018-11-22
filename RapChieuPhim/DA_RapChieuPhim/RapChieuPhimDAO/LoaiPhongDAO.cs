@@ -21,7 +21,7 @@ namespace RapChieuPhimDAO
 
                 LoaiPhongDTO ketqua = new LoaiPhongDTO();
                 ketqua.MaLoai = int.Parse(sdr["Maloai"].ToString());
-                ketqua.TenLoaiPhong = sdr["TenPhong"].ToString();
+                ketqua.TenLoaiPhong = sdr["TenLoaiPhong"].ToString();
                 ketqua.HeSo = float.Parse(sdr["HeSo"].ToString());
                 ketqua.TrangThai = int.Parse(sdr["TrangThai"].ToString());
                 ls.Add(ketqua);

@@ -1,0 +1,7 @@
+D:\Duyen\WinNC_RapChieuPhim\DA_RCP\RapChieuPhim\DA_RapChieuPhim\RapChieuPhimDAO\bin\Debug\RapChieuPhimDAO.dll
+D:\Duyen\WinNC_RapChieuPhim\DA_RCP\RapChieuPhim\DA_RapChieuPhim\RapChieuPhimDAO\bin\Debug\RapChieuPhimDAO.pdb
+D:\Duyen\WinNC_RapChieuPhim\DA_RCP\RapChieuPhim\DA_RapChieuPhim\RapChieuPhimDAO\bin\Debug\RapChieuPhimDTO.dll
+D:\Duyen\WinNC_RapChieuPhim\DA_RCP\RapChieuPhim\DA_RapChieuPhim\RapChieuPhimDAO\bin\Debug\RapChieuPhimDTO.pdb
+D:\Duyen\WinNC_RapChieuPhim\DA_RCP\RapChieuPhim\DA_RapChieuPhim\RapChieuPhimDAO\obj\Debug\RapChieuPhimDAO.csprojResolveAssemblyReference.cache
+D:\Duyen\WinNC_RapChieuPhim\DA_RCP\RapChieuPhim\DA_RapChieuPhim\RapChieuPhimDAO\obj\Debug\RapChieuPhimDAO.dll
+D:\Duyen\WinNC_RapChieuPhim\DA_RCP\RapChieuPhim\DA_RapChieuPhim\RapChieuPhimDAO\obj\Debug\RapChieuPhimDAO.pdb

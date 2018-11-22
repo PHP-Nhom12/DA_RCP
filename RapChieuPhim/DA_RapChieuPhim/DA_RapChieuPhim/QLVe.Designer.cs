@@ -43,13 +43,13 @@
             this.lUpTenPhim = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
             this.ColTGBatDau = new DevExpress.XtraGrid.Columns.GridColumn();
             this.ColTGKetThuc = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.ColViTri = new DevExpress.XtraGrid.Columns.GridColumn();
             this.ColPhong = new DevExpress.XtraGrid.Columns.GridColumn();
             this.lUpTenPhong = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
             this.ColGiaVe = new DevExpress.XtraGrid.Columns.GridColumn();
             this.ColTenTV = new DevExpress.XtraGrid.Columns.GridColumn();
             this.lUPTenTV = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
             this.ColMaVe = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.ColViTri = new DevExpress.XtraGrid.Columns.GridColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtQuery.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcVe)).BeginInit();
@@ -70,9 +70,11 @@
             this.groupBox1.Controls.Add(this.radTenPhong);
             this.groupBox1.Controls.Add(this.radTenPhim);
             this.groupBox1.Controls.Add(this.gcVe);
-            this.groupBox1.Location = new System.Drawing.Point(3, 12);
+            this.groupBox1.Location = new System.Drawing.Point(4, 15);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(782, 430);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Size = new System.Drawing.Size(1043, 529);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Quản Lý Vé";
@@ -82,9 +84,10 @@
             // 
             this.btnSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSearch.Image = ((System.Drawing.Image)(resources.GetObject("btnSearch.Image")));
-            this.btnSearch.Location = new System.Drawing.Point(606, 41);
+            this.btnSearch.Location = new System.Drawing.Point(808, 50);
+            this.btnSearch.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(76, 32);
+            this.btnSearch.Size = new System.Drawing.Size(101, 39);
             this.btnSearch.TabIndex = 11;
             this.btnSearch.UseVisualStyleBackColor = true;
             this.btnSearch.Click += new System.EventHandler(this.button4_Click);
@@ -94,9 +97,10 @@
             this.radTatCa.AutoSize = true;
             this.radTatCa.Checked = true;
             this.radTatCa.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radTatCa.Location = new System.Drawing.Point(46, 74);
+            this.radTatCa.Location = new System.Drawing.Point(61, 91);
+            this.radTatCa.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.radTatCa.Name = "radTatCa";
-            this.radTatCa.Size = new System.Drawing.Size(80, 24);
+            this.radTatCa.Size = new System.Drawing.Size(99, 29);
             this.radTatCa.TabIndex = 8;
             this.radTatCa.TabStop = true;
             this.radTatCa.Text = "Tất Cả";
@@ -106,9 +110,10 @@
             // 
             this.radTenThanhVien.AutoSize = true;
             this.radTenThanhVien.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radTenThanhVien.Location = new System.Drawing.Point(283, 74);
+            this.radTenThanhVien.Location = new System.Drawing.Point(377, 91);
+            this.radTenThanhVien.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.radTenThanhVien.Name = "radTenThanhVien";
-            this.radTenThanhVien.Size = new System.Drawing.Size(153, 24);
+            this.radTenThanhVien.Size = new System.Drawing.Size(189, 29);
             this.radTenThanhVien.TabIndex = 6;
             this.radTenThanhVien.Text = "Tên Thành Viên";
             this.radTenThanhVien.UseVisualStyleBackColor = true;
@@ -116,9 +121,10 @@
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(663, 388);
+            this.button1.Location = new System.Drawing.Point(884, 478);
+            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(97, 34);
+            this.button1.Size = new System.Drawing.Size(129, 42);
             this.button1.TabIndex = 5;
             this.button1.Text = "Xóa Vé";
             this.button1.UseVisualStyleBackColor = true;
@@ -126,20 +132,23 @@
             // 
             // txtQuery
             // 
-            this.txtQuery.Location = new System.Drawing.Point(29, 45);
+            this.txtQuery.Location = new System.Drawing.Point(39, 55);
+            this.txtQuery.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtQuery.Name = "txtQuery";
             this.txtQuery.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtQuery.Properties.Appearance.Options.UseFont = true;
-            this.txtQuery.Size = new System.Drawing.Size(551, 24);
+            this.txtQuery.Size = new System.Drawing.Size(735, 30);
             this.txtQuery.TabIndex = 4;
+          
             // 
             // radTenPhong
             // 
             this.radTenPhong.AutoSize = true;
             this.radTenPhong.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radTenPhong.Location = new System.Drawing.Point(149, 74);
+            this.radTenPhong.Location = new System.Drawing.Point(199, 91);
+            this.radTenPhong.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.radTenPhong.Name = "radTenPhong";
-            this.radTenPhong.Size = new System.Drawing.Size(113, 24);
+            this.radTenPhong.Size = new System.Drawing.Size(139, 29);
             this.radTenPhong.TabIndex = 2;
             this.radTenPhong.Text = "Tên Phòng";
             this.radTenPhong.UseVisualStyleBackColor = true;
@@ -148,23 +157,26 @@
             // 
             this.radTenPhim.AutoSize = true;
             this.radTenPhim.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radTenPhim.Location = new System.Drawing.Point(457, 74);
+            this.radTenPhim.Location = new System.Drawing.Point(609, 91);
+            this.radTenPhim.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.radTenPhim.Name = "radTenPhim";
-            this.radTenPhim.Size = new System.Drawing.Size(101, 24);
+            this.radTenPhim.Size = new System.Drawing.Size(125, 29);
             this.radTenPhim.TabIndex = 1;
             this.radTenPhim.Text = "Tên Phim";
             this.radTenPhim.UseVisualStyleBackColor = true;
             // 
             // gcVe
             // 
-            this.gcVe.Location = new System.Drawing.Point(0, 132);
+            this.gcVe.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gcVe.Location = new System.Drawing.Point(0, 162);
             this.gcVe.MainView = this.gvVe;
+            this.gcVe.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.gcVe.Name = "gcVe";
             this.gcVe.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.lUpTenPhong,
             this.lUPTenTV,
             this.lUpTenPhim});
-            this.gcVe.Size = new System.Drawing.Size(782, 247);
+            this.gcVe.Size = new System.Drawing.Size(1043, 304);
             this.gcVe.TabIndex = 0;
             this.gcVe.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvVe});
@@ -228,6 +240,15 @@
             this.ColTGKetThuc.VisibleIndex = 2;
             this.ColTGKetThuc.Width = 42;
             // 
+            // ColViTri
+            // 
+            this.ColViTri.Caption = "Vị Trí";
+            this.ColViTri.FieldName = "ViTriNgoi";
+            this.ColViTri.Name = "ColViTri";
+            this.ColViTri.Visible = true;
+            this.ColViTri.VisibleIndex = 4;
+            this.ColViTri.Width = 42;
+            // 
             // ColPhong
             // 
             this.ColPhong.Caption = "Phòng";
@@ -281,22 +302,14 @@
             this.ColMaVe.FieldName = "MaVe";
             this.ColMaVe.Name = "ColMaVe";
             // 
-            // ColViTri
-            // 
-            this.ColViTri.Caption = "Vị Trí";
-            this.ColViTri.FieldName = "ViTriNgoi";
-            this.ColViTri.Name = "ColViTri";
-            this.ColViTri.Visible = true;
-            this.ColViTri.VisibleIndex = 4;
-            this.ColViTri.Width = 42;
-            // 
             // QLVe
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(789, 443);
+            this.ClientSize = new System.Drawing.Size(1052, 545);
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "QLVe";
             this.Text = "Quản Lý Vé";
             this.groupBox1.ResumeLayout(false);

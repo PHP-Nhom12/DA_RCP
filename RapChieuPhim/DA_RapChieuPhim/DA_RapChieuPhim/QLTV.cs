@@ -35,8 +35,10 @@ namespace DA_RapChieuPhim
         private void QLTV_Load(object sender, EventArgs e)
         {
             LoadDSTV();
+           
         }
 
+       
 
         private void BtnThem_Click(object sender, EventArgs e)
         {
@@ -170,6 +172,44 @@ namespace DA_RapChieuPhim
                 }
             }
         }
+
+        private void txtTenTV_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsLetter(e.KeyChar) && (e.KeyChar != 8 || e.KeyChar != 13))
+                e.Handled = true;
+            if (e.KeyChar == 8)
+                e.Handled = false;
+            if (e.KeyChar >= 'a' && e.KeyChar <= 'z') e.KeyChar = char.ToLower(e.KeyChar);
+        }
+
+        private void txtCMND_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            //{
+            //    e.Handled = true;
+            //    MessageBox.Show("CMND là ký tự số", "Thông báo");
+            //}
+
+
+            if(txtCMND.Text.Length>9)
+            {
+                MessageBox.Show("Nhap sai");
+                txtCMND.Text = string.Empty;
+            }
+                if ((int)e.KeyChar <= 57 && (int)e.KeyChar >= 48 | (int)e.KeyChar == 8 | (int)e.KeyChar == 13)
+                {
+                    e.Handled = false;
+                }
+                else
+                {
+                    e.Handled = true;
+
+                }
+          
+           
+        }
+
+      
     }
 }
 
