@@ -1,0 +1,9 @@
+D:\Duyen\WinNC_RapChieuPhim\DA_RCP\RapChieuPhim\DA_RapChieuPhim\RapChieuPhimBUS\bin\Debug\RapChieuPhimBUS.dll
+D:\Duyen\WinNC_RapChieuPhim\DA_RCP\RapChieuPhim\DA_RapChieuPhim\RapChieuPhimBUS\bin\Debug\RapChieuPhimBUS.pdb
+D:\Duyen\WinNC_RapChieuPhim\DA_RCP\RapChieuPhim\DA_RapChieuPhim\RapChieuPhimBUS\bin\Debug\RapChieuPhimDAO.dll
+D:\Duyen\WinNC_RapChieuPhim\DA_RCP\RapChieuPhim\DA_RapChieuPhim\RapChieuPhimBUS\bin\Debug\RapChieuPhimDTO.dll
+D:\Duyen\WinNC_RapChieuPhim\DA_RCP\RapChieuPhim\DA_RapChieuPhim\RapChieuPhimBUS\bin\Debug\RapChieuPhimDAO.pdb
+D:\Duyen\WinNC_RapChieuPhim\DA_RCP\RapChieuPhim\DA_RapChieuPhim\RapChieuPhimBUS\bin\Debug\RapChieuPhimDTO.pdb
+D:\Duyen\WinNC_RapChieuPhim\DA_RCP\RapChieuPhim\DA_RapChieuPhim\RapChieuPhimBUS\obj\Debug\RapChieuPhimBUS.csprojResolveAssemblyReference.cache
+D:\Duyen\WinNC_RapChieuPhim\DA_RCP\RapChieuPhim\DA_RapChieuPhim\RapChieuPhimBUS\obj\Debug\RapChieuPhimBUS.dll
+D:\Duyen\WinNC_RapChieuPhim\DA_RCP\RapChieuPhim\DA_RapChieuPhim\RapChieuPhimBUS\obj\Debug\RapChieuPhimBUS.pdb

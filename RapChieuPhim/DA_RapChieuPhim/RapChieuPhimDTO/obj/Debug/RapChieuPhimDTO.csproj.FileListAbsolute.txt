@@ -1,0 +1,4 @@
+D:\Duyen\WinNC_RapChieuPhim\DA_RCP\RapChieuPhim\DA_RapChieuPhim\RapChieuPhimDTO\bin\Debug\RapChieuPhimDTO.dll
+D:\Duyen\WinNC_RapChieuPhim\DA_RCP\RapChieuPhim\DA_RapChieuPhim\RapChieuPhimDTO\bin\Debug\RapChieuPhimDTO.pdb
+D:\Duyen\WinNC_RapChieuPhim\DA_RCP\RapChieuPhim\DA_RapChieuPhim\RapChieuPhimDTO\obj\Debug\RapChieuPhimDTO.dll
+D:\Duyen\WinNC_RapChieuPhim\DA_RCP\RapChieuPhim\DA_RapChieuPhim\RapChieuPhimDTO\obj\Debug\RapChieuPhimDTO.pdb
