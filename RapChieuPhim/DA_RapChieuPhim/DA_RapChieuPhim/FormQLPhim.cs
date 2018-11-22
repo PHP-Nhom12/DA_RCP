@@ -9,10 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using RapChieuPhimBUS;
 using RapChieuPhimDTO;
-<<<<<<< HEAD
 
-=======
->>>>>>> 042ac5c47f1b03b14a6e048a81eba0210df6318b
 namespace DA_RapChieuPhim
 {
     public partial class FormQLPhim : Form
@@ -22,16 +19,11 @@ namespace DA_RapChieuPhim
         {
             InitializeComponent();
         }
-<<<<<<< HEAD
         PhimBUS phim = new PhimBUS();
         TheLoaiBUS theloai = new TheLoaiBUS();
         
 
         private void FormQLPhim_Load(object sender, EventArgs e)
-=======
-        
-        private void label2_Click(object sender, EventArgs e)
->>>>>>> 042ac5c47f1b03b14a6e048a81eba0210df6318b
         {
             loadTatCa();
         }
