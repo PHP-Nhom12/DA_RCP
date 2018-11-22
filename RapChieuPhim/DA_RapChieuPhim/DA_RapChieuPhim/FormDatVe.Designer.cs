@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormDatVe));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.lbThoiLuong = new System.Windows.Forms.Label();
@@ -60,6 +61,7 @@
             this.btnDatVe = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.imlChair = new System.Windows.Forms.ImageList();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.lueVoucher.Properties)).BeginInit();
@@ -275,6 +277,7 @@
             this.lvDSGhe.Location = new System.Drawing.Point(352, 112);
             this.lvDSGhe.Name = "lvDSGhe";
             this.lvDSGhe.Size = new System.Drawing.Size(808, 230);
+            this.lvDSGhe.SmallImageList = this.imlChair;
             this.lvDSGhe.TabIndex = 34;
             this.lvDSGhe.UseCompatibleStateImageBehavior = false;
             this.lvDSGhe.View = System.Windows.Forms.View.SmallIcon;
@@ -425,6 +428,12 @@
             this.label5.TabIndex = 4;
             this.label5.Text = "Ngày";
             // 
+            // imlChair
+            // 
+            this.imlChair.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imlChair.ImageStream")));
+            this.imlChair.TransparentColor = System.Drawing.Color.Transparent;
+            this.imlChair.Images.SetKeyName(0, "seat.png");
+            // 
             // FormDatVe
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -478,5 +487,6 @@
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label lbDaoDien;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.ImageList imlChair;
     }
 }

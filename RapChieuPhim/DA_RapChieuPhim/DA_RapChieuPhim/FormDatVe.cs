@@ -299,7 +299,9 @@ namespace DA_RapChieuPhim
 
                 foreach (GheDTO ghe in lsGhe)
                 {
-                    lvDSGhe.Items.Add(ghe.MaGhe).Group = lvDSGhe.Groups[0];
+                    ListViewItem ghemoi = lvDSGhe.Items.Add(ghe.MaGhe);
+                    ghemoi.ImageIndex = 0;
+                    ghemoi.Group = lvDSGhe.Groups[0];
                 }
                 
                 lvDSGhe.Visible = true;
