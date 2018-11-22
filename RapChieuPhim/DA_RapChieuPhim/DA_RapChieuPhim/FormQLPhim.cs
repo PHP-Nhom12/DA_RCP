@@ -43,25 +43,5 @@ namespace DA_RapChieuPhim
             lueMac.Properties.DisplayMember = "Mac";
             lueMac.Properties.ValueMember = "MaPhim";
         }
-
-        private void textBox2_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (!Char.IsLetter(e.KeyChar) && (e.KeyChar != 8 || e.KeyChar != 13))
-                e.Handled = true;
-            if (e.KeyChar == 8)
-                e.Handled = false;
-            if (e.KeyChar >= 'a' && e.KeyChar <= 'z') e.KeyChar = char.ToLower(e.KeyChar);
-        }
-
-        private void textBox3_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (!Char.IsLetter(e.KeyChar) && (e.KeyChar != 8 || e.KeyChar != 13))
-                e.Handled = true;
-            if (e.KeyChar == 8)
-                e.Handled = false;
-            if (e.KeyChar >= 'a' && e.KeyChar <= 'z') e.KeyChar = char.ToLower(e.KeyChar);
-        }
-
-
     }
 }

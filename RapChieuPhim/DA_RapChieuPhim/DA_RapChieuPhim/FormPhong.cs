@@ -17,7 +17,7 @@ namespace DA_RapChieuPhim
         PhongBUS pBUS = new PhongBUS();
         LoaiPhongBUS loaiphong = new LoaiPhongBUS();
         PhongDTO phongchon = null;
-
+        
         public FormPhong()
         {
             InitializeComponent();
@@ -47,7 +47,7 @@ namespace DA_RapChieuPhim
                     phongchon = new PhongDTO();
                 }
 
-                phongchon.MaPhong = int.Parse(txtMPhong.Text);
+                phongchon.MaPhong =int.Parse( txtMPhong.Text);
                 phongchon.TenPhong = txtTenPhong.Text;
                 phongchon.LoaiPhong = int.Parse(lUpLoaiPhong.EditValue.ToString());
                 phongchon.SLCho = int.Parse(txtSLCho.Text);
@@ -84,8 +84,8 @@ namespace DA_RapChieuPhim
                     if (rows >= 0)
                     {
                         string TenPhong = gvPhong.GetRowCellValue(rows, ColTenPhong).ToString();
-                        int MaPhong = int.Parse(gvPhong.GetRowCellValue(rows, ColMaPhong).ToString());
-                        DialogResult r = MessageBox.Show("Bạn có chắn chắn muốn xóa phòng '" + TenPhong + "'?", "Thông Báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                        int MaPhong = int.Parse(gvPhong.GetRowCellValue(rows,ColMaPhong).ToString());
+                        DialogResult r = MessageBox.Show("Bạn có chắn chắn muốn xóa phòng '"+TenPhong+"'?", "Thông Báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                         if (DialogResult.Yes == r)
                         {
                             if (pBUS.Xoa(MaPhong) >= 1)
@@ -113,7 +113,7 @@ namespace DA_RapChieuPhim
             lUpLoaiPhong.EditValue = null;
             txtSLCho.Text = "";
             button2.Enabled = false;
-            button3.Enabled = false;
+            button3.Enabled=false;
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -166,10 +166,10 @@ namespace DA_RapChieuPhim
                     {
                         phongchon = new PhongDTO();
                         phongchon.MaPhong = int.Parse(gvPhong.GetRowCellValue(item, ColMaPhong).ToString());
-                        phongchon.TenPhong = gvPhong.GetRowCellValue(item, ColTenPhong).ToString().Trim();
+                        phongchon.TenPhong =gvPhong.GetRowCellValue(item, ColTenPhong).ToString().Trim();
                         phongchon.LoaiPhong = int.Parse(gvPhong.GetRowCellValue(item, ColLoaiPhong).ToString());
-                        phongchon.SLCho = int.Parse(gvPhong.GetRowCellValue(item, ColSL).ToString());
-
+                        phongchon.SLCho =int.Parse( gvPhong.GetRowCellValue(item, ColSL).ToString());
+                        
                     }
                     else
                     {
@@ -182,7 +182,7 @@ namespace DA_RapChieuPhim
             txtSLCho.Text = phongchon.SLCho.ToString();
             lUpLoaiPhong.EditValue = (int)phongchon.LoaiPhong;
 
-
+          
         }
 
         private void gvPhong_RowClick(object sender, DevExpress.XtraGrid.Views.Grid.RowClickEventArgs e)
@@ -192,58 +192,5 @@ namespace DA_RapChieuPhim
                 button2.Enabled = true;
             }
         }
-
-        private void txtMPhong_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (!char.IsControl(e.KeyChar) && !char.IsNumber(e.KeyChar))
-            {
-                e.Handled = true;
-            }
-            else
-            {
-                
-                e.Handled = false;
-               
-
-            }
-        }
-
-        private void txtSLCho_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (!char.IsControl(e.KeyChar) && !char.IsNumber(e.KeyChar))
-            {
-                e.Handled = true;
-            }
-            else
-            {
-               
-                e.Handled = false;
-                
-            }
-        }
-
-        private void txtTenPhong_KeyPress(object sender, KeyPressEventArgs e)
-        {
-
-        }
-
-
-
-        //private void txtSLCho_KeyPress(object sender, KeyPressEventArgs e)
-        //{
-        //    if ((int)e.KeyChar <= 57 && (int)e.KeyChar >= 48 | (int)e.KeyChar == 8 | (int)e.KeyChar == 13)
-        //    {
-        //        e.Handled = false;
-        //        }
-        //        else
-        //        {
-        //            MessageBox.Show("Số lượng chỗ là ký tự chữ!!!", "Error", MessageBoxButtons.OK);
-        //        e.Handled = true;
-
-        //        }
-        //     }
-
     }
 }
-
-
